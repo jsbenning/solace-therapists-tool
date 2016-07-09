@@ -1,7 +1,9 @@
 require './config/environment'
-require "./app/models/user"
+#require "./app/models/therapist"
+
 
 class ApplicationController < Sinatra::Base
+
 
   configure do
     enable :sessions
@@ -10,33 +12,43 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-    post "/signup" do
-    @user = User.create(username: params["username"], 
-    password: params["password"], email: params["email"])
-    if @user.save || logged_in?
-      session[:user_id] = @user.id
-      redirect to "/tweets"
-    else
-      redirect to '/signup'
-    end
-  end
-
-  get "/login" do
+  get '/' do
     if logged_in?
-      @user = current_user
-      redirect to "/tweets"
-    else  
-      erb :"users/login"
+      @therapist = current_user
+      @clients = @therapist.clients
+      erb :'therapists/show_therapist'
+    else
+      erb :"index"
     end
   end
 
-  post "/login" do
-    @user = User.find_by(username: params[:username])
-    if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
-      redirect to "/tweets"
+  get '/register' do
+    if logged_in?
+      @therapist = current_user
+      @clients = @therapist.clients
+        erb :'therapists/show_therapist'
+    else 
+      erb :"therapists/create_therapist" 
+    end
+  end
+
+  get '/login' do
+    if logged_in?
+      @therapist = current_user
+      erb :'therapists/show_therapist'
+    else  
+      erb :'login'
+    end
+  end
+
+  post '/login' do
+    @therapist = Therapist.find_by(username: params[:username])
+    if @therapist && @therapist.authenticate(params[:password])
+      session[:therapist_id] = @therapist.id
+      @clients = @therapist.clients
+      erb :'therapists/show_therapist'
     else
-      redirect to '/'  #homepage
+      redirect to '/'  #index page
     end
   end
 
@@ -47,6 +59,18 @@ class ApplicationController < Sinatra::Base
     else
       redirect to '/'
     end
+  end
+
+  helpers do
+
+    def logged_in?
+      !!session[:therapist_id]
+    end
+
+    def current_user
+      Therapist.find(session[:therapist_id])
+    end
+    
   end
 
 end

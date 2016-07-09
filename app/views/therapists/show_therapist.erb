@@ -1,0 +1,23 @@
+<h2><%=@therapist.first_name%> <%=@therapist.last_name%>, <%=@therapist.license_type%></h2>
+<form method="link" action="/therapists/<%= @therapist.id %>/edit">
+  <input type="submit" value="Edit Therapist">
+</form>
+
+<br></br>
+
+<h2>Clients:</h2>
+<ul class="navigation">
+<% @clients.each do |client| %>
+
+<li><a href="/clients/<%=client.id%>"><%=client.last_name%>, <%=client.first_name%></a></li>
+<%end%>
+</ul>
+
+
+<form method="link" action="/clients/new">
+  <input type="submit" value="Create Client">
+</form>
+
+
+
+
