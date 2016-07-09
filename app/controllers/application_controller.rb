@@ -1,9 +1,6 @@
 require './config/environment'
-#require "./app/models/therapist"
-
-
 class ApplicationController < Sinatra::Base
-
+  register Sinatra::ActiveRecordExtension
 
   configure do
     enable :sessions

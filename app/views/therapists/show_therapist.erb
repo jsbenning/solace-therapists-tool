@@ -1,11 +1,11 @@
-<h2><%=@therapist.first_name%> <%=@therapist.last_name%>, <%=@therapist.license_type%></h2>
+<h2><%=@therapist.first_name%> <%=@therapist.last_name%>, <%=@therapist.license_type%>
 <form method="link" action="/therapists/<%= @therapist.id %>/edit">
   <input type="submit" value="Edit Therapist">
-</form>
+</form></h2>
 
-<br></br>
 
-<h2>Clients:</h2>
+
+<h3>Clients:</h3>
 <ul class="navigation">
 <% @clients.each do |client| %>
 
@@ -17,6 +17,13 @@
 <form method="link" action="/clients/new">
   <input type="submit" value="Create Client">
 </form>
+<br></br>
+<br></br>
+<form method="GET" action="/logout">
+  <input type="submit" value="Logout">
+</form>
+
+
 
 
 

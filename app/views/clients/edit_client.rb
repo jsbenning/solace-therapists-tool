@@ -1,5 +1,19 @@
-<h2>Create a Client</h2>
-<form action="/clients/new" method="POST">
+
+
+
+<%=@client.medical_record_id%> 
+<br></br>
+<%=@client.last_name%>, <%=@client.first_name%>
+<form method="POST" action="/clients/<%= @client.id %>/edit">
+<input id="hidden" type="hidden" name="_method" value="patch">
+
+
+
+
+
+
+<h2>Edit Client Record</h2>
+<form action="/clients/edit/id" method="POST">
   <input type="integer" name="medical_record_id" placeholder="Medical Record Number">
   <br></br>
   <input type="text" name="first_name" placeholder="First Name">
@@ -14,3 +28,6 @@
   <br></br>
   <input type="submit" value="Create Client">
 </form>
+
+
+

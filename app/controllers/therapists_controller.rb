@@ -1,3 +1,4 @@
+
 class TherapistsController < ApplicationController
 
   post '/therapists/new' do

@@ -1,1 +1,15 @@
-<%=@client.last_name%>
+<br></br>
+<h2>Client Record</h2>
+
+<b>Medical Record Number:</b> <%=@client.medical_record_id%><br></br>
+<b>Name: </b><%=@client.last_name%>, <%=@client.first_name%><br></br>
+<b>Date of Birth:</b> <%=@client.date_of_birth%><br></br>
+<b>Address:</b> <%=@client.address%><br></br>
+<b>Phone Number: </b><%=@client.phone%><br></br>
+<form action="/clients/<%=@client.id%>/edit" method="GET">
+  <input type="submit" value="Edit Client Record">
+</form>
+<br></br>
+<form action="/therapists/<%=@therapist.id%>" method="GET">
+  <input type="submit" value="Return To Home Page">
+</form>
