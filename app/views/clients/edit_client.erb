@@ -1,0 +1,25 @@
+<br></br>
+<h2>Client: <%=@client.last_name%>, <%=@client.first_name%></h2>
+<h3>Medical Record #: <%=@client.medical_record_id%></h3>
+<form method="POST" action="/clients/<%= @client.id %>/edit">
+<input id="hidden" type="hidden" name="_method" value="patch">
+<br></br>
+<h3>Edit Client Record</h3>
+<form action="/clients/edit/id" method="POST">
+
+  First Name: <input type="text" name="client[first_name]" value="<%=@client.first_name%>"placeholder="<%=@client.first_name%>">
+  <br></br>
+  Last Name: <input type="text" name="client[last_name]" value="<%=@client.last_name%>" placeholder="<%=@client.last_name%>">
+  <br></br>
+  Date of Birth: <input type="text" name="client[date_of_birth]" value="<%=@client.date_of_birth%>"placeholder="<%=@client.date_of_birth%>">
+  <br></br>
+  Address: <br></br>
+  <textarea rows="5" cols="50" name="client[address]" value="<%=@client.address%>"placeholder="<%=@client.address%>"></textarea>
+    <br></br>
+  Phone Number: <input type="text" name="[client]phone" value="<%=@client.phone%>"placeholder="<%=@client.phone%>">
+  <br></br>
+  <input type="submit" value="Update Client">
+</form>
+
+
+

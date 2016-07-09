@@ -38,6 +38,7 @@ class TherapistsController < ApplicationController
   patch '/therapists/:id/edit' do
     if logged_in?
       @therapist = current_user
+      @therapist.update(params["therapist"])
       redirect to "/therapists/#{@therapist.id}"
     else
       erb :'index'

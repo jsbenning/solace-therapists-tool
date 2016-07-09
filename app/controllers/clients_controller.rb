@@ -31,4 +31,25 @@ class ClientsController < ApplicationController
       end
     end
 
+    get '/clients/:id/edit' do
+      if logged_in?
+        @therapist = current_user
+        @client = Client.find(params[:id])
+        erb :'clients/edit_client'
+      else
+        redirect to '/'
+      end
+    end
+
+    patch '/clients/:id/edit' do
+      if logged_in?
+        @therapist = current_user
+        @client = Client.find(params[:id])
+        @client.update(params["client"])
+        redirect to "/clients/#{@client.id}"
+      else
+        erb :'index'
+      end
+    end
+
 end
