@@ -45,3 +45,11 @@ class TherapistsController < ApplicationController
     end
   end
 end
+
+=begin
+  <p>To change this client's therapist, select from the following:</p>
+  <%@therapists.each do |therapist|%>
+   <input type="radio"  name="client[therapist]"  id="<%= therapist.id%>" value="<%=therapist.id%>"><%=therapist.first_name%> <%=therapist.last_name%>, <%=therapist.license_type%> 
+   <%end%>
+  
+=end

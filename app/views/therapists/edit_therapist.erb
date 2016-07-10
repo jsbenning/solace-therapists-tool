@@ -2,19 +2,14 @@
 
 <form method="POST" action="/therapists/<%= @therapist.id %>/edit">
 <input id="hidden" type="hidden" name="_method" value="patch">
-<h2>Edit any of the following fields and press 'Update":</h2>
-
-  Username: <input type="text" name="username" placeholder="<%=@therapist.username%>">
+<h3>Edit any of the following fields and press "Update":</h3>
+  First Name: <input type="text" name="therapist[first_name]" value="<%=@therapist.first_name%>" placeholder="<%=@therapist.first_name%>">
   <br></br>
-  Password: <input type="password" name="password" value="password" placeholder="password">
+  Last Name: <input type="text" name="therapist[last_name]" value="<%=@therapist.last_name%>" placeholder="<%=@therapist.last_name%>">
   <br></br>
-  First Name: <input type="text" name="first_name" value="<%=@therapist.first_name%>" placeholder="<%=@therapist.first_name%>">
+  License Type: <input type="text" name="therapist[license_type]" value="<%=@therapist.license_type%>"placeholder="<%=@therapist.license_type%>">
   <br></br>
-  Last Name: <input type="text" name="last_name" value="<%=@therapist.last_name%>" placeholder="<%=@therapist.last_name%>">
-  <br></br>
-  License Type: <input type="text" name="license_type" value="<%=@therapist.license_type%>"placeholder="<%=@therapist.license_type%>">
-  <br></br>
-  License Number: <input type="text" name="license_number" value="<%=@therapist.license_number%>" placeholder="<%=@therapist.license_number%>">
+  License Number: <input type="text" name="therapist[license_number]" value="<%=@therapist.license_number%>" placeholder="<%=@therapist.license_number%>">
   <br></br>
   <input type="submit" value="Update">
 </form>

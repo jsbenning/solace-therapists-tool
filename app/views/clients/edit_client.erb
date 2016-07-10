@@ -1,9 +1,9 @@
-<br></br>
-<h2>Client: <%=@client.last_name%>, <%=@client.first_name%></h2>
-<h3>Medical Record #: <%=@client.medical_record_id%></h3>
+<h2>Client: <br></br>
+  <%=@client.last_name%>, <%=@client.first_name%></h2>
+<h4>Medical Record #: <%=@client.medical_record_id%></h4>
+
 <form method="POST" action="/clients/<%= @client.id %>/edit">
 <input id="hidden" type="hidden" name="_method" value="patch">
-<br></br>
 <h3>Edit Client Record</h3>
 <form action="/clients/edit/id" method="POST">
 
@@ -18,6 +18,7 @@
     <br></br>
   Phone Number: <input type="text" name="[client]phone" value="<%=@client.phone%>"placeholder="<%=@client.phone%>">
   <br></br>
+
   <input type="submit" value="Update Client">
 </form>
 
