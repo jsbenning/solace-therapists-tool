@@ -29,6 +29,7 @@ class ClientsController < ApplicationController
           date_of_birth: params["date_of_birth"], 
           address: params["address"],
           phone: params["phone"] )
+        @record = Record.create(client_id: @client.id)
         erb :'clients/show_client'
       else
         redirect to '/'
@@ -66,5 +67,44 @@ class ClientsController < ApplicationController
         erb :'index'
       end
     end
+
+    get 'clients/:id/:record/edit' do
+      if logged_in?
+        @therapist = current_user
+        @client = Client.find(params[:id])
+        @record_form = params[:record]
+        @record = @client.record
+        @record = @record.update(params["@record_form"])
+        erb :'#{@record_form}/edit'
+      else
+        erb :'index'
+      end
+    end
+
+    get 'clients/:id/:record/edit' do
+      if logged_in?
+        @therapist = current_user
+        @client = Client.find(params[:id])
+        @record_form = params[:record]
+        @record = @client.record
+        erb :'#{@record_form}/show'
+      else
+        erb :'index'
+      end
+    end
+
+    post 'clients/:id/:record' do
+      if logged_in?
+        @therapist = current_user
+        @client = Client.find(params[:id])
+        @record_form = params[:record]
+        @record = @client.record 
+        @record = @record.update(params["@record_form"])
+        erb :'#{@record_form}/show'
+      else
+        erb :'index'
+      end
+    end
+
 
 end

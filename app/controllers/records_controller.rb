@@ -1,4 +1,0 @@
-class RecordsController < ApplicationController
-
-
-end

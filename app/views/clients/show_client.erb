@@ -1,4 +1,9 @@
-<h2>Client Record</h2>
+<form action="/therapists/<%=@therapist.id%>" method="GET">
+  <input type="submit" value="Return To Home Page">
+</form>
+<br></br>
+
+<h2>Basic Client Information</h2>
 
 <b>Medical Record Number:</b> <%=@client.medical_record_id%><br></br>
 <b>Name: </b><%=@client.last_name%>, <%=@client.first_name%><br></br>
@@ -8,9 +13,99 @@
 <i>Currently under the care of <%=@therapist.first_name%> <%=@therapist.last_name%>, <%=@therapist.license_type%></i>
 <br></br>
 <form action="/clients/<%=@client.id%>/edit" method="GET">
-  <input type="submit" value="Edit Client Record">
+  <input type="submit" value="Edit Client Info">
+
 </form>
 <br></br>
+<h3>Click the links below to edit or view the named reports:</h3>
+
+<ol>
+  <li><b>Client Release Form</b>
+    <br></br>
+  <form action="/clients/<%=@client.id%>/release/edit" method="GET">
+  <input type="submit" value="Edit">
+</form>
+
+ <form action="/clients/<%=@client.id%>/release" method="GET">
+  <input type="submit" value="View">
+</form></li>
+<br></br>
+  <li><b>Presenting Problems</b>
+    <br></br>
+  <form action="/clients/<%=@client.id%>/presenting_problems/edit" method="GET">
+  <input type="submit" value="Edit">
+</form>
+
+ <form action="/clients/<%=@client.id%>/presenting_problems" method="GET">
+  <input type="submit" value="View">
+</form></li>
+<br></br>
+  <li><b>Assessed Risk</b>
+    <br></br>
+  <form action="/clients/<%=@client.id%>/assessed_risk/edit" method="GET">
+  <input type="submit" value="Edit">
+</form>
+
+ <form action="/clients/<%=@client.id%>/assessed_risk" method="GET">
+  <input type="submit" value="View">
+</form></li>
+<br></br>
+  <li><b>Mental Status</b>
+    <br></br>
+  <form action="/clients/<%=@client.id%>/mental_status/edit" method="GET">
+  <input type="submit" value="Edit">
+</form>
+
+ <form action="/clients/<%=@client.id%>/mental_status" method="GET">
+  <input type="submit" value="View">
+</form></li>
+<br></br>
+  <li><b>Biosocial History</b>
+    <br></br>
+  <form action="/clients/<%=@client.id%>/biosocial_history/edit" method="GET">
+  <input type="submit" value="Edit">
+</form>
+
+ <form action="/clients/<%=@client.id%>/biosocial_history" method="GET">
+  <input type="submit" value="View">
+</form></li>
+<br></br>
+  <li><b>Drug Assessment</b>
+    <br></br>
+  <form action="/clients/<%=@client.id%>/drug_assessment/edit" method="GET">
+  <input type="submit" value="Edit">
+</form>
+
+ <form action="/clients/<%=@client.id%>/drug_assessment" method="GET">
+  <input type="submit" value="View">
+</form></li>
+<br></br>
+  <li><b>Suicide Assessment</b>
+    <br></br>
+  <form action="/clients/<%=@client.id%>/suicide_assessment/edit" method="GET">
+  <input type="submit" value="Edit">
+</form>
+
+ <form action="/clients/<%=@client.id%>/suicide_assessment" method="GET">
+  <input type="submit" value="View">
+</form></li>
+<br></br>
+  <li><b>Homicide Assessment</b>
+    <br></br>
+  <form action="/clients/<%=@client.id%>/homicide_assessment/edit" method="GET">
+  <input type="submit" value="Edit">
+</form>
+
+ <form action="/clients/<%=@client.id%>/homicide_assessment" method="GET">
+  <input type="submit" value="View">
+</form></li>
+<br></br>
+</ol>
+---------------------------------
+
+<br></br>
+
+
 <form action="/therapists/<%=@therapist.id%>" method="GET">
   <input type="submit" value="Return To Home Page">
 </form>

@@ -9,4 +9,4 @@ class Therapist < ActiveRecord::Base
   validates_presence_of :last_name, :on => :create
   validates_presence_of :license_type, :on => :create
   validates_presence_of :license_number, :on => :create
-en
+end
