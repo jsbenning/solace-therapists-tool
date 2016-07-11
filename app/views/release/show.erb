@@ -1,0 +1,39 @@
+<h2>Release form for <i><%=@client.first_name%> <%=@client.last_name%></i></h2>
+<p>Client Medical Record ID#:<%=@client.medical_record_id%></p>
+<ul>
+<li><h3>Client authorizes facility to provide:</h3></li>
+<%=@client.record.release_type ||= "No release types currently on file"%>
+<br></br>
+
+<li><h3>Description(s) and date(s):</h3></li>
+<%=@client.record.release_description ||= "No release descriptions currently on file"%>
+<br></br>
+
+
+<li><h3><%=@client.record.release_initialed%></h3></li>
+
+<li><h3><%=@client.record.release_releasee%></h3></li>
+
+<li><h3>Disclosure to the following persons/institutions:</h3></li>
+<%=@client.record.release_releasee_info ||= "No external institutions currently on file"%>
+
+<li><h3>Client authorized agency to release/disclose health information for the following specific purpose(s):</h3></li>
+  <%=@client.record.release_purpose%>
+
+</ul>
+ 
+
+<form method="GET" action="../../clients/<%=@client.id%>">
+<input type="submit" value="Client Main Page">
+</form>
+<br></br>
+
+<form method="GET" action="../../therapists/<%=@therapist.id%>">
+  <input type="submit" value="Homepage">
+</form>
+<br></br>
+
+<form method="GET" action="/logout">
+  <input type="submit" value="Logout">
+</form>
+

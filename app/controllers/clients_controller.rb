@@ -29,7 +29,7 @@ class ClientsController < ApplicationController
           date_of_birth: params["date_of_birth"], 
           address: params["address"],
           phone: params["phone"] )
-        @record = Record.create(client_id: @client.id)
+        @client.record = Record.create(client_id: @client.id)
         erb :'clients/show_client'
       else
         redirect to '/'
@@ -40,6 +40,7 @@ class ClientsController < ApplicationController
       if logged_in?
         @therapist = current_user
         @client = Client.find(params[:id])
+        binding.pry
         erb :'clients/show_client'
       else
         redirect to '/'
@@ -68,39 +69,40 @@ class ClientsController < ApplicationController
       end
     end
 
-    get 'clients/:id/:record/edit' do
+    get '/clients/:id/:record_name/edit' do
       if logged_in?
         @therapist = current_user
         @client = Client.find(params[:id])
-        @record_form = params[:record]
+        record_form = params[:record_name]
         @record = @client.record
-        @record = @record.update(params["@record_form"])
-        erb :'#{@record_form}/edit'
+        erb :"#{record_form}/edit"
       else
         erb :'index'
       end
     end
 
-    get 'clients/:id/:record/edit' do
+    get '/clients/:id/:record_name' do
       if logged_in?
         @therapist = current_user
         @client = Client.find(params[:id])
-        @record_form = params[:record]
+        @record_form = params[:record_name]
         @record = @client.record
-        erb :'#{@record_form}/show'
+        erb :"#{@record_form}/show"
       else
         erb :'index'
       end
     end
 
-    post 'clients/:id/:record' do
+    post '/clients/:id/:record_name' do
       if logged_in?
         @therapist = current_user
         @client = Client.find(params[:id])
-        @record_form = params[:record]
-        @record = @client.record 
-        @record = @record.update(params["@record_form"])
-        erb :'#{@record_form}/show'
+        @record = @client.record
+        if params[:record] 
+          @record.update(params[:record])
+        end
+        @record_form = (params[:record_name])
+        erb :"#{@record_form}/show"
       else
         erb :'index'
       end
