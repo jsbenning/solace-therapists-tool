@@ -1,4 +1,5 @@
 <form action="/clients/<%=@client.id%>/assessed_risk" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="patch">
 
 <h2>Edit Assessed Risk for <%=@client.first_name%> <%=@client.last_name%></h2>
 <b>Fill out any field(s) below and click 'update' to save</b><br></br><br></br>

@@ -40,7 +40,6 @@ class ClientsController < ApplicationController
       if logged_in?
         @therapist = current_user
         @client = Client.find(params[:id])
-        binding.pry
         erb :'clients/show_client'
       else
         redirect to '/'
@@ -93,11 +92,12 @@ class ClientsController < ApplicationController
       end
     end
 
-    post '/clients/:id/:record_name' do
+    patch '/clients/:id/:record_name' do
       if logged_in?
         @therapist = current_user
         @client = Client.find(params[:id])
         @record = @client.record
+        binding.pry
         if params[:record] 
           @record.update(params[:record])
         end

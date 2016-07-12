@@ -1,112 +1,112 @@
 class CreateRecords < ActiveRecord::Migration
   def up
     create_table :records do |t|
-      t.integer :client_id
-      t.string :release_type
-      t.string :release_description
-      t.string :release_initialed
-      t.string :release_releasee
-      t.string :release_releasee_info
-      t.string :release_purpose
-      t.string :ment_orientation
-      t.string :ment_appearance
-      t.string :ment_behavior
-      t.string :ment_speech
-      t.string :ment_thought
-      t.string :ment_affect
-      t.string :ment_mood
-      t.string :ment_memory
-      t.string :ment_concentration
-      t.string :ment_cognition
-      t.string :ment_sleep
-      t.string :ment_appetite
-      t.string :ment_judgment
-      t.string :ment_insight
-      t.string :ment_self_behavior
-      t.string :ment_compulsions
-      t.integer :risk_level
-      t.string :risk_interventions
-      t.string :risk_therapist_sign_and_date
-      t.string :risk_supervisor_sign_and_date
-      t.string :bio_presenting_problem
-      t.string :bio_history_presenting_problem
-      t.string :bio_development
-      t.string :bio_family_hist_probs
-      t.string :bio_family_hist_dynamics
-      t.string :bio_abuse
-      t.string :bio_reading
-      t.string :bio_learning_style
-      t.string :bio_self_assessment
-      t.string :bio_barriers
-      t.string :bio_teachable
-      t.string :bio_family_barriers
-      t.string :bio_social_function
-      t.string :bio_community
-      t.string :bio_culture
-      t.string :bio_finance
-      t.string :bio_family_readiness
-      t.string :bio_strengths_and_challenges
-      t.string :bio_clinical_analysis
-      t.string :bio_treatment_recommendations
-      t.string :bio_other_issues
-      t.string :bio_dsm
-      t.string :bio_sign_and_date
-      t.string :bio_supervisor_sign_and_date
-      t.string :sui_ideation_past
-      t.string :sui_ideation_present
-      t.string :sui_thoughts_past
-      t.string :sui_thoughts_present
-      t.string :sui_freq_past
-      t.string :sui_freq_present
-      t.string :sui_strength_past
-      t.string :sui_strength_present
-      t.string :sui_dur_past
-      t.string :sui_dur_present
-      t.string :sui_plan_past
-      t.string :sui_plan_present
-      t.string :sui_intent_past
-      t.string :sui_intent_present
-      t.string :sui_attempt_past
-      t.string :sui_attempt_present
-      t.string :sui_reason_past
-      t.string :sui_reason_present
-      t.string :sui_family_past
-      t.string :sui_family_present
-      t.string :sui_deterrents_past
-      t.string :sui_deterrents_present
-      t.string :sui_selfinjure_past
-      t.string :sui_selfinjure_present
-      t.string :hom_thoughts_past
-      t.string :hom_thoughts_present
-      t.string :hom_freq_past
-      t.string :hom_freq_present
-      t.string :hom_strength_past
-      t.string :hom_strength_present
-      t.string :hom_dur_past
-      t.string :hom_dur_present
-      t.string :hom_control_past
-      t.string :hom_control_present
-      t.string :hom_intent_past
-      t.string :hom_intent_present
-      t.string :hom_attempt_past
-      t.string :hom_attempt_present
-      t.string :hom_reason_past
-      t.string :hom_reason_present
-      t.string :hom_family_past
-      t.string :hom_family_present
-      t.string :hom_criminal_past
-      t.string :hom_criminal_present
-      t.string :hom_deterrents_past
-      t.string :hom_deterrents_present
-      t.string :drug_types
-      t.string :drug_denies
-      t.string :drug_method_and_amount
-      t.string :drug_freq
-      t.integer :drug_age_first_use
-      t.integer :drug_age_last_use
-      t.string :drug_forty_eight_hours
-      t.string :drug_thirty_days
-      t.string :drug_comments
+      t.integer :client_id, default: 0
+      t.string :release_type, default: "No assessed value on file"
+      t.string :release_description, default: "No assessed value on file"
+      t.string :release_initialed, default: "No assessed value on file"
+      t.string :release_releasee, default: "No assessed value on file"
+      t.string :release_releasee_info, default: "No assessed value on file"
+      t.string :release_purpose, default: "No assessed value on file"
+      t.string :ment_orientation, default: "No assessed value on file"
+      t.string :ment_appearance, default: "No assessed value on file"
+      t.string :ment_behavior, default: "No assessed value on file"
+      t.string :ment_speech, default: "No assessed value on file"
+      t.string :ment_thought, default: "No assessed value on file"
+      t.string :ment_affect, default: "No assessed value on file"
+      t.string :ment_mood, default: "No assessed value on file"
+      t.string :ment_memory, default: "No assessed value on file"
+      t.string :ment_concentration, default: "No assessed value on file"
+      t.string :ment_cognition, default: "No assessed value on file"
+      t.string :ment_sleep, default: "No assessed value on file"
+      t.string :ment_appetite, default: "No assessed value on file"
+      t.string :ment_judgment, default: "No assessed value on file"
+      t.string :ment_insight, default: "No assessed value on file"
+      t.string :ment_self_behavior, default: "No assessed value on file"
+      t.string :ment_compulsions, default: "No assessed value on file"
+      t.integer :risk_level, default: 0
+      t.string :risk_interventions, default: "No assessed value on file"
+      t.string :risk_therapist_sign_and_date, default: "No assessed value on file"
+      t.string :risk_supervisor_sign_and_date, default: "No assessed value on file"
+      t.string :bio_presenting_problem, default: "No assessed value on file"
+      t.string :bio_history_presenting_problem, default: "No assessed value on file"
+      t.string :bio_development, default: "No assessed value on file"
+      t.string :bio_family_hist_probs, default: "No assessed value on file"
+      t.string :bio_family_hist_dynamics, default: "No assessed value on file"
+      t.string :bio_abuse, default: "No assessed value on file"
+      t.string :bio_reading, default: "No assessed value on file"
+      t.string :bio_learning_style, default: "No assessed value on file"
+      t.string :bio_self_assessment, default: "No assessed value on file"
+      t.string :bio_barriers, default: "No assessed value on file"
+      t.string :bio_teachable, default: "No assessed value on file"
+      t.string :bio_family_barriers, default: "No assessed value on file"
+      t.string :bio_social_function, default: "No assessed value on file"
+      t.string :bio_community, default: "No assessed value on file"
+      t.string :bio_culture, default: "No assessed value on file"
+      t.string :bio_finance, default: "No assessed value on file"
+      t.string :bio_family_readiness, default: "No assessed value on file"
+      t.string :bio_strengths_and_challenges, default: "No assessed value on file"
+      t.string :bio_clinical_analysis, default: "No assessed value on file"
+      t.string :bio_treatment_recommendations, default: "No assessed value on file"
+      t.string :bio_other_issues, default: "No assessed value on file"
+      t.string :bio_dsm, default: "No assessed value on file"
+      t.string :bio_sign_and_date, default: "No assessed value on file"
+      t.string :bio_supervisor_sign_and_date, default: "No assessed value on file"
+      t.string :sui_ideation_past, default: "No assessed value on file"
+      t.string :sui_ideation_present, default: "No assessed value on file"
+      t.string :sui_thoughts_past, default: "No assessed value on file"
+      t.string :sui_thoughts_present, default: "No assessed value on file"
+      t.string :sui_freq_past, default: "No assessed value on file"
+      t.string :sui_freq_present, default: "No assessed value on file"
+      t.string :sui_strength_past, default: "No assessed value on file"
+      t.string :sui_strength_present, default: "No assessed value on file"
+      t.string :sui_dur_past, default: "No assessed value on file"
+      t.string :sui_dur_present, default: "No assessed value on file"
+      t.string :sui_plan_past, default: "No assessed value on file"
+      t.string :sui_plan_present, default: "No assessed value on file"
+      t.string :sui_intent_past, default: "No assessed value on file"
+      t.string :sui_intent_present, default: "No assessed value on file"
+      t.string :sui_attempt_past, default: "No assessed value on file"
+      t.string :sui_attempt_present, default: "No assessed value on file"
+      t.string :sui_reason_past, default: "No assessed value on file"
+      t.string :sui_reason_present, default: "No assessed value on file"
+      t.string :sui_family_past, default: "No assessed value on file"
+      t.string :sui_family_present, default: "No assessed value on file"
+      t.string :sui_deterrents_past, default: "No assessed value on file"
+      t.string :sui_deterrents_present, default: "No assessed value on file"
+      t.string :sui_selfinjure_past, default: "No assessed value on file"
+      t.string :sui_selfinjure_present, default: "No assessed value on file"
+      t.string :hom_thoughts_past, default: "No assessed value on file"
+      t.string :hom_thoughts_present, default: "No assessed value on file"
+      t.string :hom_freq_past, default: "No assessed value on file"
+      t.string :hom_freq_present, default: "No assessed value on file"
+      t.string :hom_strength_past, default: "No assessed value on file"
+      t.string :hom_strength_present, default: "No assessed value on file"
+      t.string :hom_dur_past, default: "No assessed value on file"
+      t.string :hom_dur_present, default: "No assessed value on file"
+      t.string :hom_control_past, default: "No assessed value on file"
+      t.string :hom_control_present, default: "No assessed value on file"
+      t.string :hom_intent_past, default: "No assessed value on file"
+      t.string :hom_intent_present, default: "No assessed value on file"
+      t.string :hom_attempt_past, default: "No assessed value on file"
+      t.string :hom_attempt_present, default: "No assessed value on file"
+      t.string :hom_reason_past, default: "No assessed value on file"
+      t.string :hom_reason_present, default: "No assessed value on file"
+      t.string :hom_family_past, default: "No assessed value on file"
+      t.string :hom_family_present, default: "No assessed value on file"
+      t.string :hom_criminal_past, default: "No assessed value on file"
+      t.string :hom_criminal_present, default: "No assessed value on file"
+      t.string :hom_deterrents_past, default: "No assessed value on file"
+      t.string :hom_deterrents_present, default: "No assessed value on file"
+      t.string :drug_types, default: "No assessed value on file"
+      t.string :drug_denies, default: "No assessed value on file"
+      t.string :drug_method_and_amount, default: "No assessed value on file"
+      t.string :drug_freq, default: "No assessed value on file"
+      t.integer :drug_age_first_use, default: 0
+      t.integer :drug_age_last_use, default: 0
+      t.string :drug_forty_eight_hours, default: "No assessed value on file"
+      t.string :drug_thirty_days, default: "No assessed value on file"
+      t.string :drug_comments, default: "No assessed value on file"
     end
   end
 

@@ -1,24 +1,24 @@
 <h2>Release form for <i><%=@client.first_name%> <%=@client.last_name%></i></h2>
 <p>Client Medical Record ID#:<%=@client.medical_record_id%></p>
+
 <ul>
-<li><h3>Client authorizes facility to provide:</h3></li>
-<%=@client.record.release_type ||= "No release types currently on file"%>
-<br></br>
+<li><b><p>Client authorizes facility to provide:</p></b></li>
+<%=@client.record.release_type%>
 
-<li><h3>Description(s) and date(s):</h3></li>
-<%=@client.record.release_description ||= "No release descriptions currently on file"%>
-<br></br>
+<li><b><p>Description(s) and date(s):</p></b></li>
+<%=@client.record.release_description %>
 
+<li><b><p>Client initialed?</p></b></li>
+<%=@client.record.release_initialed%>
 
-<li><h3><%=@client.record.release_initialed%></h3></li>
+<li><b><p>Client approved disclosure?</p></b></li>
+<%=@client.record.release_releasee %>
 
-<li><h3><%=@client.record.release_releasee%></h3></li>
+<li><b><p>Disclosure to the following persons/institutions:</p></b></li>
+<%=@client.record.release_releasee_info%>
 
-<li><h3>Disclosure to the following persons/institutions:</h3></li>
-<%=@client.record.release_releasee_info ||= "No external institutions currently on file"%>
-
-<li><h3>Client authorized agency to release/disclose health information for the following specific purpose(s):</h3></li>
-  <%=@client.record.release_purpose%>
+<li><b><p>Client authorized agency to release/disclose health information for the following specific purpose(s):</p></b></li>
+  <%=@client.record.release_purpose %>
 
 </ul>
  

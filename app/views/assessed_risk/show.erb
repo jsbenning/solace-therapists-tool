@@ -1,15 +1,15 @@
 <h3>Risk assessment for <i><%=@client.first_name%> <%=@client.last_name%></i></h3>
 
-<h3>Client is assessed with a risk of <%= @client.record.risk_level ||= "Not Yet Assessed" %>*</h3>
+<h3>Client is assessed with a risk of <%= @client.record.risk_level ||= "(no current assessment)" %>*</h3>
 
 <h3>The following interventions were performed:</h3>
-<%=@client.record.risk_interventions ||= "No interventions currently on file"%>
+<%=@client.record.risk_interventions %>
 <br></br>
 
 <h3><b>Signatures on file, if any:</b></h3>
 
-<p><%=@client.record.risk_therapist_sign_and_date ||= "No therapist signature on file"%></p>
-<p><%=@client.record.risk_supervisor_sign_and_date ||= "No supervisor signature on file"%></p>
+<p><%=@client.record.risk_therapist_sign_and_date %></p>
+<p><%=@client.record.risk_supervisor_sign_and_date %></p>
 <br></br>
 
 <form method="GET" action="../../clients/<%=@client.id%>">

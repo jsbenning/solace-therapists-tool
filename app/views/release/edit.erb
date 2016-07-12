@@ -1,4 +1,5 @@
 <form action="/clients/<%=@client.id%>/release" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="patch">
 
   <h2>Edit release form for client <%=@client.first_name%> <%=@client.last_name%></h2>
   <p>Client Medical Record ID#:<%=@client.medical_record_id%></p>
@@ -6,49 +7,49 @@
 <b>Fill out any field(s) below and click 'update' to save</b><br></br>
 
 <p><b>Client authorizes facility to provide:</b></p>
-<input type="checkbox" name="record[release_type][]" value="Access to review Health Information">Access to review Health Information<br></br>
-<input type="checkbox" name="record[release_type][]" value="Photocopies of my Health Information, as requested below">Photocopies of my Health Information, as requested below<br></br>
+<input type="checkbox" name="record[release_type][]" value="Access to review Health Information" <%='checked' if @record.release_type.include?("Access to review Health Information")%>>Access to review Health Information<br></br>
+<input type="checkbox" name="record[release_type][]" value="Photocopies of my Health Information, as requested below"<%='checked' if @record.release_type.include?("Photocopies of my Health Information")%>>Photocopies of my Health Information, as requested below<br></br>
 
 <p><b>Dates/Description of information to be released/disclosed:</b></p>
 
 <%@time=Time.now%>
 <% @date = @time.strftime "%m/%d/%Y" %>
-<input type="checkbox" name="record[release_description][]" value="ER Record Only, <%=@date%>">ER Record Only<br></br>
-<input type="checkbox" name="record[release_description][]" value="Consultation Reports, <%=@date%>">Consultation Reports<br></br>
-<input type="checkbox" name="record[release_description][]" value="Operative Reports, <%=@date%>">Operative Reports<br></br>
-<input type="checkbox" name="record[release_description][]" value="Entire Medical Record, <%=@date%>">Entire Medical Record<br></br>
-<input type="checkbox" name="record[release_description][]" value="NSI Office Vist Documentation, <%=@date%>">Office Vist Documentation<br></br>
-<input type="checkbox" name="record[release_description][]" value="Pathology Reports, <%=@date%>">Pathology Reports<br></br>
-<input type="checkbox" name="record[release_description][]" value="X-Rays Report, <%=@date%>">X-Rays Report<br></br>
-<input type="checkbox" name="record[release_description][]" value="Access to review Health Information, <%=@date%>">Access to review Health Information<br></br>
-<input type="checkbox" name="record[release_description][]" value="Billing Reports, <%=@date%>">Billing Reports<br></br>
-<input type="checkbox" name="record[release_description][]" value="Discharge Summary, <%=@date%>">Discharge Summary<br></br>
-<input type="checkbox" name="record[release_description][]" value="Visual Field Reports, <%=@date%>">Visual Field Reports<br></br>
-<input type="checkbox" name="record[release_description][]" value="EKG/EEG Reports, <%=@date%>">EKG/EEG Reports<br></br>
-<input type="checkbox" name="record[release_description][]" value="Sleep Test Reports, <%=@date%>">Sleep Test Reports<br></br>
-<input type="checkbox" name="record[release_description][]" value="Abstract, <%=@date%>">Abstract (Face Sheet, History and Physical, Consults, Discharge Summary, Tests, Operative Reports, Lab/Pathology)<br></br>
-<input type="checkbox" name="record[release_description][]" value="Neurophysiology Reports, <%=@date%>">Neurophysiology Reports<br></br>
-<input type="checkbox" name="record[release_description][]" value="Lab Reports, <%=@date%>">Lab Reports<br></br>
+<input type="checkbox" name="record[release_description][]" value="ER Record Only, <%=@date%>" <%='checked' if @record.release_description.include?("ER Record Only")%>>ER Record Only<br></br>
+<input type="checkbox" name="record[release_description][]" value="Consultation Reports, <%=@date%>"<%='checked' if @record.release_description.include?("Consultation Reports")%>>Consultation Reports<br></br>
+<input type="checkbox" name="record[release_description][]" value="Operative Reports, <%=@date%>"<%='checked' if @record.release_description.include?("Operative Reports")%>>Operative Reports<br></br>
+<input type="checkbox" name="record[release_description][]" value="Entire Medical Record, <%=@date%>"<%='checked' if @record.release_description.include?("Entire Medical Record")%>>Entire Medical Record<br></br>
+<input type="checkbox" name="record[release_description][]" value="NSI Office Vist Documentation, <%=@date%>"<%='checked' if @record.release_description.include?("NSI Office Vist Documentation")%>>Office Vist Documentation<br></br>
+<input type="checkbox" name="record[release_description][]" value="Pathology Reports, <%=@date%>"<%='checked' if @record.release_description.include?("Pathology Reports")%>>Pathology Reports<br></br>
+<input type="checkbox" name="record[release_description][]" value="X-Rays Report, <%=@date%>"<%='checked' if @record.release_description.include?("X-Rays Report")%>>X-Rays Report<br></br>
+<input type="checkbox" name="record[release_description][]" value="Access to review Health Information, <%=@date%>"<%='checked' if @record.release_description.include?("Access to review Health Information")%>>Access to review Health Information<br></br>
+<input type="checkbox" name="record[release_description][]" value="Billing Reports, <%=@date%>"<%='checked' if @record.release_description.include?("ER Record Only")%>>Billing Reports<br></br>
+<input type="checkbox" name="record[release_description][]" value="Discharge Summary, <%=@date%>"<%='checked' if @record.release_description.include?("Billing Reports")%>>Discharge Summary<br></br>
+<input type="checkbox" name="record[release_description][]" value="Visual Field Reports, <%=@date%>"<%='checked' if @record.release_description.include?("Visual Field Reports")%>>Visual Field Reports<br></br>
+<input type="checkbox" name="record[release_description][]" value="EKG/EEG Reports, <%=@date%>"<%='checked' if @record.release_description.include?("EKG/EEG Reports")%>>EKG/EEG Reports<br></br>
+<input type="checkbox" name="record[release_description][]" value="Sleep Test Reports, <%=@date%>"<%='checked' if @record.release_description.include?("Sleep Test Reports")%>>Sleep Test Reports<br></br>
+<input type="checkbox" name="record[release_description][]" value="Abstract, <%=@date%>"<%='checked' if @record.release_description.include?("Abstract")%>>Abstract (Face Sheet, History and Physical, Consults, Discharge Summary, Tests, Operative Reports, Lab/Pathology)<br></br>
+<input type="checkbox" name="record[release_description][]" value="Neurophysiology Reports, <%=@date%>"<%='checked' if @record.release_description.include?("Neurophysiology")%>>Neurophysiology Reports<br></br>
+<input type="checkbox" name="record[release_description][]" value="Lab Reports, <%=@date%>"<%='checked' if @record.release_description.include?("Lab Reports")%>>Lab Reports<br></br>
 <input type="text" name="record[release_description][]">Other, please specify<br></br>
 <p><b>Specific Confidential Information Authorized for this Release:</b></p>
-<p>By signing my initials, I understand that the information to be released/disclosed from my medical record may include information relating to sexually transmatted disease, acquired immunodeficiency syndrome (AIDS), or human immunodeficiency virus (HIV), genetic information and tuberculosis information.  It may also include information about behaioral or mental health services, and treatment for alcohol and drug abuse.</p>
+<p>By signing my initials, I understand that the information to be released/disclosed from my medical record may include information relating to sexually transmatted disease, acquired immunodeficiency syndrome (AIDS), or human immunodeficiency virus (HIV), genetic information and tuberculosis information.  It may also include information about behavioral or mental health services, and treatment for alcohol and drug abuse.</p>
 
 <input type="checkbox" name="record[release_initialed]" value="Release initialed, <%=@date%>">Check if release initialed by client<br></br>
 
 <p><b>Release approved to be disclosed, if entered:</b>
 </p>
-<input type="checkbox" name="record[release_releasee]" value="Release approved for disclosure, <%=@date%>">Check if release approved to be disclosed
-To be disclosed to the following (Please Enter Organization, Individual Name, Phone, Steet Address, City, State and Zipcode):
+<input type="checkbox" name="record[release_releasee]" value="Release approved for disclosure, <%=@date%>">Check if release approved to be disclosed.
+<p>To be disclosed to the following (Please Enter Organization, Individual Name, Phone, Steet Address, City, State and Zipcode):</p>
 
 
 <textarea rows="5" cols="50" name="record[release_releasee_info]"></textarea><br></br>
 
 <p><b>Purpose of Release/Disclosure:</b></p>
 <p>Client authorizes agency to release/disclose my health information for the following specific purpose(s):<br></br>
-<input type="checkbox" name="record[release_purpose]" value="Medical Care">Medical Care<br></br>
-<input type="checkbox" name="record[release_purpose]" value="Insurance">Insurance<br></br>
-<input type="checkbox" name="record[release_purpose]" value="Personal">Personal<br></br>
-<input type="text" name="record[release_purpose]">Other<br></br>
+<input type="checkbox" name="record[release_purpose][]" value="Medical Care"<%='checked' if @record.release_purpose.include?("Medical Care")%>>Medical Care<br></br>
+<input type="checkbox" name="record[release_purpose][]" value="Insurance"<%='checked' if @record.release_purpose.include?("Insurance")%>>Insurance<br></br>
+<input type="checkbox" name="record[release_purpose][]" value="Personal"<%='checked' if @record.release_purpose.include?("Personal")%>>Personal<br></br>
+<input type="text" name="record[release_purpose][]">Other<br></br>
 
 <input type="submit" value="Update">
 </form>
