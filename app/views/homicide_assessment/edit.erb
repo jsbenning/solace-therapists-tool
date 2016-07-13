@@ -1,0 +1,67 @@
+<form action="/clients/<%=@client.id%>/homicide_assessment" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+
+<h2>Edit Homicide Assessment for <%=@client.first_name%> <%=@client.last_name%></h2>
+<b>Fill out any field(s) below and click 'update' to save</b><br></br>
+
+<h3>Homicidal Ideation, Lifetime:</h3>
+<input type="radio" name="record[hom_ideation_past]" value="Yes" >Yes<br></br><input type="radio" name="record[hom_ideation_past]" value="No" >No<br></br>
+<p>If 'yes', complete fields below:</p>
+Explain Thoughts (Past):<br></br> 
+<textarea rows="10" cols="50"name="record[hom_thoughts_past]"></textarea><br></br>
+Frequency - How Often? (Past):<br></br>
+<textarea rows="10" cols="50"name="record[hom_freq_past]"></textarea><br></br>
+Intensity - How Strong? (Past):<br></br>  
+<textarea rows="10" cols="50"name="record[hom_strength_past]"></textarea><br></br> 
+Duration - How Long? (Past):<br></br>
+<textarea rows="10" cols="50"name="record[hom_dur_past]"></textarea><br></br> 
+Controllability? (Past):<br></br>
+<textarea rows="10" cols="50"name="record[hom_control_past]"></textarea><br></br> 
+Homicidal Plan?  Preparing?  Method?  Access to Firearms?(Past):<br></br>
+<textarea rows="10" cols="50"name="record[hom_plan_past]"></textarea><br></br> 
+Homicidal Intent? (Past):<br></br>
+<textarea rows="10" cols="50"name="record[hom_intent_past]"></textarea><br></br> 
+Previous Violence, Assaults, Attempts? (Past):<br></br>
+<textarea rows="10" cols="50"name="record[hom_attempt_past]"></textarea><br></br> 
+Reasons for Attempts/Plans/Assault? (Past):<br></br>
+<textarea rows="10" cols="50"name="record[hom_reason_past]"></textarea><br></br> 
+Family History/Violence? (Past):<br></br>
+<textarea rows="10" cols="50"name="record[hom_family_past]"></textarea><br></br> 
+Criminal Involvement? (Past):<br></br>
+<textarea rows="10" cols="50"name="record[hom_criminal_past]"></textarea><br></br> 
+Deterrents/Protective Factors? (Past):<br></br>
+<textarea rows="10" cols="50"name="record[hom_deterrents_past]"></textarea><br></br>
+
+
+<h3>Homicidal Ideation, Past Month:</h3>
+<input type="radio" name="record[hom_ideation_present]" value="Yes" >Yes<br></br><input type="radio" name="record[hom_ideation_present]" value="No" >No<br></br>
+<p>If 'yes', complete fields below:</p>
+
+Explain Thoughts (Recent):<br></br> 
+<textarea rows="10" cols="50"name="record[hom_thoughts_present]"></textarea><br></br>
+Frequency - How Often? (Recent):<br></br>
+<textarea rows="10" cols="50"name="record[hom_freq_present]"></textarea><br></br>
+Intensity - How Strong? (Recent):<br></br>  
+<textarea rows="10" cols="50"name="record[hom_strength_present]"></textarea><br></br> 
+Duration - How Long? (Recent):<br></br>
+<textarea rows="10" cols="50"name="record[hom_dur_present]"></textarea><br></br> 
+Controllability? (Recent):<br></br>
+<textarea rows="10" cols="50"name="record[hom_control_present]"></textarea><br></br> 
+Homicidal Plan? Preparing? Method? Access to Firearms? (Recent):<br></br>
+<textarea rows="10" cols="50"name="record[hom_plan_present]"></textarea><br></br> 
+Homicidal Intent? (Recent):<br></br>
+<textarea rows="10" cols="50"name="record[hom_intent_present]"></textarea> <br></br>
+Previous Violence, Assaults, Attempts? (Recent):<br></br>
+<textarea rows="10" cols="50"name="record[hom_attempt_present]"></textarea><br></br> 
+Reasons for Attempts/Plans/Assault? (Recent):<br></br>
+<textarea rows="10" cols="50"name="record[hom_reason_present]"></textarea><br></br> 
+Family History/Violence? (Recent):<br></br>
+<textarea rows="10" cols="50"name="record[hom_family_present]"></textarea><br></br> 
+Criminal Involvement? (Recent):<br></br>
+<textarea rows="10" cols="50"name="record[hom_criminal_present]"></textarea><br></br> 
+Deterrents/Protective Factors? (Recent):<br></br>
+<textarea rows="10" cols="50"name="record[hom_deterrents_present]"></textarea><br></br>
+
+
+<input type="submit" value="Update">
+</form>

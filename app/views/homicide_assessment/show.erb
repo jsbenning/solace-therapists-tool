@@ -1,0 +1,74 @@
+<h2>Homicide Assessment for <%=@client.first_name%> <%=@client.last_name%></h2>
+
+<h3>Homicidal Ideation, Lifetime:</h3>
+<%=@record.hom_ideation_past%>
+<br></br>
+Explain Thoughts (Past):<br></br> 
+<%=@record.hom_thoughts_past%><br></br>
+Frequency - How Often? (Past):<br></br>
+<%=@record.hom_freq_past%><br></br>
+Intensity - How Strong? (Past):<br></br>  
+<%=@record.hom_strength_past%><br></br> 
+Duration - How Long? (Past):<br></br>
+<%=@record.hom_dur_past%><br></br> 
+Controllability? (Past):<br></br>
+<%=@record.hom_control_past%><br></br> 
+Homicidal Plan?  Preparing?  Method?  Access to Firearms?(Past):<br></br>
+<%=@record.hom_plan_past%><br></br> 
+Homicidal Intent? (Past):<br></br>
+<%=@record.hom_intent_past%><br></br> 
+Previous Violence, Assaults, Attempts? (Past):<br></br>
+<%=@record.hom_attempt_past%><br></br> 
+Reasons for Attempts/Plans/Assault? (Past):<br></br>
+<%=@record.hom_reason_past%><br></br> 
+Family History/Violence? (Past):<br></br>
+<%=@record.hom_family_past%><br></br> 
+Criminal Involvement? (Past):<br></br>
+<%=@record.hom_criminal_past%><br></br> 
+Deterrents/Protective Factors? (Past):<br></br>
+<%=@record.hom_deterrents_past%><br></br>
+
+
+<h3>Homicidal Ideation, Past Month:</h3>
+<%=@record.hom_ideation_present%><br></br>
+
+
+Explain Thoughts (Recent):<br></br> 
+<%=@record.hom_thoughts_present%><br></br>
+Frequency - How Often? (Recent):<br></br>
+<%=@record.hom_freq_present%><br></br>
+Intensity - How Strong? (Recent):<br></br>  
+<%=@record.hom_strength_present%><br></br> 
+Duration - How Long? (Recent):<br></br>
+<%=@record.hom_dur_present%><br></br> 
+Controllability? (Recent):<br></br>
+<%=@record.hom_control_present%><br></br> 
+Homicidal Plan? Preparing? Method? Access to Firearms? (Recent):<br></br>
+<%=@record.hom_plan_present%><br></br> 
+Homicidal Intent? (Recent):<br></br>
+<%=@record.hom_intent_present%> <br></br>
+Previous Violence, Assaults, Attempts? (Recent):<br></br>
+<%=@record.hom_attempt_present%><br></br> 
+Reasons for Attempts/Plans/Assault? (Recent):<br></br>
+<%=@record.hom_reason_present%><br></br> 
+Family History/Violence? (Recent):<br></br>
+<%=@record.hom_family_present%><br></br> 
+Criminal Involvement? (Recent):<br></br>
+<%=@record.hom_criminal_present%><br></br> 
+Deterrents/Protective Factors? (Recent):<br></br>
+<%=@record.hom_deterrents_present%><br></br>
+
+
+<form method="GET" action="../../clients/<%=@client.id%>">
+<input type="submit" value="Client Main Page">
+</form>
+<br></br>
+
+<form method="GET" action="../../therapists/<%=@therapist.id%>">
+  <input type="submit" value="Homepage">
+</form>
+<br></br>
+
+<form method="GET" action="/logout">
+  <input type="submit" value="Logout">
+</form>

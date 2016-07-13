@@ -1,0 +1,100 @@
+<h2>Biosocial Assessment for <%=@client.first_name%> <%=@client.last_name%></h2>
+
+<ul>
+<li><b><p>Presenting Problems:</b></p>
+
+<%=@record.bio_presenting_problem%></li>
+
+<li><b><p>History of Presenting Problems:</b></p>
+  <%=@record.bio_history_presenting_problem%></li>
+
+<li><b><p>Developmental Issues: </b></p>
+  
+<%=@record.bio_development%></li>
+
+<li><b><p>Family History:</b></p>
+  
+<%=@record.bio_family_hist_probs%></li>
+
+<li><b><p>Family Dynamics:</b></p>
+  
+<%=@record.bio_family_hist_dynamics%></li>
+
+<li><b><p>History of Abuse: </b></p>
+  
+<%=@record.bio_abuse%></li>
+
+<li><b><p>Patients Reading Ability:</b></p>
+<%=@record.bio_reading.gsub(/[\[\]]/, "")%></li> 
+
+<li><b><p>Client learns best by:</b></p>
+<%=@record.bio_learning_style.gsub(/[\[\]]/, "")%></li> 
+
+
+<li><b><p>How was the client's ability assessed?</b></p>
+<%=@record.bio_self_assessment.gsub(/[\[\]]/, "")%></li> 
+
+
+<li><b><p>Client's barriers to learning:</b></p>
+<%=@record.bio_barriers.gsub(/[\[\]]/, "")%></li>
+
+<li><b><p>Is the client ready for learning?</b></p>
+  <%=@record.bio_teachable.gsub(/[\[\]]/, "")%></li> 
+
+<li><b><p>Are there any learning barriers that will prevent the family from adhering to the rehabilitation/treatment agreed upon and being responsible for the outcomes if rehabilitation/treatment is refused?</b></p>
+<%=@record.bio_family_barriers.gsub(/[\[\]]/, "")%></li> 
+
+<li><b><p>Social Functioning Issues/Skills: </b></p>
+<%=@record.bio_social_function%></li>
+
+<li><b><p>Community Resources: </b></p>
+<%=@record.bio_community%></li>
+
+<li><b><p>Cultural/ Spiritual/ Religious Issues: </b></p>
+<%=@record.bio_culture%></li>
+
+<li><b><p>Financial Issues: </b></p>
+<%=@record.bio_finance%></li>
+
+<li><b><p>Client's Family and Readiness for Treatment:</b></p> 
+<%=@record.bio_family_readiness%></li>
+
+<li><b><p>Client's Strengths and Challenges:</b></p>
+<%=@record.bio_strengths_and_challenges%></li>
+
+<li><b><p>Clinical Analysis of the Problem: </b></p>
+<%=@record.bio_clinical_analysis%></li>
+
+<li><b><p>Treatment Recommendations: </b></p>
+<%=@record.bio_treatment_recommendations%></li>
+
+<li><b><p>Additional Issues: </b></p>
+<%=@record.bio_other_issues%></li>
+<li><b><p>DIAGNOSIS/ DSM V CODE: </b></p>
+<%=@record.bio_dsm%></li>
+</ul>
+<br></br>
+
+
+<%=@record.bio_sign_and_date%>
+<br></br> 
+<%=@record.bio_supervisor_sign_and_date%>
+<br></br>
+
+
+<form method="GET" action="../../clients/<%=@client.id%>">
+<input type="submit" value="Client Main Page">
+</form>
+<br></br>
+
+<form method="GET" action="../../therapists/<%=@therapist.id%>">
+  <input type="submit" value="Homepage">
+</form>
+<br></br>
+
+<form method="GET" action="/logout">
+  <input type="submit" value="Logout">
+</form>
+
+
+

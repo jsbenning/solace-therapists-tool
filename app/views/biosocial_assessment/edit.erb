@@ -1,0 +1,119 @@
+<form action="/clients/<%=@client.id%>/biosocial_assessment" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+
+<h2>Edit Presenting Problems for <%=@client.first_name%> <%=@client.last_name%></h2>
+<b>Fill out any field(s) below and click 'update' to save</b>
+<br></br>
+
+<ol type="I">
+<li><h3>PRESENTING PROBLEM(S): <i>Include reasons for seeking treatment now, source of information and reliability.  Describe in behavioral terms and include symptoms.</i></h3>
+
+<textarea rows="10" cols="50" name="record[bio_presenting_problem]"></textarea></li>
+
+<li><h3>HISTORY OF PRESENTING PROBLEM(S): <i>Include onset of symptoms, contributing factors, history of and response to treatment.</i><h3>
+  
+<textarea rows="10" cols="50"name="record[bio_history_presenting_problem]"></textarea></li>
+
+<li><h3>DEVELOPMENTAL ISSUE(S): <i>Include problems in pregnancy and delivery, development milestones, and significant childhood illness.</i></h3>
+  
+<textarea rows="10" cols="50"name="record[bio_development]"></textarea></li>
+
+<li><h3>FAMILY HISTORY: <i>Include family history of psychiatric problems and or drug/alcohol abuse.</i></h3>
+  
+<textarea rows="10" cols="50"name="record[bio_family_hist_probs]"></textarea></li>
+
+<li><h3>DESCRIBE FAMILY RELATIONSHIPS/DYNAMICS.</h3>
+  
+<textarea rows="10" cols="50"name="record[bio_family_hist_dynamics]"></textarea></li>
+
+<li><h3>HISTORY OF ABUSE: <i>Include any history of physical, sexual or emotional abuse either as recipient or perpetrator.</i></h3>
+  
+<textarea rows="10" cols="50"name="record[bio_abuse]"></textarea></li>
+
+<li><h3>EDUCATION AND LEARNING SCREENING: <i>Complete the information below.</i></h3>
+<ol>
+
+<li><h3>Client's Reading Ability:</h3>
+  
+<input type="checkbox" value="Satisfactory" name="record[bio_reading][]" <%='checked' if @record.bio_reading.include?("Satisfactory")%>>Satisfactory
+<input type="checkbox" value="Causes Difficulty" name="record[bio_reading][]" <%='checked' if @record.bio_reading.include?("Causes Difficulty")%>>Causes Difficulty</li>
+
+
+<li><h3>Client learns best by:</h3>
+<input type="checkbox" value="Visual Aids" name="record[bio_learning_style][]" <%='checked' if @record.bio_learning_style.include?("Visual Aids")%>>Visual Aids
+<input type="checkbox" value="Hearing" name="record[bio_learning_style][]" <%='checked' if @record.bio_learning_style.include?("Hearing")%>>Hearing (tapes, explanations)
+<input type="checkbox" value="Doing" name="record[bio_learning_style][]" <%='checked' if @record.bio_learning_style.include?("Doing")%>>Doing
+<input type="checkbox" value="Reading" name="record[bio_learning_style][]" <%='checked' if @record.bio_learning_style.include?("Reading")%>>Reading
+
+
+<li><h3>How was the client's ability assessed?:</h3>
+ 
+<input type="checkbox" value="Self-Reported" name="record[bio_self_assessment][]" <%='checked' if @record.bio_self_assessment.include?("Self-Reported")%>>Self-Reported
+<input type="checkbox" value="Reported by family" name="record[bio_self_assessment][]" <%='checked' if @record.bio_self_assessment.include?("Medical Care")%>>Reported by family<br></br>
+Other:<input type="text" name="record[bio_self_assessment][]"></li>
+<br></br>
+
+
+<li><h3>Client's barriers to learning:</h3>
+<input type="checkbox" value="None" name="record[bio_barriers][]" <%='checked' if @record.bio_barriers.include?("None")%>>None
+<input type="checkbox" value="Chronic Pain" name="record[bio_barriers][]" <%='checked' if @record.bio_barriers.include?("Chronic Pain")%>>Chronic Pain
+<input type="checkbox" value="Language" name="record[bio_barriers][]" <%='checked' if @record.bio_barriers.include?("Language")%>>Language
+<input type="checkbox" value="Speech" name="record[bio_barriers][]" <%='checked' if @record.bio_barriers.include?("Speech")%>>Speech
+<input type="checkbox" value="Vision" name="record[bio_barriers][]" <%='checked' if @record.bio_barriers.include?("Vision")%>>Vision
+<input type="checkbox" value="Hearing" name="record[bio_barriers][]">Hearing
+<input type="checkbox" value="Emotional" name="record[bio_barriers][]" <%='checked' if @record.bio_barriers.include?("Emotional")%>>Emotional
+<input type="checkbox" value="Literacy" name="record[bio_barriers][]" <%='checked' if @record.bio_barriers.include?("Literacy")%>>Literacy
+<input type="checkbox" value="Financial" name="record[bio_barriers][]" <%='checked' if @record.bio_barriers.include?("Financial")%>>Financial
+<input type="checkbox" value="Motivational" name="record[bio_barriers][]" <%='checked' if @record.bio_barriers.include?("Motivational")%>>Motivational
+<input type="checkbox" value="Physical Limitations" name="record[bio_barriers][]" <%='checked' if @record.bio_barriers.include?("Physical Limitations")%>>Physical Limitations
+<input type="checkbox" value="Cognitive/Memory" name="record[bio_barriers][]" <%='checked' if @record.bio_barriers.include?("Cognitive/Memory")%>>Cognitive/Memory
+<input type="checkbox" value="Cultural/Religious" name="record[bio_barriers][]" <%='checked' if @record.bio_barriers.include?("Cultural/Religious")%>>Cultural/Religious
+<input type="checkbox" value="Motivational" name="record[bio_barriers][]" <%='checked' if @record.bio_barriers.include?("Motivational")%>>Motivational<br></br>
+Other:<input type="text" name="record[bio_barriers][]"></li>
+<br></br>
+
+<li><h3>Is the client ready for learning?</h3>
+  <input type="checkbox" value="Yes" name="record[bio_teachable][]" <%='checked' if @record.bio_barriers.include?("Yes")%>>Yes
+<input type="checkbox" value="No" name="record[bio_teachable][]" <%='checked' if @record.bio_teachable.include?("No")%>>No<br></br>
+If 'no', explain :<input type="text" name="record[bio_teachable][]"></li>
+
+<li><h3>Are there any learning barriers that will prevent the family from adhering to the rehabilitation/treatment agreed upon and being responsible for the outcomes if rehabilitation/treatment is refused?</h3>
+  <input type="checkbox" value="No" name="record[bio_family_barriers][]" <%='checked' if @record.bio_family_barriers.include?("No")%>>No
+<input type="checkbox" value="Yes" name="record[bio_family_barriers][]" <%='checked' if @record.bio_family_barriers.include?("Yes")%>>Yes<br></br>
+If 'yes', explain :<input type="text" name="record[bio_family_barriers][]"></li>
+</ol>
+
+<br></br>
+
+
+<li><h3>SOCIAL FUNCTIONING ISSUES/SKILLS: <i>Include with whom the ptient socializes, peer relationships, sexuality, and other social issues or concerns including history of bullying.</i><br></br>
+<textarea rows="10" cols="50"name="record[bio_social_function]"></textarea></li>
+<li><h3>COMMUNITY RESOURCES: :<i>Please list all resources used by the patient and include the reason for utilization.</i><br></br>
+<textarea rows="10" cols="50"name="record[bio_community]"></textarea></li>
+<li><h3>CULTURAL/ SPIRITUAL/ RELIGIOUS ISSUES: <i>Include any influence these issues may have on treatment outcome, language needs, etc.</i><br></br>
+<textarea rows="10" cols="50"name="record[bio_culture]"></textarea></li>
+<li><h3>FINANCIAL ISSUES:<i>Is the patient capable of managing his or her needs?  If not, please explain.</i><br></br>
+<textarea rows="10" cols="50"name="record[bio_finance]"></textarea></li>
+<li><h3>CLIENT'S FAMILY AND READINESS FOR TREATMENT: <i>Include ability to recognize symptoms, medication compliance, and level of motivation.</i><br></br>
+<textarea rows="10" cols="50"name="record[bio_family_readiness]"></textarea></li>
+<li><h3>PATIENTS STRENGTHS AND CHALLENGES:<br></br>
+<textarea rows="10" cols="50"name="record[bio_strengths_and_challenges]"></textarea></li>
+<li><h3>CLINICAL ANALYSIS OF THE PROBLEM: <i>Integrate relevant clinical information obtained in all sections of this assessment (physical, psychological, and social dimensions).  Include client's strenghts and needs.  Include criteria for DSM-V Diagnosis</i><br></br>
+<textarea rows="10" cols="50"name="record[bio_clinical_analysis]"></textarea></li>
+<li><h3>TREATMENT RECOMMENDATIONS: <i>List type of treatment, case management issues and other collateral services issues that will be addressed or considered during treatment.</i><br></br>
+<textarea rows="10" cols="50"name="record[bio_treatment_recommendations]"></textarea></li>
+<li><h3>OTHER ISSUES: <i>List all problems that will not be addressed in treatment. State reason why they will not be addressed.</i><br></br>
+<textarea rows="10" cols="50"name="record[bio_other_issues]"></textarea></li>
+<li><h3>DIAGNOSIS/ DSM V CODE: <i><br></br>
+<textarea rows="10" cols="50"name="record[bio_dsm]"></textarea></li>
+</ol>
+
+<input type="checkbox" name="record[bio_sign_and_date]" value="File signed and dated by therapist">check if signed and dated by therapist<br></br> 
+
+<input type="checkbox" name="record[bio_supervisor_sign_and_date]" value="File signed and dated by supervisor">check if signed and dated by supervisor<br></br>
+<br></br>
+<input type="submit" value="Update">
+</form>
+
+
+

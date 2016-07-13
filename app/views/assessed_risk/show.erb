@@ -1,6 +1,6 @@
-<h3>Risk assessment for <i><%=@client.first_name%> <%=@client.last_name%></i></h3>
+<h2>Risk assessment for <%=@client.first_name%> <%=@client.last_name%></h2>
 
-<h3>Client is assessed with a risk of <%= @client.record.risk_level ||= "(no current assessment)" %>*</h3>
+<h3>Client is assessed with a risk of <%= @client.record.risk_level%>*</h3>
 
 <h3>The following interventions were performed:</h3>
 <%=@client.record.risk_interventions %>

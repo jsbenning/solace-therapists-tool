@@ -30,13 +30,13 @@
   <input type="submit" value="View">
 </form></li>
 <br></br>
-  <li><b>Presenting Problems</b>
+  <li><b>Biosocial Assessment</b>
     <br></br>
-  <form action="/clients/<%=@client.id%>/presenting_problems/edit" method="GET">
+  <form action="/clients/<%=@client.id%>/biosocial_assessment/edit" method="GET">
   <input type="submit" value="Edit">
 </form>
 
- <form action="/clients/<%=@client.id%>/presenting_problems" method="GET">
+ <form action="/clients/<%=@client.id%>/biosocial_assessment" method="GET">
   <input type="submit" value="View">
 </form></li>
 <br></br>
@@ -60,12 +60,7 @@
   <input type="submit" value="View">
 </form></li>
 <br></br>
-  <li><b>Biosocial History</b>
-    <br></br>
-  <form action="/clients/<%=@client.id%>/biosocial_history/edit" method="GET">
-  <input type="submit" value="Edit">
-</form>
-
+ 
  <form action="/clients/<%=@client.id%>/biosocial_history" method="GET">
   <input type="submit" value="View">
 </form></li>
@@ -99,13 +94,11 @@
  <form action="/clients/<%=@client.id%>/homicide_assessment" method="GET">
   <input type="submit" value="View">
 </form></li>
-<br></br>
+
 </ol>
 ---------------------------------
 
 <br></br>
-
-
 <form action="/therapists/<%=@therapist.id%>" method="GET">
   <input type="submit" value="Return To Home Page">
 </form>

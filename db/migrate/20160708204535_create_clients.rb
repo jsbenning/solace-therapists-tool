@@ -8,6 +8,7 @@ class CreateClients < ActiveRecord::Migration
       t.string :date_of_birth
       t.string :address
       t.string :phone
+      t.string :alert, default: "No current alerts"
     end
   end
   

@@ -97,7 +97,6 @@ class ClientsController < ApplicationController
         @therapist = current_user
         @client = Client.find(params[:id])
         @record = @client.record
-        binding.pry
         if params[:record] 
           @record.update(params[:record])
         end
