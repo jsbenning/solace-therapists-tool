@@ -21,7 +21,7 @@ class TherapistsController < ApplicationController
       @clients = @therapist.clients
       erb :'therapists/edit_therapist'
     else
-      erb :'index'
+      erb :'error'
     end
   end
 
@@ -31,7 +31,7 @@ class TherapistsController < ApplicationController
       @clients = @therapist.clients
       erb :'therapists/show_therapist'
     else
-      erb :'index'
+      erb :'error'
     end
   end
 

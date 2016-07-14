@@ -3,7 +3,7 @@
 </form>
 
 <% if @client.record.risk_level > 7 %>
-<% @client.alert += " High level of Risk!" %>
+<% @client.alert = " High level of Risk!" %>
 <% end %>
 
 <h2>Basic Client Information</h2>

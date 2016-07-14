@@ -6,7 +6,7 @@ class ClientsController < ApplicationController
       @clients = @therapist.clients
       erb :'therapists/show_therapist'
     else
-      redirect to '/'
+      erb :'error'
     end
   end
 
@@ -15,7 +15,7 @@ class ClientsController < ApplicationController
       @therapist = current_user
       erb :'clients/create_client'
     else
-      redirect to '/'
+      erb :'error'
     end
   end
 
@@ -42,7 +42,7 @@ class ClientsController < ApplicationController
       @client = Client.find(params[:id])
       erb :'clients/show_client'
     else
-      redirect to '/'
+      erb :'error'
     end
   end
 
@@ -53,7 +53,7 @@ class ClientsController < ApplicationController
       @client = Client.find(params[:id])
       erb :'clients/edit_client'
     else
-      redirect to '/'
+      erb :'error'
     end
   end
 
@@ -86,7 +86,7 @@ class ClientsController < ApplicationController
       @client = Client.find(params[:id])
       erb :'clients/summary'
     else
-      redirect to '/'
+      erb :'error'
     end
   end
 
@@ -102,7 +102,7 @@ class ClientsController < ApplicationController
       @record = @client.record
       erb :"#{record_form}/edit"
     else
-      erb :'index'
+      erb :'error'
     end
   end
 
@@ -114,7 +114,7 @@ class ClientsController < ApplicationController
       @record = @client.record
       erb :"#{@record_form}/show"
     else
-      erb :'index'
+      erb :'error'
     end
   end
 
@@ -129,7 +129,7 @@ class ClientsController < ApplicationController
       @record_form = (params[:record_name])
       erb :"#{@record_form}/show"
     else
-      erb :'index'
+      erb :'error'
     end
   end
 
@@ -141,7 +141,7 @@ class ClientsController < ApplicationController
       @client.delete
       erb :'therapists/show_therapist'
     else
-      erb :'index'
+      erb :'error'
     end
   end
 

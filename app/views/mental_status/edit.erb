@@ -56,7 +56,8 @@
 <h3>REPORTED BEHAVIORS (Symptoms/Stressors Affecting Ability to Function):</h3><input type="checkbox" name="record[ment_self_behavior][]" value="Not at All"<%='checked' if @record.ment_self_behavior.include?("Not at All")%>>Not at All<input type="checkbox" name="record[ment_self_behavior][]" value="Slightly"<%='checked' if @record.ment_self_behavior.include?("Slightly")%>>Slightly<input type="checkbox" name="record[ment_self_behavior][]" value="Moderately"<%='checked' if @record.ment_self_behavior.include?("Moderately")%>>Moderately<input type="checkbox" name="record[ment_self_behavior][]" value="Significantly"<%='checked' if @record.ment_self_behavior.include?("Significantly")%>>Significantly<input type="text" placeholder="Additional Comments:" name="record[ment_self_behavior][]"> 
 
 <h3>COMPULSIVE BEHAVIOR (Describe Type, Severity, and Frequency such as Sexual, Gambling, Spending):</h3>
-<textarea name="record[ment_compulsions]"></textarea>
+<textarea rows="10" cols="50" name="record[ment_compulsions]"></textarea>
+<br></br>
 
 
   <input type="submit" value="Update">

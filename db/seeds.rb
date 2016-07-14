@@ -12,9 +12,6 @@ last_name: "Johnson",
 license_type: "LCSW",
 license_number: "NJ434476566") 
 
-
-
-
 sandee = Client.create( medical_record_id: "GT34233-88",
 first_name: "Sandra", 
 last_name: "Monroe", 
@@ -45,16 +42,11 @@ release_releasee: "Quisque lobortis purus est, a porttitor mi venenatis sed. Viv
 release_releasee_info: "Quisque lobortis purus est, a porttitor mi venenatis sed. Vivamus efficitur commodo neque, et faucibus nunc.", 
 release_purpose: "Quisque lobortis purus est, a porttitor mi venenatis sed. Vivamus efficitur commodo neque, et faucibus nunc.", 
 ment_orientation: "Quisque lobortis purus est, a porttitor mi venenatis sed. Vivamus efficitur commodo neque, et faucibus nunc.", 
-ment_appearance: 
-"Phasellus ac facilisis justo, et euismod felis. Duis in sollicitudin nisl. Praesent quis justo sit amet enim lacinia dignissim.", 
-ment_behavior: 
-"Phasellus ac facilisis justo, et euismod felis. Duis in sollicitudin nisl. Praesent quis justo sit amet enim lacinia dignissim.", 
-ment_speech: 
-"Phasellus ac facilisis justo, et euismod felis. Duis in sollicitudin nisl. Praesent quis justo sit amet enim lacinia dignissim.", 
-ment_thought: 
-"Phasellus ac facilisis justo, et euismod felis. Duis in sollicitudin nisl. Praesent quis justo sit amet enim lacinia dignissim.", 
-ment_affect: 
-"Phasellus ac facilisis justo, et euismod felis. Duis in sollicitudin nisl. Praesent quis justo sit amet enim lacinia dignissim.", 
+ment_appearance: "Phasellus ac facilisis justo, et euismod felis. Duis in sollicitudin nisl. Praesent quis justo sit amet enim lacinia dignissim.", 
+ment_behavior: "Phasellus ac facilisis justo, et euismod felis. Duis in sollicitudin nisl. Praesent quis justo sit amet enim lacinia dignissim.", 
+ment_speech: "Phasellus ac facilisis justo, et euismod felis. Duis in sollicitudin nisl. Praesent quis justo sit amet enim lacinia dignissim.", 
+ment_thought: "Phasellus ac facilisis justo, et euismod felis. Duis in sollicitudin nisl. Praesent quis justo sit amet enim lacinia dignissim.", 
+ment_affect: "Phasellus ac facilisis justo, et euismod felis. Duis in sollicitudin nisl. Praesent quis justo sit amet enim lacinia dignissim.", 
 ment_mood: "Quisque lobortis purus est, a porttitor mi venenatis sed. Vivamus efficitur commodo neque, et faucibus nunc.", 
 ment_memory: "Quisque lobortis purus est, a porttitor mi venenatis sed. Vivamus efficitur commodo neque, et faucibus nunc.", 
 ment_concentration: "Quisque lobortis purus est, a porttitor mi venenatis sed. Vivamus efficitur commodo neque, et faucibus nunc.", 
@@ -66,10 +58,8 @@ ment_insight: "Quisque lobortis purus est, a porttitor mi venenatis sed. Vivamus
 ment_self_behavior: "Quisque lobortis purus est, a porttitor mi venenatis sed. Vivamus efficitur commodo neque, et faucibus nunc.", 
 ment_compulsions: "Quisque lobortis purus est, a porttitor mi venenatis sed. Vivamus efficitur commodo neque, et faucibus nunc.", 
 risk_level: 8, 
-risk_interventions: 
-"Phasellus ac facilisis justo, et euismod felis. Duis in sollicitudin nisl. Praesent quis justo sit amet enim lacinia dignissim.", 
-risk_therapist_sign_and_date: 
-"Phasellus ac facilisis justo, et euismod felis. Duis in sollicitudin nisl. Praesent quis justo sit amet enim lacinia dignissim.", 
+risk_interventions: "Phasellus ac facilisis justo, et euismod felis. Duis in sollicitudin nisl. Praesent quis justo sit amet enim lacinia dignissim.", 
+risk_therapist_sign_and_date: "Phasellus ac facilisis justo, et euismod felis. Duis in sollicitudin nisl. Praesent quis justo sit amet enim lacinia dignissim.", 
 risk_supervisor_sign_and_date: "Quisque lobortis purus est, a porttitor mi venenatis sed. Vivamus efficitur commodo neque, et faucibus nunc.", 
 bio_presenting_problem: "Quisque lobortis purus est, a porttitor mi venenatis sed. Vivamus efficitur commodo neque, et faucibus nunc.", 
 bio_history_presenting_problem: "Quisque lobortis purus est, a porttitor mi venenatis sed. Vivamus efficitur commodo neque, et faucibus nunc.", 
@@ -371,5 +361,8 @@ sandee.save
 trish.save
 peter.save
 john.save
+record1.save
+record2.save
+record3.save
 
 

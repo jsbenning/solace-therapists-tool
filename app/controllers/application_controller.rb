@@ -1,6 +1,7 @@
 require './config/environment'
 class ApplicationController < Sinatra::Base
   register Sinatra::ActiveRecordExtension
+  
 
   configure do
     enable :sessions
@@ -54,7 +55,7 @@ class ApplicationController < Sinatra::Base
       session.clear
       redirect to '/'
     else
-      redirect to '/'
+      erb :'error'
     end
   end
 
