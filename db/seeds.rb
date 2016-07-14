@@ -1,4 +1,4 @@
-johnson = Therapist.create(username: "user",
+john = Therapist.create(username: "user",
 password: "password", 
 first_name: "John", 
 last_name: "Miller", 
@@ -10,7 +10,9 @@ password: "password",
 first_name: "Pete", 
 last_name: "Johnson", 
 license_type: "LCSW",
-license_number: "NJ434476566")     
+license_number: "NJ434476566") 
+
+
 
 
 sandee = Client.create( medical_record_id: "GT34233-88",
@@ -20,23 +22,15 @@ date_of_birth: "03/14/66",
 address: "453 W.Channing Dr, Jackson, NJ 08878",
 phone: "908-545-3222" )
 
-frank = Client.create( medical_record_id: "GT34883-88",
+frank = Client.create(medical_record_id: "GT34883-88",
 first_name: "Frank", 
 last_name: "Gigilli", 
 date_of_birth: "09/14/86", 
 address: "77666 Velmont Circle, Bledstoe, NJ 09978",
 phone: "908-766-3298" )
 
-trish = Client.create( therapist_id = medical_record_id: "GT34883-88",
-first_name: "Patricia", 
-last_name: "Allen", 
-date_of_birth: "09/07/66", 
-address: "144 Main St., Old Bridge, NJ 08878",
-phone: "908-799-7811" )
-
 
 record1 = Record.create(
-
 release_type: "Quisque lobortis purus est, a porttitor mi venenatis sed. Vivamus efficitur commodo neque, et faucibus nunc.", 
 release_description: "Quisque lobortis purus est, a porttitor mi venenatis sed. Vivamus efficitur commodo neque, et faucibus nunc.", 
 release_initialed: "Quisque lobortis purus est, a porttitor mi venenatis sed. Vivamus efficitur commodo neque, et faucibus nunc.", 
@@ -249,6 +243,13 @@ hom_deterrents_present: "Quisque lobortis purus est, a porttitor mi venenatis se
 
 record1.client_id = frank.id
 record2.client_id = sandee.id
-
+sandee.therapist_id = peter.id
+frank.therapist_id = john.id
+frank.save
+sandee.save
+peter.save
+john.save
+record1.save
+record2.save
 
 
