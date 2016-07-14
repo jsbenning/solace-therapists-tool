@@ -3,7 +3,7 @@
 <h3>Client is assessed with a risk of <%= @client.record.risk_level%>*</h3>
 
 <h3>The following interventions were performed:</h3>
-<%=@client.record.risk_interventions %>
+<%=@client.record.risk_interventions.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '') %>
 <br></br>
 
 <h3><b>Signatures on file, if any:</b></h3>

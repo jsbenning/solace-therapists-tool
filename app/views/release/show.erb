@@ -3,22 +3,22 @@
 
 <ul>
 <li><b><p>Client authorizes facility to provide:</p></b></li>
-<%=@client.record.release_type%>
+<%=@client.record.release_type.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
 
 <li><b><p>Description(s) and date(s):</p></b></li>
-<%=@client.record.release_description %>
+<%=@client.record.release_description.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '') %>
 
 <li><b><p>Client initialed?</p></b></li>
-<%=@client.record.release_initialed%>
+<%=@client.record.release_initialed.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
 
 <li><b><p>Client approved disclosure?</p></b></li>
-<%=@client.record.release_releasee %>
+<%=@client.record.release_releasee.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '') %>
 
 <li><b><p>Disclosure to the following persons/institutions:</p></b></li>
-<%=@client.record.release_releasee_info%>
+<%=@client.record.release_releasee_info.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
 
 <li><b><p>Client authorized agency to release/disclose health information for the following specific purpose(s):</p></b></li>
-  <%=@client.record.release_purpose %>
+  <%=@client.record.release_purpose.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '') %>
 
 </ul>
  

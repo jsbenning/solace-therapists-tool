@@ -25,24 +25,24 @@
 <%=@record.bio_abuse%></li>
 
 <li><b><p>Patients Reading Ability:</b></p>
-<%=@record.bio_reading.gsub(/[\[\]]/, "")%></li> 
+<%=@record.bio_reading.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%></li> 
 
 <li><b><p>Client learns best by:</b></p>
-<%=@record.bio_learning_style.gsub(/[\[\]]/, "")%></li> 
+<%=@record.bio_learning_style.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%></li> 
 
 
 <li><b><p>How was the client's ability assessed?</b></p>
-<%=@record.bio_self_assessment.gsub(/[\[\]]/, "")%></li> 
+<%=@record.bio_self_assessment.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%></li> 
 
 
 <li><b><p>Client's barriers to learning:</b></p>
-<%=@record.bio_barriers.gsub(/[\[\]]/, "")%></li>
+<%=@record.bio_barriers.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%></li>
 
 <li><b><p>Is the client ready for learning?</b></p>
-  <%=@record.bio_teachable.gsub(/[\[\]]/, "")%></li> 
+  <%=@record.bio_teachable.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%></li> 
 
-<li><b><p>Are there any learning barriers that will prevent the family from adhering to the rehabilitation/treatment agreed upon and being responsible for the outcomes if rehabilitation/treatment is refused?</b></p>
-<%=@record.bio_family_barriers.gsub(/[\[\]]/, "")%></li> 
+<li><b><p>Are there any learning barriers that will prevent the family from adhering to the rehabilitation/treatment?</b></p>
+<%=@record.bio_family_barriers.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%></li> 
 
 <li><b><p>Social Functioning Issues/Skills: </b></p>
 <%=@record.bio_social_function%></li>
