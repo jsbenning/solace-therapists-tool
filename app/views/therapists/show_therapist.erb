@@ -4,15 +4,15 @@
 </form></h2>
 
 
-
 <h3>Current clients:</h3>
 <ul class="navigation">
+<%if @clients %>  
 <% @clients.each do |client| %>
 
 <li><a href="/clients/<%=client.id%>"><%=client.last_name%>, <%=client.first_name%></a></li>
 <%end%>
+<%end%>
 </ul>
-
 
 <form method="link" action="/clients/new">
   <input type="submit" value="Create Client">

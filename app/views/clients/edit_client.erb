@@ -4,8 +4,7 @@
 
 <form method="POST" action="/clients/<%= @client.id %>/edit">
 <input id="hidden" type="hidden" name="_method" value="patch">
-<h3>Edit Client Record</h3>
-<form action="/clients/edit/id" method="POST">
+
 
   First Name: <input type="text" name="client[first_name]" value="<%=@client.first_name%>"placeholder="<%=@client.first_name%>">
   <br></br>

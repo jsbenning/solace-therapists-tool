@@ -62,6 +62,8 @@ class CreateRecords < ActiveRecord::Migration
       t.string :sui_strength_present, default: "No assessed value on file"
       t.string :sui_dur_past, default: "No assessed value on file"
       t.string :sui_dur_present, default: "No assessed value on file"
+      t.string :sui_control_past, default: "No assessed value on file"
+      t.string :sui_control_present, default: "No assessed value on file"
       t.string :sui_plan_past, default: "No assessed value on file"
       t.string :sui_plan_present, default: "No assessed value on file"
       t.string :sui_intent_past, default: "No assessed value on file"
@@ -102,15 +104,6 @@ class CreateRecords < ActiveRecord::Migration
       t.string :hom_criminal_present, default: "No assessed value on file"
       t.string :hom_deterrents_past, default: "No assessed value on file"
       t.string :hom_deterrents_present, default: "No assessed value on file"
-      t.string :drug_types, default: "No assessed value on file"
-      t.string :drug_denies, default: "No assessed value on file"
-      t.string :drug_method_and_amount, default: "No assessed value on file"
-      t.string :drug_freq, default: "No assessed value on file"
-      t.integer :drug_age_first_use, default: 0
-      t.integer :drug_age_last_use, default: 0
-      t.string :drug_forty_eight_hours, default: "No assessed value on file"
-      t.string :drug_thirty_days, default: "No assessed value on file"
-      t.string :drug_comments, default: "No assessed value on file"
     end
   end
 

@@ -1,62 +1,82 @@
-h2>Suicide Assessment for <%=@client.first_name%> <%=@client.last_name%></h2>
+<h2>Suicide Assessment for <%=@client.first_name%> <%=@client.last_name%></h2>
 
-<h3>Suicidal Ideation, Lifetime:</h3>
-<%=@record.sui_ideation_past%>
-<br></br>
-Explain Thoughts (Past):<br></br> 
-<%=@record.sui_thoughts_past%><br></br>
-Frequency - How Often? (Past):<br></br>
-<%=@record.sui_freq_past%><br></br>
-Intensity - How Strong? (Past):<br></br>  
-<%=@record.sui_strength_past%><br></br> 
-Duration - How Long? (Past):<br></br>
-<%=@record.sui_dur_past%><br></br> 
-Controllability? (Past):<br></br>
-<%=@record.sui_control_past%><br></br> 
-Suicidal Plan? :<br></br>
-<%=@record.sui_plan_past%><br></br> 
-Suicidal Intent? (Past):<br></br>
-<%=@record.sui_intent_past%><br></br> 
-Previous Attempts? (Past):<br></br>
-<%=@record.sui_attempt_past%><br></br> 
-Reasons for Attempts? (Past):<br></br>
-<%=@record.sui_reason_past%><br></br> 
-Family History? (Past):<br></br>
-<%=@record.sui_family_past%><br></br> 
-Deterrents/Protective Factors? (Past):<br></br>
-<%=@record.sui_deterrents_past%><br></br>
-Self-Injury: (Past):<br></br>
-<%=@record.sui_selfinjure_past%><br></br> 
+<table>
+  <tr>
+    <th></th>
+    <th scope="col">Past Month</th>
+    <th scope="col">Lifetime</th>
+  </tr>
+  <tr>
+    <th scope="row">Ideation:</th>
+      <td><%=@record.sui_ideation_past%></td>
+      <td><%=@record.sui_ideation_present%></td>
+  </tr>
+    <tr>
+    <th scope="row">Thoughts:</th>
+      <td><%=@record.sui_thoughts_past%></td>
+      <td><%=@record.sui_thoughts_present%></td>
+  </tr>
+    <tr>
+    <th scope="row">Frequency:</th>
+      <td><%=@record.sui_freq_past%></td>
+      <td><%=@record.sui_freq_present%></td>
+  </tr>
+    <tr>
+    <th scope="row">Intensity:</th>
+      <td><%=@record.sui_strength_past%></td>
+      <td><%=@record.sui_strength_present%></td>
+  </tr>
+    <tr>
+    <th scope="row">Duration:</th>
+      <td><%=@record.sui_dur_past%></td>
+      <td><%=@record.sui_dur_present%></td>
+  </tr>
+    <tr>
+    <th scope="row">Controllability:</th>
+      <td><%=@record.sui_control_past%></td>
+      <td><%=@record.sui_control_present%></td>
+  </tr>
 
+  <tr>
+    <th scope="row">Plan:</th>
+      <td><%=@record.sui_plan_past%></td>
+      <td><%=@record.sui_plan_present%></td>
+  </tr>
 
-<h3>Homicidal Ideation, Past Month:</h3>
-<%=@record.sui_ideation_present%><br></br>
+  <tr>
+    <th scope="row">Intent:</th>
+      <td><%=@record.sui_intent_past%></td>
+      <td><%=@record.sui_intent_present%></td>
+  </tr>
+    <tr>
+    <th scope="row">Attempts:</th>
+      <td><%=@record.sui_attempt_past%></td>
+      <td><%=@record.sui_attempt_present%></td>
+  </tr>
+    <tr>
+    <th scope="row">Reasons:</th>
+      <td><%=@record.sui_reason_past%></td>
+      <td><%=@record.sui_reason_present%></td>
+  </tr>
+    <tr>
+    <th scope="row">Family History:</th>
+      <td><%=@record.sui_family_past%></td>
+      <td><%=@record.sui_family_present%></td>
+  </tr>
+    <tr>
+    <th scope="row">Deterrents:</th>
+      <td><%=@record.sui_deterrents_past%></td>
+      <td><%=@record.sui_deterrents_present%></td>
+  </tr>
 
+  <tr>
+    <th scope="row">Self Harm:</th>
+      <td><%=@record.sui_selfinjure_past%></td>
+      <td><%=@record.sui_selfinjure_present%></td>
+  </tr>
+  </table>  
 
-Explain Thoughts (Recent):<br></br> 
-<%=@record.sui_thoughts_present%><br></br>
-Frequency - How Often? (Recent):<br></br>
-<%=@record.sui_freq_present%><br></br>
-Intensity - How Strong? (Recent):<br></br>  
-<%=@record.sui_strength_present%><br></br> 
-Duration - How Long? (Recent):<br></br>
-<%=@record.sui_dur_present%><br></br> 
-Controllability? (Recent):<br></br>
-<%=@record.sui_control_present%><br></br> 
-Suicidal Plan? (Recent):<br></br>
-<%=@record.sui_plan_present%><br></br> 
-Suicidal Intent? (Recent):<br></br>
-<%=@record.sui_intent_present%> <br></br>
-Previous Attempts? (Recent):<br></br>
-<%=@record.sui_attempt_present%><br></br> 
-Reasons for Attempts? (Recent):<br></br>
-<%=@record.sui_reason_present%><br></br> 
-Family History? (Recent):<br></br>
-<%=@record.sui_family_present%><br></br>  
-Deterrents/Protective Factors? (Recent):<br></br>
-<%=@record.sui_deterrents_present%><br></br>
-Self-Injury: (Recent):<br></br>
-<%=@record.sui_selfinjure_present%><br></br>
+  <br></br>    
 
 
 <form method="GET" action="../../clients/<%=@client.id%>">
