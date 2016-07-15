@@ -1,48 +1,49 @@
 <div class="listr1">
 <h2>Release form for <%=@client.first_name%> <%=@client.last_name%></h2>
 <p>Client Medical Record ID#:<%=@client.medical_record_id%></p>
+<hr>
 </div>
 
 <ul>
 <div class="bloc1">
 <li><b><p>Client authorizes facility to provide:</p></b></li>
 </div>
-<div class="bloc2">
+<div class="bloc2 lighter">
 <%=@client.record.release_type.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
 </div>
 
 <div class="bloc1">
 <li><b><p>Description(s) and date(s):</p></b></li>
 </div>
-<div class="bloc2">
+<div class="bloc2 lighter">
 <%=@client.record.release_description.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '') %>
 </div>
 
 <div class="bloc1">
 <li><b><p>Client initialed?</p></b></li>
 </div>
-<div class="bloc2">
+<div class="bloc2 lighter">
 <%=@client.record.release_initialed.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
 </div>
 
 <div class="bloc1">
 <li><b><p>Client approved disclosure?</p></b></li>
 </div>
-<div class="bloc2">
+<div class="bloc2 lighter">
 <%=@client.record.release_releasee.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '') %>
 </div>
 
 <div class="bloc1">
 <li><b><p>Disclosure to the following persons/institutions:</p></b></li>
 </div>
-<div class="bloc2">
+<div class="bloc2 lighter">
 <%=@client.record.release_releasee_info.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
 </div>
 
 <div class="bloc1">
 <li><b><p>Client authorized agency to release/disclose health information for the following specific purpose(s):</p></b></li>
 </div>
-<div class="bloc2">
+<div class="bloc2 lighter">
   <%=@client.record.release_purpose.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '') %>
 </div>
 

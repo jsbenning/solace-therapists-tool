@@ -1,8 +1,9 @@
 
 body {
-    background-color: PaleTurquoise;
+    background-color: #AFEEEE;
     font-family: 'Noto Sans', sans-serif;
 }
+
 
 .listr1{
   margin:10px 5px 15px 50px;
@@ -11,16 +12,24 @@ body {
 
 .bloc1 {
   margin:10px 5px 15px 100px;
-
+  
 }
 
 .bloc2 {
-  margin:10px 5px 50px 150px;
+  margin:10px 5px 50px 150px; 
 }
+
 
 table, th, td {
    border: 1px solid black;
    padding: 15px;
+   background-color: #E0FFFF;
+}
+
+body .lighter{
+    background-color: #E0FFFF;
+    display: block;
+    padding: 20px;
 }
 
 .alert {
@@ -31,11 +40,22 @@ table, th, td {
 .centered {
   display: block;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto;  
 }
+
+.checkspace{
+  margin-left: 25px;
+}
+body label {
+  padding-right: 20px;
+  padding-left:10px;
+}
+
 
 img {
   max-width: 100%;
   height: auto;
+  padding: 1px;
+  border:5px solid #483D8B;
 }
 

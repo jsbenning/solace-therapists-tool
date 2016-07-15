@@ -108,10 +108,12 @@ class ClientsController < ApplicationController
       @therapist = current_user
       @client = Client.find(params[:id])
       @record = @client.record
-      (params[:record]).each do |param_key, param_value| #this method prevents empty fields from clearing values
-        @record.attributes.each do |key, value|
-          if key == param_key && param_value != "" && param_value != value
-            @record.update((param_key.to_sym) => param_value)
+      if params[:record]
+        (params[:record]).each do |param_key, param_value| #this method prevents empty fields from clearing values
+          @record.attributes.each do |key, value|
+            if key == param_key && param_value != "" && param_value != value
+              @record.update((param_key.to_sym) => param_value)
+            end
           end
         end
       end

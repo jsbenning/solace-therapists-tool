@@ -1,19 +1,20 @@
 <div class="listr1">
 <h2>Biosocial Assessment for <%=@client.first_name%> <%=@client.last_name%></h2>
+<hr>
 </div>
 
 <ul>
 <div class="bloc1">  
 <li><b><p>Presenting Problems:</b></p>
   </div>
-<div class="bloc2"> 
+<div class="bloc2 lighter"> 
 <%=@record.bio_presenting_problem%></li>
 </div>
 
 <div class="bloc1"> 
 <li><b><p>History of Presenting Problems:</b></p>
   </div>
-  <div class="bloc2"> 
+  <div class="bloc2 lighter"> 
   <%=@record.bio_history_presenting_problem%></li>
   </div>
 
@@ -21,7 +22,7 @@
 <li><b><p>Developmental Issues: </b></p>
   </div>
  
- <div class="bloc2">  
+ <div class="bloc2 lighter">  
 <%=@record.bio_development%></li>
 </div>
 
@@ -29,7 +30,7 @@
 <li><b><p>Family History:</b></p>
   </div>
  
- <div class="bloc2">  
+ <div class="bloc2 lighter">  
 <%=@record.bio_family_hist_probs%></li>
 </div>
 
@@ -37,7 +38,7 @@
 <li><b><p>Family Dynamics:</b></p>
   </div>
  
- <div class="bloc2">  
+ <div class="bloc2 lighter">  
 <%=@record.bio_family_hist_dynamics%></li>
 </div>
 
@@ -45,118 +46,118 @@
 <li><b><p>History of Abuse: </b></p>
   </div>
  
- <div class="bloc2">  
+ <div class="bloc2 lighter">  
 <%=@record.bio_abuse%></li>
 </div>
 
 <div class="bloc1"> 
 <li><b><p>Patients Reading Ability:</b></p>
   </div>
-  <div class="bloc2"> 
+  <div class="bloc2 lighter"> 
 <%=@record.bio_reading.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%></li>
 </div> 
 
 <div class="bloc1"> 
 <li><b><p>Client learns best by:</b></p>
   </div>
-  <div class="bloc2"> 
+  <div class="bloc2 lighter"> 
 <%=@record.bio_learning_style.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%></li>
 </div> 
 
 <div class="bloc1"> 
 <li><b><p>How was the client's ability assessed?</b></p>
   </div>
-  <div class="bloc2"> 
+  <div class="bloc2 lighter"> 
 <%=@record.bio_self_assessment.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%></li> 
 </div>
 
 <div class="bloc1"> 
 <li><b><p>Client's barriers to learning:</b></p>
   </div>
-  <div class="bloc2"> 
+  <div class="bloc2 lighter"> 
 <%=@record.bio_barriers.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%></li>
 </div>
 
 <div class="bloc1"> 
 <li><b><p>Is the client ready for learning?</b></p>
   </div>
-  <div class="bloc2"> 
+  <div class="bloc2 lighter"> 
   <%=@record.bio_teachable.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%></li> </div>
 
 <div class="bloc1"> 
 <li><b><p>Are there any learning barriers that will prevent the family from adhering to the rehabilitation/treatment?</b></p>
   </div>
-  <div class="bloc2"> 
+  <div class="bloc2 lighter"> 
 <%=@record.bio_family_barriers.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%></li>
 </div> 
 
 <div class="bloc1"> 
 <li><b><p>Social Functioning Issues/Skills: </b></p>
   </div>
-  <div class="bloc2"> 
+  <div class="bloc2 lighter"> 
 <%=@record.bio_social_function%></li>
 </div>
 
 <div class="bloc1"> 
 <li><b><p>Community Resources: </b></p>
   </div>
-  <div class="bloc2"> 
+  <div class="bloc2 lighter"> 
 <%=@record.bio_community%></li>
 </div>
 
 <div class="bloc1"> 
 <li><b><p>Cultural/ Spiritual/ Religious Issues: </b></p>
   </div>
-  <div class="bloc2"> 
+  <div class="bloc2 lighter"> 
 <%=@record.bio_culture%></li>
 </div>
 
 <div class="bloc1"> 
 <li><b><p>Financial Issues: </b></p>
   </div>
-  <div class="bloc2"> 
+  <div class="bloc2 lighter"> 
 <%=@record.bio_finance%></li>
 </div>
 
 <div class="bloc1"> 
 <li><b><p>Client's Family and Readiness for Treatment:</b></p>
   </div>
-<div class="bloc2">  
+<div class="bloc2 lighter">  
 <%=@record.bio_family_readiness%></li>
 </div>
 
 <div class="bloc1"> 
 <li><b><p>Client's Strengths and Challenges:</b></p>
   </div>
-  <div class="bloc2"> 
+  <div class="bloc2 lighter"> 
 <%=@record.bio_strengths_and_challenges%></li>
 </div>
 
 <div class="bloc1"> 
 <li><b><p>Clinical Analysis of the Problem: </b></p>
   </div>
-  <div class="bloc2"> 
+  <div class="bloc2 lighter"> 
 <%=@record.bio_clinical_analysis%></li>
 </div>
 
 <div class="bloc1"> 
 <li><b><p>Treatment Recommendations: </b></p>
   </div>
-  <div class="bloc2"> 
+  <div class="bloc2 lighter"> 
 <%=@record.bio_treatment_recommendations%></li>
 </div>
 
 <div class="bloc1"> 
 <li><b><p>Additional Issues: </b></p>
   </div>
-<div class="bloc2">   
+<div class="bloc2 lighter"> 
 <%=@record.bio_other_issues%></li>
 </div>
 
 <div class="bloc1"> 
 <li><b><p>DIAGNOSIS/ DSM V CODE: </b></p>
   </div>
-<div class="bloc2"> 
+<div class="bloc2 lighter"> 
 <%=@record.bio_dsm%></li>
 </div>
 </ul>
