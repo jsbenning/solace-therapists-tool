@@ -20,8 +20,8 @@ body {
 
 table, th, td {
    border: 1px solid black;
+   padding: 15px;
 }
-
 
 .alert {
   color:red;
@@ -34,4 +34,8 @@ table, th, td {
   margin-right: auto;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
 
