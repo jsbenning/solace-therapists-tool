@@ -1,57 +1,128 @@
+<div class="listr1"> 
 <h2>Mental Status Form for <%=@client.first_name%> <%=@client.last_name%></h2>
 <p>Client Medical Record ID#:<%=@client.medical_record_id%></p>
-
+</div>
 <ul>
+  <div class="bloc1">
   <li><b><p>Orientation:</p></b></li>
+  </div>
+  <div class="bloc2">
 <%=@client.record.ment_orientation.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
+</div>
 
+<div class="bloc1">
   <li><b><p>Appearance:</p></b></li>
+  </div>
+  <div class="bloc2">
 <%=@client.record.ment_appearance.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
+</div>
 
+<div class="bloc1">
   <li><b><p>Behavior:</p></b></li>
+  </div>
+  <div class="bloc2">
 <%=@client.record.ment_behavior.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
+</div>
 
+<div class="bloc1">
   <li><b><p>Speech:</p></b></li>
+  </div>
+  <div class="bloc2">
 <%=@client.record.ment_speech.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
+</div>
 
+<div class="bloc1">
   <li><b><p>Thought:</p></b></li>
+  </div>
+  <div class="bloc2">
 <%=@client.record.ment_thought.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
+</div>
 
+<div class="bloc1">
   <li><b><p>Affect:</p></b></li>
+  </div>
+  <div class="bloc2">
 <%=@client.record.ment_affect.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
+</div>
 
+<div class="bloc1">
   <li><b><p>Mood:</p></b></li>
+  </div>
+  <div class="bloc2">
 <%=@client.record.ment_mood.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
+</div>
 
+<div class="bloc1">
   <li><b><p>Memory:</p></b></li>
+  </div>
+  <div class="bloc2">
 <%=@client.record.ment_memory.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
+</div>
 
+<div class="bloc1">
   <li><b><p>Concentration:</p></b></li>
+  </div>
+  <div class="bloc2">
 <%=@client.record.ment_concentration.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
+</div>
 
+<div class="bloc1">
   <li><b><p>Cognition:</p></b></li>
+  </div>
+  <div class="bloc2">
 <%=@client.record.ment_cognition.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
+</div>
 
+<div class="bloc1">
   <li><b><p>Sleep:</p></b></li>
+  </div>
+
+  <div class="bloc2">
 <%=@client.record.ment_sleep.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
+</div>
 
+<div class="bloc1">
   <li><b><p>Appetite:</p></b></li>
+  </div>
+
+  <div class="bloc2">
 <%=@client.record.ment_appetite.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
+</div>
 
+<div class="bloc1">
   <li><b><p>Judgment:</p></b></li>
+  </div>
+
+  <div class="bloc2">
 <%=@client.record.ment_judgment.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
+</div>
 
+<div class="bloc1">
   <li><b><p>Insight:</p></b></li>
+  </div>
+
+  <div class="bloc2">
 <%=@client.record.ment_insight.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
+</div>
 
+<div class="bloc1">
+  <li><b><p>Self-Reported Behaviors</b> (i.e., Symptoms/Stressors Affecting Ability to Function)?:</p></li>
+  </div>
 
-  <li><b><p>Self-Reported Behaviors</b> (Symptoms/Stressors Affecting Ability to Function):</p></li>
+  <div class="bloc2">
 <%=@client.record.ment_self_behavior.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '')%>
+</div>
+ 
+ <div class="bloc1">
   <li><b><p>Compulsions:</p></b></li>
+  </div>
+
+  <div class="bloc2">
 <%=@client.record.ment_compulsions%>
-<br></br>
+</div>
 
 
+<div class="listr1">
 <form method="GET" action="../../clients/<%=@client.id%>">
 <input type="submit" value="Client Main Page">
 </form>
@@ -65,3 +136,4 @@
 <form method="GET" action="/logout">
   <input type="submit" value="Logout">
 </form>
+</div>

@@ -1,12 +1,12 @@
 <form method="POST" action="/therapists/<%= @therapist.id %>/edit">
 <input id="hidden" type="hidden" name="_method" value="patch">
 
-<div class="intro">
+<div class="listr1">
 <h2><%=@therapist.first_name%> <%=@therapist.last_name%>, <%=@therapist.license_type%></h2>
 </div>
 
 
-<div class="narr">
+<div class="bloc1">
 <h3>Edit any of the following fields and press "Update":</h3>
   First Name: <input type="text" name="therapist[first_name]" value="<%=@therapist.first_name%>" placeholder="<%=@therapist.first_name%>">
   <br></br>

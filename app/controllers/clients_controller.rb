@@ -68,18 +68,6 @@ class ClientsController < ApplicationController
     end
   end
 
-  delete '/clients/:id/edit' do
-    if logged_in?
-      @therapist = current_user
-      @client = Client.find(params[:id])
-      @client.record.delete
-      @client.delete
-      redirect to "/clients/#{@client.id}"
-    else
-      erb :'index'
-    end
-  end
-
   get '/clients/:id/summary' do
     if logged_in?
       @therapist = current_user
@@ -89,9 +77,6 @@ class ClientsController < ApplicationController
       erb :'error'
     end
   end
-
-
-
 
 
   get '/clients/:id/:record_name/edit' do

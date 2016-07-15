@@ -1,20 +1,25 @@
 
 body {
-    background-color: powderblue;
+    background-color: PaleTurquoise;
     font-family: 'Noto Sans', sans-serif;
 }
 
 .listr1{
   margin:10px 5px 15px 50px;
+
 }
 
 .bloc1 {
-  margin:10px 5px 15px 75px;
+  margin:10px 5px 15px 100px;
 
 }
 
 .bloc2 {
-  margin:10px 5px 50px 100px;
+  margin:10px 5px 50px 150px;
+}
+
+table, th, td {
+   border: 1px solid black;
 }
 
 

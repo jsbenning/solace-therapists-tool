@@ -1,9 +1,13 @@
 <form action="/clients/<%=@client.id%>/homicide_assessment" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
-
+<div class="listr1">
 <h2>Edit Homicide Assessment for <%=@client.first_name%> <%=@client.last_name%></h2>
+</div>
+<div class="bloc1">
 <b>Fill out any field(s) below and click 'update' to save</b><br></br>
+</div>
 
+<div class="bloc2">
 <h3>Homicidal Ideation, Lifetime:</h3>
 <input type="radio" name="record[hom_ideation_past]" value="Yes" >Yes<br></br><input type="radio" name="record[hom_ideation_past]" value="No" >No<br></br>
 <p>If 'yes', complete fields below:</p>
@@ -61,7 +65,8 @@ Criminal Involvement? (Recent):<br></br>
 <textarea rows="10" cols="50"name="record[hom_criminal_present]"></textarea><br></br> 
 Deterrents/Protective Factors? (Recent):<br></br>
 <textarea rows="10" cols="50"name="record[hom_deterrents_present]"></textarea><br></br>
-
-
+</div>
+<div class="listr1">
 <input type="submit" value="Update">
 </form>
+</div>

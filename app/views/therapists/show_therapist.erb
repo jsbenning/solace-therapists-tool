@@ -1,11 +1,11 @@
-<div class="intro">
+<div class="listr1">
 <h2><%=@therapist.first_name%> <%=@therapist.last_name%>, <%=@therapist.license_type%>
 <form method="link" action="/therapists/<%= @therapist.id %>/edit">
   <input type="submit" value="Edit Therapist">
 </form></h2>
 </div>
 
-<div class="narr">
+<div class="bloc1">
 <h3>Current clients:</h3>
 <ul class="navigation">
 <%if @clients %>  
@@ -19,7 +19,8 @@
 <form method="link" action="/clients/new">
   <input type="submit" value="Create Client">
 </form>
-<br></br>
+</div>
+<div class="listr1">
 <br></br>
 <form method="GET" action="/logout">
   <input type="submit" value="Logout">

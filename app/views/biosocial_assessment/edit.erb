@@ -1,11 +1,12 @@
 <form action="/clients/<%=@client.id%>/biosocial_assessment" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
-<div class="intro">
+<div class="listr1">
 <h2>Edit Presenting Problems for <%=@client.first_name%> <%=@client.last_name%></h2>
-<b>Fill out any field(s) below and click 'update' to save</b>
+<p><b>Fill out any field(s) below and click 'update' to save</b></p>
 <br></br>
 </div>
-<div class="narr">
+
+<div class="bloc1">
 <ol type="I">
 <li><h3>PRESENTING PROBLEM(S): <i>Include reasons for seeking treatment now, source of information and reliability.  Describe in behavioral terms and include symptoms.</i></h3>
 
@@ -115,7 +116,7 @@ If 'yes', explain :<input type="text" name="record[bio_family_barriers][]"></li>
 <br></br>
 
 </div>
-<div class="botnav">
+<div class="listr1">
 <input type="submit" value="Update">
 </form>
 </div>

@@ -1,9 +1,12 @@
 <form action="/clients/<%=@client.id%>/suicide_assessment" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
-
+<div class="listr1">
 <h2>Edit Sucide Assessment for <%=@client.first_name%> <%=@client.last_name%></h2>
+</div>
+<div class="bloc1">
 <b>Fill out any field(s) below and click 'update' to save</b><br></br>
-
+</div>
+<div class="bloc2">
 <h3>Suicidal Ideation, Lifetime:</h3>
 <input type="radio" name="record[sui_ideation_past]" value="Yes" >Yes<br></br><input type="radio" name="record[sui_ideation_past]" value="No" >No<br></br>
 <p>If 'yes', complete fields below:</p>
@@ -61,7 +64,8 @@ Deterrents/Protective Factors? (Recent):<br></br>
 <textarea rows="10" cols="50"name="record[sui_deterrents_present]"></textarea><br></br>
 Self Injury? (Recent):<br></br>
 <textarea rows="10" cols="50"name="record[sui_selfinjure_present]"></textarea><br></br>
-
-
+</div>
+<div class="listr1">
 <input type="submit" value="Update">
 </form>
+</div>

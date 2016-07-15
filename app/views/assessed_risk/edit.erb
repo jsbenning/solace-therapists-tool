@@ -1,10 +1,12 @@
 <form action="/clients/<%=@client.id%>/assessed_risk" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
-
+<div class="listr1">
 <h2>Edit Assessed Risk for <%=@client.first_name%> <%=@client.last_name%></h2>
-<b>Fill out any field(s) below and click 'update' to save</b><br></br><br></br>
+</div>
+<div class="bloc1"
+<b>Fill out any field(s) below and click 'update' to save</b><br></br>
 
-  <b>CLIENT'S ASSESSED LEVEL OF RISK: </b>
+  <p><b>CLIENT'S ASSESSED LEVEL OF RISK: </b></p>
 
 1 <input type="radio" name="record[risk_level]" value="1">
 2 <input type="radio" name="record[risk_level]" value="2">
@@ -15,9 +17,13 @@
 7 <input type="radio" name="record[risk_level]" value="7">
 8 <input type="radio" name="record[risk_level]" value="8">
 9 <input type="radio" name="record[risk_level]" value="9">
-10 <input type="radio" name="record[risk_level]" value="10"><br></br>
+10 <input type="radio" name="record[risk_level]" value="10">
 
+
+<br></br>
+</div>
 <h3>Guidelines for Levels:</h3>
+<div class="bloc2">
 <b>High Risk =  9, 10:</b>
 <p>Assess for hospitalization.  Suicidal/Homicidal plan and/or intent; command hallucinations; psychotic symptoms which are significantly interfering with client's ability to function</p>
 <b>High Risk Alert = 7, 8:</b>
@@ -28,8 +34,11 @@
 <p>No current suicidal/homicidal ideation; no current or past high risk behavior; patient has important protective factor which reduces risk.</p>
 ------------------------------------------------------------
 <br></br>
+</div>
+<div class="bloc1">
 <h3><b>INTERVENTIONS:</b></h3>
-
+</div>
+<div class="bloc2">
 <b>High Risk (9, 10):</b>
 
 <p>Assess for Hospitalization</p>
@@ -64,10 +73,12 @@
 <input type="checkbox" name="record[risk_therapist_sign_and_date]" value="File signed and dated by therapist">check if signed and dated by therapist<br></br> 
 
 <input type="checkbox" name="record[risk_supervisor_sign_and_date]" value="File signed and dated by supervisor">check if signed and dated by supervisor<br></br>
-<br></br>
 
+</div>
+<div class="listr1">
 <input type="submit" value="Update">
 </form>
+</div>
 
 
 

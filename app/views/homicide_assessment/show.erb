@@ -1,8 +1,10 @@
+<div class="listr1">
 <h2>Homicide Assessment for <%=@client.first_name%> <%=@client.last_name%></h2>
 <b>Medical Record Number:</b> <%=@client.medical_record_id%>
 <br></br>
+</div>
 
-
+<div class="bloc1">
 <table>
   <tr>
     <th></th>
@@ -75,10 +77,10 @@
       <td><%=@record.hom_deterrents_present%></td>
   </tr>
   </table>  
-
+</div>
   <br></br>    
 
-
+<div class="listr1">
 <form method="GET" action="../../clients/<%=@client.id%>">
 <input type="submit" value="Client Main Page">
 </form>
@@ -92,3 +94,5 @@
 <form method="GET" action="/logout">
   <input type="submit" value="Logout">
 </form>
+
+</div>
