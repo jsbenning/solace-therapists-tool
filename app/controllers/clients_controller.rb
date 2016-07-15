@@ -129,6 +129,7 @@ class ClientsController < ApplicationController
       @client = Client.find(params[:id])
       @client.record.delete
       @client.delete
+      @clients = @therapist.clients
       erb :'therapists/show_therapist'
     else
       erb :'error'
