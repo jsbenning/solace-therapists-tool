@@ -1,3 +1,4 @@
+<div class="listr1">
 <form action="/therapists/<%=@therapist.id%>" method="GET">
   <input type="submit" value="Return To Home Page">
 </form>
@@ -7,14 +8,24 @@
 <% end %>
 
 <h2>Basic Client Information</h2>
+</div>
 
-<b>Medical Record Number:</b> <%=@client.medical_record_id%><br></br>
-<b>Alerts, if any: </b><%=@client.alert%><br></br>
-<b>Name: </b><%=@client.last_name%>, <%=@client.first_name%><br></br>
-<b>Date of Birth:</b> <%=@client.date_of_birth%><br></br>
-<b>Address:</b> <%=@client.address%><br></br>
-<b>Phone Number: </b><%=@client.phone%><br></br>
+<div class="bloc1">  
+<p><b>Medical Record Number:</b> <%=@client.medical_record_id%></p>
+
+
+<p><b>Alerts, if any: </b><div class="alert"> <%=@client.alert%>
+</div></p>
+
+<p><b>Name: </b><%=@client.last_name%>, <%=@client.first_name%></p>
+<p><b>Date of Birth:</b> <%=@client.date_of_birth%></p>
+<p><b>Address:</b>  <%=@client.address%></p>
+<p><b>Phone Number:</b> <%=@client.phone%></p>
 <i>Currently under the care of <%=@therapist.first_name%> <%=@therapist.last_name%>, <%=@therapist.license_type%></i>
+</div>
+
+
+<div class="listr1">
 <br></br>
 <form action="/clients/<%=@client.id%>/edit" method="GET">
   <input type="submit" value="Edit Client Info">
@@ -23,13 +34,17 @@
 
 <form action="/clients/<%=@client.id%>/delete" method="POST" value="Delete Client" type="submit"> 
 <input id="hidden"  name="_method" type="hidden" name="_method" value="delete">
-<input type="submit" value="Delete Client"> *CAUTION*  THIS ACTION CANNOT BE UNDONE!
+<div class="alert"><input type="submit" value="Delete Client"> *CAUTION*  THIS ACTION CANNOT BE UNDONE!</div>
 </form>
+</div>
 
 
+<div class="listr1">
 <br></br>
 <h3>Click the links below to edit or view the named reports:</h3>
+</div>
 
+<div class="bloc2">
 <ol>
   <li><b>Client Summary</b>
     <br></br>
@@ -102,9 +117,4 @@
 </form></li>
 
 </ol>
----------------------------------
-
-<br></br>
-<form action="/therapists/<%=@therapist.id%>" method="GET">
-  <input type="submit" value="Return To Home Page">
-</form>
+</div>

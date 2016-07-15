@@ -1,9 +1,11 @@
+<div class="intro">
 <h2><%=@therapist.first_name%> <%=@therapist.last_name%>, <%=@therapist.license_type%>
 <form method="link" action="/therapists/<%= @therapist.id %>/edit">
   <input type="submit" value="Edit Therapist">
 </form></h2>
+</div>
 
-
+<div class="narr">
 <h3>Current clients:</h3>
 <ul class="navigation">
 <%if @clients %>  
@@ -22,8 +24,7 @@
 <form method="GET" action="/logout">
   <input type="submit" value="Logout">
 </form>
-
-
+</div>
 
 
 

@@ -1,10 +1,11 @@
 <form action="/clients/<%=@client.id%>/biosocial_assessment" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
-
+<div class="intro">
 <h2>Edit Presenting Problems for <%=@client.first_name%> <%=@client.last_name%></h2>
 <b>Fill out any field(s) below and click 'update' to save</b>
 <br></br>
-
+</div>
+<div class="narr">
 <ol type="I">
 <li><h3>PRESENTING PROBLEM(S): <i>Include reasons for seeking treatment now, source of information and reliability.  Describe in behavioral terms and include symptoms.</i></h3>
 
@@ -112,8 +113,12 @@ If 'yes', explain :<input type="text" name="record[bio_family_barriers][]"></li>
 
 <input type="checkbox" name="record[bio_supervisor_sign_and_date]" value="File signed and dated by supervisor">check if signed and dated by supervisor<br></br>
 <br></br>
+
+</div>
+<div class="botnav">
 <input type="submit" value="Update">
 </form>
+</div>
 
 
 
