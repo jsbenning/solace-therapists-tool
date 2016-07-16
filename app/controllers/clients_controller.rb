@@ -6,7 +6,7 @@ class ClientsController < ApplicationController
       @clients = @therapist.clients
       erb :'therapists/show_therapist'
     else
-      erb :'error'
+      erb :'/'
     end
   end
 
@@ -15,7 +15,7 @@ class ClientsController < ApplicationController
       @therapist = current_user
       erb :'clients/create_client'
     else
-      erb :'error'
+      erb :'/'
     end
   end
 
@@ -32,7 +32,7 @@ class ClientsController < ApplicationController
       @client.record = Record.create(client_id: @client.id)
       erb :'clients/show_client'
     else
-      redirect to '/'
+      erb :'/'
     end
   end
 
@@ -40,9 +40,13 @@ class ClientsController < ApplicationController
     if logged_in?
       @therapist = current_user
       @client = Client.find(params[:id])
+      if !(@therapist.clients).include?(@client)
+        erb :'error'
+      else
       erb :'clients/show_client'
+      end
     else
-      erb :'error'
+      erb :'/'
     end
   end
 
@@ -51,7 +55,11 @@ class ClientsController < ApplicationController
       @therapist = current_user
       @therapists = Therapist.all
       @client = Client.find(params[:id])
-      erb :'clients/edit_client'
+      if !(@therapist.clients).include?(@client)
+        erb :'error'
+      else
+        erb :'clients/edit_client'
+      end
     else
       erb :'error'
     end
