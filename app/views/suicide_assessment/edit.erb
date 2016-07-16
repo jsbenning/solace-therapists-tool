@@ -1,72 +1,126 @@
 <form action="/clients/<%=@client.id%>/suicide_assessment" method="POST">
-  <input id="hidden" type="hidden" name="_method" value="patch">
-<div class="listr1">
-<h2>Edit Sucide Assessment for <%=@client.first_name%> <%=@client.last_name%></h2>
-<hr>
-</div>
-<div class="bloc1">
-<b>Fill out any field(s) below and click 'update' to save</b><br></br>
-</div>
-<div class="bloc2">
-<h3>Suicidal Ideation, Lifetime:</h3>
-<input type="radio" name="record[sui_ideation_past]" value="Yes" >Yes<br></br><input type="radio" name="record[sui_ideation_past]" value="No" >No<br></br>
-<p>If 'yes', complete fields below:</p>
-Explain Thoughts (Past):<br></br> 
-<textarea rows="10" cols="50"name="record[sui_thoughts_past]"></textarea><br></br>
-Frequency - How Often? (Past):<br></br>
-<textarea rows="10" cols="50"name="record[sui_freq_past]"></textarea><br></br>
-Intensity - How Strong? (Past):<br></br>  
-<textarea rows="10" cols="50"name="record[sui_strength_past]"></textarea><br></br> 
-Duration - How Long? (Past):<br></br>
-<textarea rows="10" cols="50"name="record[sui_dur_past]"></textarea><br></br> 
-Controllability? (Past):<br></br>
-<textarea rows="10" cols="50"name="record[sui_control_past]"></textarea><br></br> 
-Suicidal Plan?  Preparing?  Method?  Access to Firearms?(Past):<br></br>
-<textarea rows="10" cols="50"name="record[sui_plan_past]"></textarea><br></br> 
-Suicidal Intent? (Past):<br></br>
-<textarea rows="10" cols="50"name="record[sui_intent_past]"></textarea><br></br> 
-Previous Attempts? How many? When? Lethality? Aborted? Interrupted?  (Past):<br></br>
-<textarea rows="10" cols="50"name="record[sui_attempt_past]"></textarea><br></br> 
-Reasons for Attempts/Plans? Stop Pain? Make a Point? Attention?(Past):<br></br>
-<textarea rows="10" cols="50"name="record[sui_reason_past]"></textarea><br></br> 
-Family History/Attempts? (Past):<br></br>
-<textarea rows="10" cols="50"name="record[sui_family_past]"></textarea><br></br> 
-Deterrents/Protective Factors? (Past):<br></br>
-<textarea rows="10" cols="50"name="record[sui_deterrents_past]"></textarea><br></br>
-Self Injury? (Past):<br></br>
-<textarea rows="10" cols="50"name="record[sui_selfinjure_past]"></textarea><br></br>
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <div class="listr1">
+        <h2>Edit Sucide Assessment for <%=@client.first_name%> <%=@client.last_name%></h2>
+        <hr>
+    </div>
+    <div class="bloc1">
+        <b>Fill out any field(s) below and click 'update' to save</b>
+        <br></br>
+    </div>
+    <div class="bloc2">
+        <h3>Suicidal Ideation, Lifetime:</h3>
+        <input type="radio" name="record[sui_ideation_past]" value="Yes">Yes
+        <br></br>
+        <input type="radio" name="record[sui_ideation_past]" value="No">No
+        <br></br>
+        <p>If 'yes', complete fields below:</p>
+        Explain Thoughts (Past):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_thoughts_past]"></textarea>
+        <br></br>
+        Frequency - How Often? (Past):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_freq_past]"></textarea>
+        <br></br>
+        Intensity - How Strong? (Past):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_strength_past]"></textarea>
+        <br></br>
+        Duration - How Long? (Past):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_dur_past]"></textarea>
+        <br></br>
+        Controllability? (Past):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_control_past]"></textarea>
+        <br></br>
+        Suicidal Plan? Preparing? Method? Access to Firearms?(Past):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_plan_past]"></textarea>
+        <br></br>
+        Suicidal Intent? (Past):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_intent_past]"></textarea>
+        <br></br>
+        Previous Attempts? How many? When? Lethality? Aborted? Interrupted? (Past):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_attempt_past]"></textarea>
+        <br></br>
+        Reasons for Attempts/Plans? Stop Pain? Make a Point? Attention?(Past):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_reason_past]"></textarea>
+        <br></br>
+        Family History/Attempts? (Past):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_family_past]"></textarea>
+        <br></br>
+        Deterrents/Protective Factors? (Past):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_deterrents_past]"></textarea>
+        <br></br>
+        Self Injury? (Past):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_selfinjure_past]"></textarea>
+        <br></br>
 
+        <h3>Suicidal Ideation, Past Month:</h3>
+        <input type="radio" name="record[sui_ideation_present]" value="Yes">Yes
+        <br></br>
+        <input type="radio" name="record[sui_ideation_present]" value="No">No
+        <br></br>
+        <p>If 'yes', complete fields below:</p>
 
-<h3>Suicidal Ideation, Past Month:</h3>
-<input type="radio" name="record[sui_ideation_present]" value="Yes" >Yes<br></br><input type="radio" name="record[sui_ideation_present]" value="No" >No<br></br>
-<p>If 'yes', complete fields below:</p>
-
-Explain Thoughts (Recent):<br></br> 
-<textarea rows="10" cols="50"name="record[sui_thoughts_present]"></textarea><br></br>
-Frequency - How Often? (Recent):<br></br>
-<textarea rows="10" cols="50"name="record[sui_freq_present]"></textarea><br></br>
-Intensity - How Strong? (Recent):<br></br>  
-<textarea rows="10" cols="50"name="record[sui_strength_present]"></textarea><br></br> 
-Duration - How Long? (Recent):<br></br>
-<textarea rows="10" cols="50"name="record[sui_dur_present]"></textarea><br></br> 
-Controllability? (Recent):<br></br>
-<textarea rows="10" cols="50"name="record[sui_control_present]"></textarea><br></br> 
-Suicidal Plan? Preparing? Method? Access to Firearms? (Recent):<br></br>
-<textarea rows="10" cols="50"name="record[sui_plan_present]"></textarea><br></br> 
-Suicidal Intent? (Recent):<br></br>
-<textarea rows="10" cols="50"name="record[sui_intent_present]"></textarea> <br></br>
-Previous Attempts? How many? When? Lethality? Aborted? Interrupted? (Recent):<br></br>
-<textarea rows="10" cols="50"name="record[sui_attempt_present]"></textarea><br></br> 
-Reasons for Attempts/Plans? Stop Pain? Make a Point? Attention?(Past):<br></br>
-<textarea rows="10" cols="50"name="record[sui_reason_present]"></textarea><br></br> 
-Family History/Attempts? (Recent):<br></br>
-<textarea rows="10" cols="50"name="record[sui_family_present]"></textarea><br></br> 
-Deterrents/Protective Factors? (Recent):<br></br>
-<textarea rows="10" cols="50"name="record[sui_deterrents_present]"></textarea><br></br>
-Self Injury? (Recent):<br></br>
-<textarea rows="10" cols="50"name="record[sui_selfinjure_present]"></textarea><br></br>
-</div>
-<div class="listr1">
-<input type="submit" value="Update">
+        Explain Thoughts (Recent):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_thoughts_present]"></textarea>
+        <br></br>
+        Frequency - How Often? (Recent):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_freq_present]"></textarea>
+        <br></br>
+        Intensity - How Strong? (Recent):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_strength_present]"></textarea>
+        <br></br>
+        Duration - How Long? (Recent):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_dur_present]"></textarea>
+        <br></br>
+        Controllability? (Recent):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_control_present]"></textarea>
+        <br></br>
+        Suicidal Plan? Preparing? Method? Access to Firearms? (Recent):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_plan_present]"></textarea>
+        <br></br>
+        Suicidal Intent? (Recent):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_intent_present]"></textarea>
+        <br></br>
+        Previous Attempts? How many? When? Lethality? Aborted? Interrupted? (Recent):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_attempt_present]"></textarea>
+        <br></br>
+        Reasons for Attempts/Plans? Stop Pain? Make a Point? Attention?(Past):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_reason_present]"></textarea>
+        <br></br>
+        Family History/Attempts? (Recent):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_family_present]"></textarea>
+        <br></br>
+        Deterrents/Protective Factors? (Recent):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_deterrents_present]"></textarea>
+        <br></br>
+        Self Injury? (Recent):
+        <br></br>
+        <textarea rows="10" cols="50" name="record[sui_selfinjure_present]"></textarea>
+        <br></br>
+    </div>
+    <div class="listr1">
+        <input type="submit" value="Update">
 </form>
 </div>

@@ -1,99 +1,152 @@
 <div class="listr1">
-<h2>Homicide Assessment for <%=@client.first_name%> <%=@client.last_name%></h2>
-<b>Medical Record Number:</b> <%=@client.medical_record_id%>
-<br></br>
-<hr>
+    <h2>Homicide Assessment for <%=@client.first_name%> <%=@client.last_name%></h2>
+    <b>Medical Record Number:</b>
+    <%=@client.medical_record_id%>
+        <br></br>
+        <hr>
 </div>
 
 <div class="bloc1">
-<table>
-  <tr>
-    <th></th>
-    <th scope="col">Past Month</th>
-    <th scope="col">Lifetime</th>
-  </tr>
-  <tr>
-    <th scope="row">Ideation:</th>
-      <td><%=@record.hom_ideation_past%></td>
-      <td><%=@record.hom_ideation_present%></td>
-  </tr>
-    <tr>
-    <th scope="row">Thoughts:</th>
-      <td><%=@record.hom_thoughts_past%></td>
-      <td><%=@record.hom_thoughts_present%></td>
-  </tr>
-    <tr>
-    <th scope="row">Frequency:</th>
-      <td><%=@record.hom_freq_past%></td>
-      <td><%=@record.hom_freq_present%></td>
-  </tr>
-    <tr>
-    <th scope="row">Intensity:</th>
-      <td><%=@record.hom_strength_past%></td>
-      <td><%=@record.hom_strength_present%></td>
-  </tr>
-    <tr>
-    <th scope="row">Duration:</th>
-      <td><%=@record.hom_dur_past%></td>
-      <td><%=@record.hom_dur_present%></td>
-  </tr>
-    <tr>
-    <th scope="row">Controllability:</th>
-      <td><%=@record.hom_control_past%></td>
-      <td><%=@record.hom_control_present%></td>
-  </tr>
-    <tr>
-    <th scope="row">Intent:</th>
-      <td><%=@record.hom_intent_past%></td>
-      <td><%=@record.hom_intent_present%></td>
-  </tr>
-    <tr>
-    <th scope="row">Plan:</th>
-      <td><%=@record.hom_plan_past%></td>
-      <td><%=@record.hom_plan_present%></td>
-  </tr>
-    <tr>
-    <th scope="row">Attempts:</th>
-      <td><%=@record.hom_attempt_past%></td>
-      <td><%=@record.hom_attempt_present%></td>
-  </tr>
-    <tr>
-    <th scope="row">Reasons:</th>
-      <td><%=@record.hom_reason_past%></td>
-      <td><%=@record.hom_reason_present%></td>
-  </tr>
-    <tr>
-    <th scope="row">Family History:</th>
-      <td><%=@record.hom_family_past%></td>
-      <td><%=@record.hom_family_present%></td>
-  </tr>
-    <tr>
-    <th scope="row">Criminal History:</th>
-      <td><%=@record.hom_criminal_past%></td>
-      <td><%=@record.hom_criminal_present%></td>
-  </tr>
-    <tr>
-    <th scope="row">Deterrents:</th>
-      <td><%=@record.hom_deterrents_past%></td>
-      <td><%=@record.hom_deterrents_present%></td>
-  </tr>
-  </table>  
+    <table>
+        <tr>
+            <th></th>
+            <th scope="col">Past Month</th>
+            <th scope="col">Lifetime</th>
+        </tr>
+        <tr>
+            <th scope="row">Ideation:</th>
+            <td>
+                <%=@record.hom_ideation_past%>
+            </td>
+            <td>
+                <%=@record.hom_ideation_present%>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Thoughts:</th>
+            <td>
+                <%=@record.hom_thoughts_past%>
+            </td>
+            <td>
+                <%=@record.hom_thoughts_present%>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Frequency:</th>
+            <td>
+                <%=@record.hom_freq_past%>
+            </td>
+            <td>
+                <%=@record.hom_freq_present%>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Intensity:</th>
+            <td>
+                <%=@record.hom_strength_past%>
+            </td>
+            <td>
+                <%=@record.hom_strength_present%>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Duration:</th>
+            <td>
+                <%=@record.hom_dur_past%>
+            </td>
+            <td>
+                <%=@record.hom_dur_present%>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Controllability:</th>
+            <td>
+                <%=@record.hom_control_past%>
+            </td>
+            <td>
+                <%=@record.hom_control_present%>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Intent:</th>
+            <td>
+                <%=@record.hom_intent_past%>
+            </td>
+            <td>
+                <%=@record.hom_intent_present%>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Plan:</th>
+            <td>
+                <%=@record.hom_plan_past%>
+            </td>
+            <td>
+                <%=@record.hom_plan_present%>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Attempts:</th>
+            <td>
+                <%=@record.hom_attempt_past%>
+            </td>
+            <td>
+                <%=@record.hom_attempt_present%>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Reasons:</th>
+            <td>
+                <%=@record.hom_reason_past%>
+            </td>
+            <td>
+                <%=@record.hom_reason_present%>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Family History:</th>
+            <td>
+                <%=@record.hom_family_past%>
+            </td>
+            <td>
+                <%=@record.hom_family_present%>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Criminal History:</th>
+            <td>
+                <%=@record.hom_criminal_past%>
+            </td>
+            <td>
+                <%=@record.hom_criminal_present%>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Deterrents:</th>
+            <td>
+                <%=@record.hom_deterrents_past%>
+            </td>
+            <td>
+                <%=@record.hom_deterrents_present%>
+            </td>
+        </tr>
+    </table>
 </div>
-  <br></br>    
+<br></br>
 
 <div class="listr1">
-<form method="GET" action="../../clients/<%=@client.id%>">
-<input type="submit" value="Client Main Page">
-</form>
-<br></br>
+    <form method="GET" action="../../clients/<%=@client.id%>">
+        <input type="submit" value="Client Main Page">
+    </form>
+    <br></br>
 
-<form method="GET" action="../../therapists/<%=@therapist.id%>">
-  <input type="submit" value="Homepage">
-</form>
-<br></br>
+    <form method="GET" action="../../therapists/<%=@therapist.id%>">
+        <input type="submit" value="Homepage">
+    </form>
+    <br></br>
 
-<form method="GET" action="/logout">
-  <input type="submit" value="Logout">
-</form>
+    <form method="GET" action="/logout">
+        <input type="submit" value="Logout">
+    </form>
 
 </div>

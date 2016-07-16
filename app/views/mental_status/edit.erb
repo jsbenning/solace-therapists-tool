@@ -1,199 +1,326 @@
-
-
 <form action="/clients/<%=@client.id%>/mental_status" method="POST">
-  <input id="hidden" type="hidden" name="_method" value="patch">
-<div class="listr1">
-  <h2>Edit mental status form for client <%=@client.first_name%> <%=@client.last_name%></h2>
-  <p><b>Client Medical Record ID#:<%=@client.medical_record_id%></b></p>
-  <hr>
-</div>
-<div class="bloc1">
-  <p><b>Fill out any field(s) below and click 'update' to save</b></p>
-</div>
-<div class="bloc2 class="checkspace"">
-<h3>ORIENTATION</h3>
-<input type="checkbox" name="record[ment_orientation][]" value=" Time"<%='checked' if @record.ment_orientation.include?("Time ")%>><label for="Time">Time</label>
-<input type="checkbox" name="record[ment_orientation][]" value=" Place"<%='checked' if @record.ment_orientation.include?("Place ")%>><label for="Place">Place</label>
-<input type="checkbox" name="record[ment_orientation][]" value=" Person"<%='checked' if @record.ment_orientation.include?("Person ")%>><label for="Person">Person</label>
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <div class="listr1">
+        <h2>Edit mental status form for client <%=@client.first_name%> <%=@client.last_name%></h2>
+        <p><b>Client Medical Record ID#:<%=@client.medical_record_id%></b></p>
+        <hr>
+    </div>
+    <div class="bloc1">
+        <p><b>Fill out any field(s) below and click 'update' to save</b></p>
+    </div>
+    <div class="bloc2 class=" checkspace "">
+        <h3>ORIENTATION</h3>
+        <input type="checkbox" name="record[ment_orientation][]" value=" Time" <%='checked' if @record.ment_orientation.include?( "Time ")%>>
+        <label for="Time">Time</label>
+        <input type="checkbox" name="record[ment_orientation][]" value=" Place" <%='checked' if @record.ment_orientation.include?( "Place ")%>>
+        <label for="Place">Place</label>
+        <input type="checkbox" name="record[ment_orientation][]" value=" Person" <%='checked' if @record.ment_orientation.include?( "Person ")%>>
+        <label for="Person">Person</label>
 
- <h3>APPEARANCE:</h3>
- <input type="checkbox" name="record[ment_appearance][]" value=" Consistant with Stated Age"<%='checked' if @record.ment_appearance.include?("Consistant with Stated Age")%>><label for="Consistant with Stated Age">Consistant with Stated Age</label>
- <input type="checkbox" name="record[ment_appearance][]" value=" Younger than Stated Age"<%='checked' if @record.ment_appearance.include?("Younger than Stated Age")%>><label for="Younger than Stated Age">Younger than Stated Age</label>
- <input type="checkbox" name="record[ment_appearance][]" value=" Older than Stated Age"<%='checked' if @record.ment_appearance.include?("Older than Stated Age")%>><label for="Older than Stated Age">Older than Stated Age</label>
- <input type="checkbox" name="record[ment_appearance][]" value=" Well-Groomed"<%='checked' if @record.ment_appearance.include?("Well-Groomed")%>><label for="Well-Groomed">Well-Groomed</label>
- <input type="checkbox" name="record[ment_appearance][]" value=" Neat"<%='checked' if @record.ment_appearance.include?("Neat")%>><label for="Neat">Neat</label>
- <input type="checkbox" name="record[ment_appearance][]" value=" Casual"<%='checked' if @record.ment_appearance.include?("TCasual")%>><label for="Casual">Casual</label>
- <input type="checkbox" name="record[ment_appearance][]" value=" Disheveled"<%='checked' if @record.ment_appearance.include?("Disheveled")%>><label for="Disheveled">Disheveled</label>
- <input type="checkbox" name="record[ment_appearance][]" value=" Dirty"<%='checked' if @record.ment_appearance.include?("Dirty")%>><label for="Dirty">Dirty</label>
- <input type="checkbox" name="record[ment_appearance][]" value=" Body Odor"<%='checked' if @record.ment_appearance.include?("Body Odor")%>><label for="Body Odor">Body Odor</label>
- <input type="checkbox" name="record[ment_appearance][]" value=" Atypical Clothing"<%='checked' if @record.ment_appearance.include?("Atypical Clothing")%>><label for="Atypical Clothing">Atypical Clothing</label>
-  <input type="checkbox" name="record[ment_appearance][]" value=" Obese"<%='checked' if @record.ment_appearance.include?("Obese")%>><label for="Obese">Obese</label>
- <input type="checkbox" name="record[ment_appearance][]" value=" Anorexia"<%='checked' if @record.ment_appearance.include?("Anorexia")%>><label for="Anorexia">Anorexia</label>  Additional Comments: <input type="text" size="50" name="record[ment_appearance][]">
+        <h3>APPEARANCE:</h3>
+        <input type="checkbox" name="record[ment_appearance][]" value=" Consistant with Stated Age" <%='checked' if @record.ment_appearance.include?( "Consistant with Stated Age")%>>
+        <label for="Consistant with Stated Age">Consistant with Stated Age</label>
+        <input type="checkbox" name="record[ment_appearance][]" value=" Younger than Stated Age" <%='checked' if @record.ment_appearance.include?( "Younger than Stated Age")%>>
+        <label for="Younger than Stated Age">Younger than Stated Age</label>
+        <input type="checkbox" name="record[ment_appearance][]" value=" Older than Stated Age" <%='checked' if @record.ment_appearance.include?( "Older than Stated Age")%>>
+        <label for="Older than Stated Age">Older than Stated Age</label>
+        <input type="checkbox" name="record[ment_appearance][]" value=" Well-Groomed" <%='checked' if @record.ment_appearance.include?( "Well-Groomed")%>>
+        <label for="Well-Groomed">Well-Groomed</label>
+        <input type="checkbox" name="record[ment_appearance][]" value=" Neat" <%='checked' if @record.ment_appearance.include?( "Neat")%>>
+        <label for="Neat">Neat</label>
+        <input type="checkbox" name="record[ment_appearance][]" value=" Casual" <%='checked' if @record.ment_appearance.include?( "TCasual")%>>
+        <label for="Casual">Casual</label>
+        <input type="checkbox" name="record[ment_appearance][]" value=" Disheveled" <%='checked' if @record.ment_appearance.include?( "Disheveled")%>>
+        <label for="Disheveled">Disheveled</label>
+        <input type="checkbox" name="record[ment_appearance][]" value=" Dirty" <%='checked' if @record.ment_appearance.include?( "Dirty")%>>
+        <label for="Dirty">Dirty</label>
+        <input type="checkbox" name="record[ment_appearance][]" value=" Body Odor" <%='checked' if @record.ment_appearance.include?( "Body Odor")%>>
+        <label for="Body Odor">Body Odor</label>
+        <input type="checkbox" name="record[ment_appearance][]" value=" Atypical Clothing" <%='checked' if @record.ment_appearance.include?( "Atypical Clothing")%>>
+        <label for="Atypical Clothing">Atypical Clothing</label>
+        <input type="checkbox" name="record[ment_appearance][]" value=" Obese" <%='checked' if @record.ment_appearance.include?( "Obese")%>>
+        <label for="Obese">Obese</label>
+        <input type="checkbox" name="record[ment_appearance][]" value=" Anorexia" <%='checked' if @record.ment_appearance.include?( "Anorexia")%>>
+        <label for="Anorexia">Anorexia</label> Additional Comments:
+        <input type="text" size="50" name="record[ment_appearance][]">
 
+        <h3>OBSERVED BEHAVIOR:</h3>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Cooperative" <%='checked' if @record.ment_behavior.include?( "Cooperative")%>>
+        <label for="Cooperative">Cooperative</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Calm" <%='checked' if @record.ment_behavior.include?( "Calm")%>>
+        <label for="Calm">Calm</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Appropriate" <%='checked' if @record.ment_behavior.include?( "Appropriate")%>>
+        <label for="Appropriate">Appropriate</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Good Eye Contact" <%='checked' if @record.ment_behavior.include?( "Good Eye Contact")%>>
+        <label for="Good Eye Contact">Good Eye Contact</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Passive" <%='checked' if @record.ment_behavior.include?( "Passive")%>>
+        <label for="Passive">Passive</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Guarded" <%='checked' if @record.ment_behavior.include?( "Guarded")%>>
+        <label for="Guarded">Guarded</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Demanding" <%='checked' if @record.ment_behavior.include?( "Demanding")%>>
+        <label for="Demanding">Demanding</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Threatening" <%='checked' if @record.ment_behavior.include?( "Threatening")%>>
+        <label for="Threatening">Threatening</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Distractable" <%='checked' if @record.ment_behavior.include?( "Distractable")%>>
+        <label for="Distractable">Distractable</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Disinhibited" <%='checked' if @record.ment_behavior.include?( "Disinhibited")%>>
+        <label for="Disinhibited">Disinhibited</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Poor Eye Contact" <%='checked' if @record.ment_behavior.include?( "Poor Eye Contact")%>>
+        <label for="Time">Time</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Psychomotor Agitation" <%='checked' if @record.ment_behavior.include?( "Psychomotor Agitation")%>>
+        <label for="Psychomotor Agitation">Psychomotor Agitation</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Restless" <%='checked' if @record.ment_behavior.include?( "Restless")%>>
+        <label for="Restless">Restless</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Psychomotor Retardation" <%='checked' if @record.ment_behavior.include?( "Psychomotor Retardation")%>>
+        <label for="Psychomotor Retardation">Psychomotor Retardation</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Dramatic" <%='checked' if @record.ment_behavior.include?( "Dramatic")%>>
+        <label for="Dramatic">Dramatic</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Regressed" <%='checked' if @record.ment_behavior.include?( "Regressed")%>>
+        <label for="Regressed">Regressed</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Repetitive Movements" <%='checked' if @record.ment_behavior.include?( "Repetitive Movements")%>>
+        <label for="Repetitive Movements">Repetitive Movements</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Tremors" <%='checked' if @record.ment_behavior.include?( "Tremors")%>>
+        <label for="Tremors">Tremors</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Grimacing" <%='checked' if @record.ment_behavior.include?( "Grimacing")%>>
+        <label for="Grimacing">Grimacing</label>
+        <input type="checkbox" name="record[ment_behavior][]" value=" Gait Difficulty" <%='checked' if @record.ment_behavior.include?( "Gait Difficulty")%>>
+        <label for="Gait Difficulty">Gait Difficulty</label> Additional Comments:
+        <input type="text" size="50" name="record[ment_behavior][]">
 
-<h3>OBSERVED BEHAVIOR:</h3>
-<input type="checkbox" name="record[ment_behavior][]" value=" Cooperative"<%='checked' if @record.ment_behavior.include?("Cooperative")%>><label for="Cooperative">Cooperative</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Calm"<%='checked' if @record.ment_behavior.include?("Calm")%>><label for="Calm">Calm</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Appropriate"<%='checked' if @record.ment_behavior.include?("Appropriate")%>><label for="Appropriate">Appropriate</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Good Eye Contact"<%='checked' if @record.ment_behavior.include?("Good Eye Contact")%>><label for="Good Eye Contact">Good Eye Contact</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Passive"<%='checked' if @record.ment_behavior.include?("Passive")%>><label for="Passive">Passive</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Guarded"<%='checked' if @record.ment_behavior.include?("Guarded")%>><label for="Guarded">Guarded</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Demanding"<%='checked' if @record.ment_behavior.include?("Demanding")%>><label for="Demanding">Demanding</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Threatening"<%='checked' if @record.ment_behavior.include?("Threatening")%>><label for="Threatening">Threatening</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Distractable"<%='checked' if @record.ment_behavior.include?("Distractable")%>><label for="Distractable">Distractable</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Disinhibited"<%='checked' if @record.ment_behavior.include?("Disinhibited")%>><label for="Disinhibited">Disinhibited</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Poor Eye Contact"<%='checked' if @record.ment_behavior.include?("Poor Eye Contact")%>><label for="Time">Time</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Psychomotor Agitation"<%='checked' if @record.ment_behavior.include?("Psychomotor Agitation")%>><label for="Psychomotor Agitation">Psychomotor Agitation</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Restless"<%='checked' if @record.ment_behavior.include?("Restless")%>><label for="Restless">Restless</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Psychomotor Retardation"<%='checked' if @record.ment_behavior.include?("Psychomotor Retardation")%>><label for="Psychomotor Retardation">Psychomotor Retardation</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Dramatic"<%='checked' if @record.ment_behavior.include?("Dramatic")%>><label for="Dramatic">Dramatic</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Regressed"<%='checked' if @record.ment_behavior.include?("Regressed")%>><label for="Regressed">Regressed</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Repetitive Movements"<%='checked' if @record.ment_behavior.include?("Repetitive Movements")%>><label for="Repetitive Movements">Repetitive Movements</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Tremors"<%='checked' if @record.ment_behavior.include?("Tremors")%>><label for="Tremors">Tremors</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Grimacing"<%='checked' if @record.ment_behavior.include?("Grimacing")%>><label for="Grimacing">Grimacing</label>
-<input type="checkbox" name="record[ment_behavior][]" value=" Gait Difficulty"<%='checked' if @record.ment_behavior.include?("Gait Difficulty")%>><label for="Gait Difficulty">Gait Difficulty</label>  Additional Comments:
-<input type="text" size="50" name="record[ment_behavior][]">
+        <h3>SPEECH/LANGUAGE:</h3>
+        <input type="checkbox" name="record[ment_speech][]" value=" Spontaneous" <%='checked' if @record.ment_speech.include?( "Spontaneous")%>>
+        <label for="Spontaneous">Spontaneous</label>
+        <input type="checkbox" name="record[ment_speech][]" value=" Slow" <%='checked' if @record.ment_speech.include?( "Slow")%>>
+        <label for="Slow">Slow</label>
+        <input type="checkbox" name="record[ment_speech][]" value=" Rapid" <%='checked' if @record.ment_speech.include?( "Rapid")%>>
+        <label for="Rapid">Rapid</label>
+        <input type="checkbox" name="record[ment_speech][]" value=" Pressured" <%='checked' if @record.ment_speech.include?( "Pressured")%>>
+        <label for="Pressured">Pressured</label>
+        <input type="checkbox" name="record[ment_speech][]" value=" Loud" <%='checked' if @record.ment_speech.include?( "Loud")%>>
+        <label for="Loud">Loud</label>
+        <input type="checkbox" name="record[ment_speech][]" value=" Barely Audible" <%='checked' if @record.ment_speech.include?( "Barely Audible")%>>
+        <label for="Barely Audible">Barely Audible</label>
+        <input type="checkbox" name="record[ment_speech][]" value=" Minimally Productive" <%='checked' if @record.ment_speech.include?( "Minimally Productive")%>>
+        <label for="Minimally Productive">Minimally Productive</label>
+        <input type="checkbox" name="record[ment_speech][]" value=" Over Productive" <%='checked' if @record.ment_speech.include?( "Over Productive")%>>Over Productive
+        <input type="checkbox" name="record[ment_speech][]" value=" Thought/Blocking" <%='checked' if @record.ment_speech.include?( "Thought/Blocking")%>>
+        <label for="Thought/Blocking">Thought/Blocking</label>
+        <input type="checkbox" name="record[ment_speech][]" value=" Mute" <%='checked' if @record.ment_speech.include?( "Mute")%>>
+        <label for="Mute">Mute</label>
+        <input type="checkbox" name="record[ment_speech][]" value=" Articulation Difficulty" <%='checked' if @record.ment_speech.include?( "Articulation Difficulty")%>>
+        <label for="Articulation Difficulty">Articulation Difficulty</label>
+        <input type="checkbox" name="record[ment_speech][]" value=" Difficulty in Fluency" <%='checked' if @record.ment_speech.include?( "Difficulty in Fluency")%>>Difficulty in Fluency
+        <input type="checkbox" name="record[ment_speech][]" value=" Word Retrieval Difficulty" <%='checked' if @record.ment_speech.include?( "Word Retrieval Difficulty")%>>
+        <label for="Word Retrieval Difficulty">Word Retrieval Difficulty</label> Additional Comments:
+        <input type="text" size="50" name="record[ment_speech][]">
 
-<h3>SPEECH/LANGUAGE:</h3>
-<input type="checkbox" name="record[ment_speech][]" value=" Spontaneous"<%='checked' if @record.ment_speech.include?("Spontaneous")%>><label for="Spontaneous">Spontaneous</label>
-<input type="checkbox" name="record[ment_speech][]" value=" Slow"<%='checked' if @record.ment_speech.include?("Slow")%>><label for="Slow">Slow</label>
-<input type="checkbox" name="record[ment_speech][]" value=" Rapid"<%='checked' if @record.ment_speech.include?("Rapid")%>><label for="Rapid">Rapid</label>
-<input type="checkbox" name="record[ment_speech][]" value=" Pressured"<%='checked' if @record.ment_speech.include?("Pressured")%>><label for="Pressured">Pressured</label>
-<input type="checkbox" name="record[ment_speech][]" value=" Loud"<%='checked' if @record.ment_speech.include?("Loud")%>><label for="Loud">Loud</label>
-<input type="checkbox" name="record[ment_speech][]" value=" Barely Audible"<%='checked' if @record.ment_speech.include?("Barely Audible")%>><label for="Barely Audible">Barely Audible</label>
-<input type="checkbox" name="record[ment_speech][]" value=" Minimally Productive"<%='checked' if @record.ment_speech.include?("Minimally Productive")%>><label for="Minimally Productive">Minimally Productive</label>
-<input type="checkbox" name="record[ment_speech][]" value=" Over Productive"<%='checked' if @record.ment_speech.include?("Over Productive")%>>Over Productive
-<input type="checkbox" name="record[ment_speech][]" value=" Thought/Blocking"<%='checked' if @record.ment_speech.include?("Thought/Blocking")%>><label for="Thought/Blocking">Thought/Blocking</label>
-<input type="checkbox" name="record[ment_speech][]" value=" Mute"<%='checked' if @record.ment_speech.include?("Mute")%>><label for="Mute">Mute</label>
-<input type="checkbox" name="record[ment_speech][]" value=" Articulation Difficulty"<%='checked' if @record.ment_speech.include?("Articulation Difficulty")%>><label for="Articulation Difficulty">Articulation Difficulty</label>
-<input type="checkbox" name="record[ment_speech][]" value=" Difficulty in Fluency"<%='checked' if @record.ment_speech.include?("Difficulty in Fluency")%>>Difficulty in Fluency
-<input type="checkbox" name="record[ment_speech][]" value=" Word Retrieval Difficulty"<%='checked' if @record.ment_speech.include?("Word Retrieval Difficulty")%>><label for="Word Retrieval Difficulty">Word Retrieval Difficulty</label>  Additional Comments:
-<input type="text" size="50" name="record[ment_speech][]">
+        <h3>THOUGHT PROCESS/LANGUAGE/PERCEPTION:</h3>
+        <input type="checkbox" name="record[ment_thought][]" value=" No abnormalities in Content or Form of Speech" <%='checked' if @record.ment_thought.include?( "No abnormalities in Content or Form of Speech")%>>
+        <label for="No abnormalities in Content or Form of Speech">No abnormalities in Content or Form of Speech</label>
+        <input type="checkbox" name="record[ment_thought][]" value="Organized Speech Patterns" <%='checked' if @record.ment_thought.include?( "Organized Speech Patterns")%>>
+        <label for="Organized Speech Patternsn">Organized Speech Patterns</label>
+        <input type="checkbox" name="record[ment_thought][]" value="Relevant Speech Patterns" <%='checked' if @record.ment_thought.include?( "Relevant Speech Patterns")%>>
+        <label for="elevant Speech Patterns">elevant Speech Patterns</label>
+        <input type="checkbox" name="record[ment_thought][]" value="Logical Speech Patterns" <%='checked' if @record.ment_thought.include?( "Logical Speech Patterns")%>>
+        <label for="Logical Speech Patterns">Logical Speech Patterns</label>
+        <input type="checkbox" name="record[ment_thought][]" value=" Concrete Speech Patterns" <%='checked' if @record.ment_thought.include?( "Concrete Speech Patterns")%>>
+        <label for="Concrete Speech Patterns">Concrete Speech Patterns</label>
+        <input type="checkbox" name="record[ment_thought][]" value="Racing Speech Patterns" <%='checked' if @record.ment_thought.include?( "Racing Speech Patterns")%>>
+        <label for="Racing Speech Patterns">Racing Speech Patterns</label>
+        <input type="checkbox" name="record[ment_thought][]" value=" Tangential Speech Patterns" <%='checked' if @record.ment_thought.include?( "Tangential Speech Patterns")%>>
+        <label for="Tangential Speech Patterns">Tangential Speech Patterns</label>
+        <input type="checkbox" name="record[ment_thought][]" value="Religiously Preoccupied Speech Patterns " <%='checked' if @record.ment_thought.include?( "Religiously Preoccupied Speech Patterns")%>>
+        <label for="Religiously Preoccupied Speech Patterns">Religiously Preoccupied Speech Patterns</label>
+        <input type="checkbox" name="record[ment_thought][]" value=" Normal Thought Processes" <%='checked' if @record.ment_thought.include?( "Normal Thought Processes")%>>
+        <label for="Normal Thought Processes">Normal Thought Processes</label>
+        <input type="checkbox" name="record[ment_thought][]" value=" Phobias" <%='checked' if @record.ment_thought.include?( "Phobias")%>>
+        <label for="Phobias">Phobias</label>
+        <input type="checkbox" name="record[ment_thought][]" value=" Obsessions" <%='checked' if @record.ment_thought.include?( "Obsessions")%>>
+        <label for="Obsessions">Obsessions</label>
+        <input type="checkbox" name="record[ment_thought][]" value=" Paranoid Ideation" <%='checked' if @record.ment_thought.include?( "Paranoid Ideation")%>>
+        <label for="Paranoid Ideation">Paranoid Ideation</label>
+        <input type="checkbox" name="record[ment_thought][]" value=" Grandiose" <%='checked' if @record.ment_thought.include?( "Grandiose")%>>
+        <label for="Grandiose">Grandiose</label>
+        <input type="checkbox" name="record[ment_thought][]" value=" Ideas of Reference" <%='checked' if @record.ment_thought.include?( "Ideas of Reference")%>>
+        <label for="Ideas of Reference">Ideas of Reference</label>
+        <input type="checkbox" name="record[ment_thought][]" value=" Magical Thinking" <%='checked' if @record.ment_thought.include?( "Magical Thinking")%>>
+        <label for="Magical Thinking ">Magical Thinking </label>
+        <input type="checkbox" name="record[ment_thought][]" value=" Depersonalization" <%='checked' if @record.ment_thought.include?( "Depersonalization")%>>
+        <label for="Depersonalization">Depersonalization</label>
+        <input type="checkbox" name="record[ment_thought][]" value=" Delusions" <%='checked' if @record.ment_thought.include?( "Delusions")%>>
+        <label for="Person">Person</label>
+        <input type="checkbox" name="record[ment_thought][]" value=" Auditory Hallucinations" <%='checked' if @record.ment_thought.include?( "Auditory Hallucinations")%>>
+        <label for="Auditory Hallucinations">Auditory Hallucinations</label>
+        <input type="checkbox" name="record[ment_thought][]" value=" Command Hallucinations" <%='checked' if @record.ment_thought.include?( "Command Hallucinations")%>>Command Hallucinations
+        <input type="checkbox" name="record[ment_thought][]" value=" Visual Hallucinations" <%='checked' if @record.ment_thought.include?( "Visual Hallucinations")%>>
+        <label for="Visual Hallucinations">Visual Hallucinations</label> Additional Comments:
+        <input type="text" size="50" name="record[ment_thought][]">
 
-<h3>THOUGHT PROCESS/LANGUAGE/PERCEPTION:</h3>
-<input type="checkbox" name="record[ment_thought][]" value=" No abnormalities in Content or Form of Speech"<%='checked' if @record.ment_thought.include?("No abnormalities in Content or Form of Speech")%>><label for="No abnormalities in Content or Form of Speech">No abnormalities in Content or Form of Speech</label>
-<input type="checkbox" name="record[ment_thought][]" value="Organized Speech Patterns"<%='checked' if @record.ment_thought.include?("Organized Speech Patterns")%>><label for="Organized Speech Patternsn">Organized Speech Patterns</label>
-<input type="checkbox" name="record[ment_thought][]" value="Relevant Speech Patterns"<%='checked' if @record.ment_thought.include?("Relevant Speech Patterns")%>><label for="elevant Speech Patterns">elevant Speech Patterns</label>
-<input type="checkbox" name="record[ment_thought][]" value="Logical Speech Patterns"<%='checked' if @record.ment_thought.include?("Logical Speech Patterns")%>><label for="Logical Speech Patterns">Logical Speech Patterns</label>
-<input type="checkbox" name="record[ment_thought][]" value=" Concrete Speech Patterns"<%='checked' if @record.ment_thought.include?("Concrete Speech Patterns")%>><label for="Concrete Speech Patterns">Concrete Speech Patterns</label>
-<input type="checkbox" name="record[ment_thought][]" value="Racing Speech Patterns"<%='checked' if @record.ment_thought.include?("Racing Speech Patterns")%>><label for="Racing Speech Patterns">Racing Speech Patterns</label>
-<input type="checkbox" name="record[ment_thought][]" value=" Tangential Speech Patterns"<%='checked' if @record.ment_thought.include?("Tangential Speech Patterns")%>><label for="Tangential Speech Patterns">Tangential Speech Patterns</label>
-<input type="checkbox" name="record[ment_thought][]" value="Religiously Preoccupied Speech Patterns "<%='checked' if @record.ment_thought.include?("Religiously Preoccupied Speech Patterns")%>><label for="Religiously Preoccupied Speech Patterns">Religiously Preoccupied Speech Patterns</label>
-<input type="checkbox" name="record[ment_thought][]" value=" Normal Thought Processes"<%='checked' if @record.ment_thought.include?("Normal Thought Processes")%>><label for="Normal Thought Processes">Normal Thought Processes</label>
-<input type="checkbox" name="record[ment_thought][]" value=" Phobias"<%='checked' if @record.ment_thought.include?("Phobias")%>><label for="Phobias">Phobias</label>
-<input type="checkbox" name="record[ment_thought][]" value=" Obsessions"<%='checked' if @record.ment_thought.include?("Obsessions")%>><label for="Obsessions">Obsessions</label>
-<input type="checkbox" name="record[ment_thought][]" value=" Paranoid Ideation"<%='checked' if @record.ment_thought.include?("Paranoid Ideation")%>><label for="Paranoid Ideation">Paranoid Ideation</label>
-<input type="checkbox" name="record[ment_thought][]" value=" Grandiose"<%='checked' if @record.ment_thought.include?("Grandiose")%>><label for="Grandiose">Grandiose</label>
-<input type="checkbox" name="record[ment_thought][]" value=" Ideas of Reference"<%='checked' if @record.ment_thought.include?("Ideas of Reference")%>><label for="Ideas of Reference">Ideas of Reference</label>
-<input type="checkbox" name="record[ment_thought][]" value=" Magical Thinking"<%='checked' if @record.ment_thought.include?("Magical Thinking")%>><label for="Magical Thinking ">Magical Thinking </label>
-<input type="checkbox" name="record[ment_thought][]" value=" Depersonalization"<%='checked' if @record.ment_thought.include?("Depersonalization")%>><label for="Depersonalization">Depersonalization</label>
-<input type="checkbox" name="record[ment_thought][]" value=" Delusions"<%='checked' if @record.ment_thought.include?("Delusions")%>><label for="Person">Person</label>
-<input type="checkbox" name="record[ment_thought][]" value=" Auditory Hallucinations"<%='checked' if @record.ment_thought.include?("Auditory Hallucinations")%>><label for="Auditory Hallucinations">Auditory Hallucinations</label>
-<input type="checkbox" name="record[ment_thought][]" value=" Command Hallucinations"<%='checked' if @record.ment_thought.include?("Command Hallucinations")%>>Command Hallucinations
-<input type="checkbox" name="record[ment_thought][]" value=" Visual Hallucinations"<%='checked' if @record.ment_thought.include?("Visual Hallucinations")%>><label for="Visual Hallucinations">Visual Hallucinations</label>  Additional Comments:
-<input type="text" size="50" name="record[ment_thought][]">
+        <h3>AFFECT:</h3>
+        <input type="checkbox" name="record[ment_affect][]" value=" Appropriate" <%='checked' if @record.ment_affect.include?( "Appropriate")%>>
+        <label for="Appropriate">Appropriate</label>
+        <input type="checkbox" name="record[ment_affect][]" value=" Inappropriate" <%='checked' if @record.ment_affect.include?( "Inappropriate")%>>
+        <label for="Inappropriate">Inappropriate</label>
+        <input type="checkbox" name="record[ment_affect][]" value=" Constricted" <%='checked' if @record.ment_affect.include?( "Constricted")%>>
+        <label for="Constricted">Constricted</label>
+        <input type="checkbox" name="record[ment_affect][]" value=" Blunted" <%='checked' if @record.ment_affect.include?( "Blunted")%>>
+        <label for="Blunted">Blunted</label>
+        <input type="checkbox" name="record[ment_affect][]" value=" Flat" <%='checked' if @record.ment_affect.include?( "Flat")%>>
+        <label for="Flat">Flat</label>
+        <input type="checkbox" name="record[ment_affect][]" value=" Labile" <%='checked' if @record.ment_affect.include?( "Labile")%>>
+        <label for="Labile">Labile</label>
+        <input type="checkbox" name="record[ment_affect][]" value=" Broad" <%='checked' if @record.ment_affect.include?( "Broad")%>>
+        <label for="Broad">Broad</label>
+        <input type="checkbox" name="record[ment_affect][]" value=" Congruent with Mood" <%='checked' if @record.ment_affect.include?( "Congruent with Mood")%>>
+        <label for="Congruent with Mood">Congruent with Mood</label>
+        <input type="checkbox" name="record[ment_affect][]" value=" Incongruent with Mood" <%='checked' if @record.ment_affect.include?( "Incongruent with Mood")%>>
+        <label for="Incongruent with Mood">Incongruent with Mood</label> Additional Comments:
+        <input type="text" size="50" name="record[ment_affect][]">
 
+        <h3>MOOD:</h3>
+        <input type="checkbox" name="record[ment_mood][]" value=" Euthymic" <%='checked' if @record.ment_mood.include?( "Euthymic")%>>
+        <label for="Euthymic">Euthymic</label>
+        <input type="checkbox" name="record[ment_mood][]" value=" Calm" <%='checked' if @record.ment_mood.include?( "Calm")%>>
+        <label for="Calm">Calm</label>
+        <input type="checkbox" name="record[ment_mood][]" value=" Anxious" <%='checked' if @record.ment_mood.include?( "Anxious")%>>
+        <label for="Anxious">Anxious</label>
+        <input type="checkbox" name="record[ment_mood][]" value="Depressed " <%='checked' if @record.ment_mood.include?( "Depressed")%>>
+        <label for="Depressed">Depressed</label>
+        <input type="checkbox" name="record[ment_mood][]" value="Manic " <%='checked' if @record.ment_mood.include?( "Manic")%>>
+        <label for="Manic">Manic</label>
+        <input type="checkbox" name="record[ment_mood][]" value=" Hypomanic" <%='checked' if @record.ment_mood.include?( "Hypomanic")%>>
+        <label for="Hypomanic">Hypomanic</label>
+        <input type="checkbox" name="record[ment_mood][]" value="Euphoric " <%='checked' if @record.ment_mood.include?( "Euphoric")%>>
+        <label for="Euphoric">Euphoric</label>
+        <input type="checkbox" name="record[ment_mood][]" value=" Labile" <%='checked' if @record.ment_mood.include?( "Labile")%>>
+        <label for="Labile">Labile</label>
+        <input type="checkbox" name="record[ment_mood][]" value=" Irritable" <%='checked' if @record.ment_mood.include?( "Irritable")%>>
+        <label for="Irritable">Irritable</label>
+        <input type="checkbox" name="record[ment_mood][]" value=" Hostile" <%='checked' if @record.ment_mood.include?( "Hostile")%>>
+        <label for="Hostile">Hostile</label>
+        <input type="checkbox" name="record[ment_mood][]" value=" Anhedonia" <%='checked' if @record.ment_mood.include?( "Anhedonia")%>>
+        <label for="Anhedonia">Anhedonia</label>
+        <input type="checkbox" name="record[ment_mood][]" value=" Mood Variation/Fluctuation" <%='checked' if @record.ment_mood.include?( "Mood Variation/Fluctuation")%>>
+        <label for="Mood Variation/Fluctuation">Mood Variation/Fluctuation</label>
+        <input type="checkbox" name="record[ment_mood][]" value="Alexithymic(unable to describe mood)" <%='checked' if @record.ment_mood.include?( "Alexithymic (unable to describe mood)")%>>
+        <label for="Alexithymic (unable to describe mood)">Alexithymic (unable to describe mood)</label>
+        <input type="checkbox" name="record[ment_mood][]" value=" Fearful" <%='checked' if @record.ment_mood.include?( "Fearful")%>>
+        <label for="Fearful">Fearful</label> Additional Comments:
+        <input type="text" size="50" name="record[ment_mood][]">
 
-<h3>AFFECT:</h3>
-<input type="checkbox" name="record[ment_affect][]" value=" Appropriate"<%='checked' if @record.ment_affect.include?("Appropriate")%>><label for="Appropriate">Appropriate</label>
-<input type="checkbox" name="record[ment_affect][]" value=" Inappropriate"<%='checked' if @record.ment_affect.include?("Inappropriate")%>><label for="Inappropriate">Inappropriate</label>
-<input type="checkbox" name="record[ment_affect][]" value=" Constricted"<%='checked' if @record.ment_affect.include?("Constricted")%>><label for="Constricted">Constricted</label>
-<input type="checkbox" name="record[ment_affect][]" value=" Blunted"<%='checked' if @record.ment_affect.include?("Blunted")%>><label for="Blunted">Blunted</label>
-<input type="checkbox" name="record[ment_affect][]" value=" Flat"<%='checked' if @record.ment_affect.include?("Flat")%>><label for="Flat">Flat</label>
-<input type="checkbox" name="record[ment_affect][]" value=" Labile"<%='checked' if @record.ment_affect.include?("Labile")%>><label for="Labile">Labile</label>
-<input type="checkbox" name="record[ment_affect][]" value=" Broad"<%='checked' if @record.ment_affect.include?("Broad")%>><label for="Broad">Broad</label>
-<input type="checkbox" name="record[ment_affect][]" value=" Congruent with Mood"<%='checked' if @record.ment_affect.include?("Congruent with Mood")%>><label for="Congruent with Mood">Congruent with Mood</label>
-<input type="checkbox" name="record[ment_affect][]" value=" Incongruent with Mood"<%='checked' if @record.ment_affect.include?("Incongruent with Mood")%>><label for="Incongruent with Mood">Incongruent with Mood</label>   Additional Comments:
-<input type="text" size="50" name="record[ment_affect][]">
+        <h3>MEMORY:</h3>
+        <input type="checkbox" name="record[ment_memory][]" value=" Immediate: Intact" <%='checked' if @record.ment_memory.include?( "Immediate: Intact")%>>
+        <label for="Immediate: Intact">Immediate: Intact</label>
+        <input type="checkbox" name="record[ment_memory][]" value=" Immediate: Impaired" <%='checked' if @record.ment_memory.include?( "Immediate: Impaired")%>>
+        <label for="Immediate: Impaired">Immediate: Impaired</label>
+        <input type="checkbox" name="record[ment_memory][]" value=" Recent: Intact" <%='checked' if @record.ment_memory.include?( "Recent: Intact")%>>
+        <label for="Recent: Intact">Recent: Intact</label>
+        <input type="checkbox" name="record[ment_memory][]" value=" Recent: Impaired" <%='checked' if @record.ment_memory.include?( "Recent: Impaired")%>>
+        <label for="Recent: Impaired">Recent: Intact</label>
+        <input type="checkbox" name="record[ment_memory][]" value=" Remote: Intact" <%='checked' if @record.ment_memory.include?( "Remote: Intact")%>>
+        <label for="Remote: Intact">Remote: Intact</label>
+        <input type="checkbox" name="record[ment_memory][]" value=" Remote: Impaired" <%='checked' if @record.ment_memory.include?( "Remote: Impaired")%>>
+        <label for="Remote: Impaired">Remote: Impaired</label> Additional Comments:
+        <input type="text" size="50" name="record[ment_memory][]">
 
-<h3>MOOD:</h3>
-<input type="checkbox" name="record[ment_mood][]" value=" Euthymic"<%='checked' if @record.ment_mood.include?("Euthymic")%>><label for="Euthymic">Euthymic</label>
-<input type="checkbox" name="record[ment_mood][]" value=" Calm"<%='checked' if @record.ment_mood.include?("Calm")%>><label for="Calm">Calm</label>
-<input type="checkbox" name="record[ment_mood][]" value=" Anxious"<%='checked' if @record.ment_mood.include?("Anxious")%>><label for="Anxious">Anxious</label>
-<input type="checkbox" name="record[ment_mood][]" value="Depressed "<%='checked' if @record.ment_mood.include?("Depressed")%>><label for="Depressed">Depressed</label>
-<input type="checkbox" name="record[ment_mood][]" value="Manic "<%='checked' if @record.ment_mood.include?("Manic")%>><label for="Manic">Manic</label>
-<input type="checkbox" name="record[ment_mood][]" value=" Hypomanic"<%='checked' if @record.ment_mood.include?("Hypomanic")%>><label for="Hypomanic">Hypomanic</label>
-<input type="checkbox" name="record[ment_mood][]" value="Euphoric "<%='checked' if @record.ment_mood.include?("Euphoric")%>><label for="Euphoric">Euphoric</label>
-<input type="checkbox" name="record[ment_mood][]" value=" Labile"<%='checked' if @record.ment_mood.include?("Labile")%>><label for="Labile">Labile</label>
-<input type="checkbox" name="record[ment_mood][]" value=" Irritable"<%='checked' if @record.ment_mood.include?("Irritable")%>><label for="Irritable">Irritable</label>
-<input type="checkbox" name="record[ment_mood][]" value=" Hostile"<%='checked' if @record.ment_mood.include?("Hostile")%>><label for="Hostile">Hostile</label>
-<input type="checkbox" name="record[ment_mood][]" value=" Anhedonia"<%='checked' if @record.ment_mood.include?("Anhedonia")%>><label for="Anhedonia">Anhedonia</label>
-<input type="checkbox" name="record[ment_mood][]" value=" Mood Variation/Fluctuation"<%='checked' if @record.ment_mood.include?("Mood Variation/Fluctuation")%>><label for="Mood Variation/Fluctuation">Mood Variation/Fluctuation</label>
-<input type="checkbox" name="record[ment_mood][]" value="Alexithymic(unable to describe mood)"<%='checked' if @record.ment_mood.include?("Alexithymic (unable to describe mood)")%>><label for="Alexithymic (unable to describe mood)">Alexithymic (unable to describe mood)</label>
-<input type="checkbox" name="record[ment_mood][]" value=" Fearful"<%='checked' if @record.ment_mood.include?("Fearful")%>><label for="Fearful">Fearful</label>   Additional Comments:
-<input type="text" size="50" name="record[ment_mood][]"> 
+        <h3>CONCENTRATION:</h3>
+        <input type="checkbox" name="record[ment_concentration][]" value=" Good" <%='checked' if @record.ment_concentration.include?( "Good")%>>
+        <label for="Good">Good</label>
+        <input type="checkbox" name="record[ment_concentration][]" value=" Fair" <%='checked' if @record.ment_concentration.include?( "Fair")%>>
+        <label for="Fair">Fair</label>
+        <input type="checkbox" name="record[ment_concentration][]" value=" Poor" <%='checked' if @record.ment_concentration.include?( "Poor")%>>
+        <label for="Poor">Poor</label> Additional Comments:
+        <input type="text" size="50" name="record[ment_concentration][]">
 
-<h3>MEMORY:</h3>
-<input type="checkbox" name="record[ment_memory][]" value=" Immediate: Intact"<%='checked' if @record.ment_memory.include?("Immediate: Intact")%>><label for="Immediate: Intact">Immediate: Intact</label>
-<input type="checkbox" name="record[ment_memory][]" value=" Immediate: Impaired"<%='checked' if @record.ment_memory.include?("Immediate: Impaired")%>><label for="Immediate: Impaired">Immediate: Impaired</label>
-<input type="checkbox" name="record[ment_memory][]" value=" Recent: Intact"<%='checked' if @record.ment_memory.include?("Recent: Intact")%>><label for="Recent: Intact">Recent: Intact</label>
-<input type="checkbox" name="record[ment_memory][]" value=" Recent: Impaired"<%='checked' if @record.ment_memory.include?("Recent: Impaired")%>><label for="Recent: Impaired">Recent: Intact</label>
-<input type="checkbox" name="record[ment_memory][]" value=" Remote: Intact"<%='checked' if @record.ment_memory.include?("Remote: Intact")%>><label for="Remote: Intact">Remote: Intact</label>
-<input type="checkbox" name="record[ment_memory][]" value=" Remote: Impaired"<%='checked' if @record.ment_memory.include?("Remote: Impaired")%>><label for="Remote: Impaired">Remote: Impaired</label>   Additional Comments:
-<input type="text" size="50" name="record[ment_memory][]"> 
+        <h3>COGNITION:</h3>
+        <input type="checkbox" name="record[ment_cognition][]" value=" General Knowledge" <%='checked' if @record.ment_cognition.include?( "General Knowledge")%>>
+        <label for="General Knowledge">General Knowledge</label>
+        <input type="checkbox" name="record[ment_cognition][]" value=" Inconsistent" <%='checked' if @record.ment_cognition.include?( "Inconsistent")%>>
+        <label for="Inconsistent">Inconsistent</label>
+        <input type="checkbox" name="record[ment_cognition][]" value=" Able to Abstract" <%='checked' if @record.ment_cognition.include?( "Able to Abstract")%>>
+        <label for="Able to Abstract">Able to Abstract</label>
+        <input type="checkbox" name="record[ment_cognition][]" value=" Concrete Thinking" <%='checked' if @record.ment_cognition.include?( "Concrete Thinking")%>>
+        <label for="Concrete Thinking">Concrete Thinking</label>
+        <input type="checkbox" name="record[ment_cognition][]" value=" Impaired" <%='checked' if @record.ment_cognition.include?( "Impaired")%>>
+        <label for="Impaired">Impaired</label> Additional Comments:
+        <input type="text" size="50" name="record[ment_cognition][]">
 
-<h3>CONCENTRATION:</h3><input type="checkbox" name="record[ment_concentration][]" value=" Good"<%='checked' if @record.ment_concentration.include?("Good")%>><label for="Good">Good</label>
-<input type="checkbox" name="record[ment_concentration][]" value=" Fair"<%='checked' if @record.ment_concentration.include?("Fair")%>><label for="Fair">Fair</label>
-<input type="checkbox" name="record[ment_concentration][]" value=" Poor"<%='checked' if @record.ment_concentration.include?("Poor")%>><label for="Poor">Poor</label>   Additional Comments:
-<input type="text" size="50" name="record[ment_concentration][]"> 
+        <h3>SLEEP:</h3>
+        <input type="checkbox" name="record[ment_sleep][]" value="No Problems Reported" <%='checked' if @record.ment_sleep.include?( "No Problems Reported")%>>
+        <label for="No Problems Reported">No Problems Reported</label>
+        <input type="checkbox" name="record[ment_sleep][]" value=" Restless" <%='checked' if @record.ment_sleep.include?( "Restless")%>>
+        <label for="Restless">Restless</label>
+        <input type="checkbox" name="record[ment_sleep][]" value=" Increased" <%='checked' if @record.ment_sleep.include?( "Increased")%>>
+        <label for="Increased">Increased</label>
+        <input type="checkbox" name="record[ment_sleep][]" value=" Decreased" <%='checked' if @record.ment_sleep.include?( "Decreased")%>>
+        <label for="Decreased">Decreased</label>
+        <input type="checkbox" name="record[ment_sleep][]" value="Early Morning Awakening" <%='checked' if @record.ment_sleep.include?( "Early Morning Awakening")%>>
+        <label for="Early Morning Awakening">Early Morning Awakening</label>
+        <input type="checkbox" name="record[ment_sleep][]" value="Frequent Awakening" <%='checked' if @record.ment_sleep.include?( "Frequent Awakening")%>>
+        <label for="Frequent Awakening">Frequent Awakening</label>
+        <input type="checkbox" name="record[ment_sleep][]" value=" Difficulty Falling Asleep" <%='checked' if @record.ment_sleep.include?( "Difficulty Falling Asleep")%>>
+        <label for="Falling Asleep">Falling Asleep</label>
+        <input type="checkbox" name="record[ment_sleep][]" value=" Unable to Sleep" <%='checked' if @record.ment_sleep.include?( "Unable to Sleep")%>>
+        <label for="Unable to Sleep">Unable to Sleep</label>
+        <input type="checkbox" name="record[ment_sleep][]" value=" Nightmares" <%='checked' if @record.ment_sleep.include?( "Nightmares")%>>
+        <label for="Nightmares">Nightmares</label> Additional Comments:
+        <input type="text" size="50" name="record[ment_sleep][]">
 
+        <h3>APPETITE/WEIGHT:</h3>
+        <input type="checkbox" name="record[ment_appetite][]" value=" No Problems Reported" <%='checked' if @record.ment_appetite.include?( "No Problems Reported")%>>
+        <label for="No Problems Reported">No Problems Reported</label>
+        <input type="checkbox" name="record[ment_appetite][]" value="Poor Appetite" <%='checked' if @record.ment_appetite.include?( "Poor Appetite")%>>
+        <label for="Poor Appetite">Poor Appetite</label>
+        <input type="checkbox" name="record[ment_appetite][]" value="Excessive Appetite" <%='checked' if @record.ment_appetite.include?( "Excessive Appetite")%>>
+        <label for="Excessive Appetite">Excessive Appetite</label>
+        <input type="checkbox" name="record[ment_appetite][]" value="Bingeing" <%='checked' if @record.ment_appetite.include?( "Bingeing")%>>
+        <label for="Bingeing">Bingeing</label>
+        <input type="checkbox" name="record[ment_appetite][]" value=" Purging" <%='checked' if @record.ment_appetite.include?( "Purging")%>>
+        <label for="Purging">Purging</label>
+        <input type="checkbox" name="record[ment_appetite][]" value=" Weight Gain" <%='checked' if @record.ment_appetite.include?( "Weight Gain")%>>
+        <label for="Weight Gain">Weight Gain</label>
+        <input type="checkbox" name="record[ment_appetite][]" value=" Weight Loss" <%='checked' if @record.ment_appetite.include?( "Weight Loss")%>>
+        <label for="Weight Loss">Weight Loss</label>
+        <input type="checkbox" name="record[ment_appetite][]" value=" Anorexia" <%='checked' if @record.ment_appetite.include?( "Anorexia")%>>
+        <label for="Anorexia">Anorexia</label>
+        <input type="checkbox" name="record[ment_appetite][]" value=" Disturbances in Eating or Body Image" <%='checked' if @record.ment_appetite.include?( "Disturbances in Eating or Body Image")%>>
+        <label for="Disturbances in Eating or Body Image">Disturbances in Eating or Body Image</label> Additional Comments:
+        <input type="text" size="50" name="record[ment_appetite][]">
 
-<h3>COGNITION:</h3>
-<input type="checkbox" name="record[ment_cognition][]" value=" General Knowledge"<%='checked' if @record.ment_cognition.include?("General Knowledge")%>><label for="General Knowledge">General Knowledge</label>
-<input type="checkbox" name="record[ment_cognition][]" value=" Inconsistent"<%='checked' if @record.ment_cognition.include?("Inconsistent")%>><label for="Inconsistent">Inconsistent</label>
-<input type="checkbox" name="record[ment_cognition][]" value=" Able to Abstract"<%='checked' if @record.ment_cognition.include?("Able to Abstract")%>><label for="Able to Abstract">Able to Abstract</label>
-<input type="checkbox" name="record[ment_cognition][]" value=" Concrete Thinking"<%='checked' if @record.ment_cognition.include?("Concrete Thinking")%>><label for="Concrete Thinking">Concrete Thinking</label>
-<input type="checkbox" name="record[ment_cognition][]" value=" Impaired"<%='checked' if @record.ment_cognition.include?("Impaired")%>><label for="Impaired">Impaired</label>   Additional Comments:
-<input type="text" size="50" name="record[ment_cognition][]"> 
+        <h3>JUDGMENT:</h3>
+        <input type="checkbox" name="record[ment_judgment][]" value=" Good" <%='checked' if @record.ment_judgment.include?( "Good")%>>
+        <label for="Good">Good</label>
+        <input type="checkbox" name="record[ment_judgment][]" value=" Fair" <%='checked' if @record.ment_judgment.include?( "Fair")%>>
+        <label for="Fair">Fair</label>
+        <input type="checkbox" name="record[ment_judgment][]" value=" Poor" <%='checked' if @record.ment_judgment.include?( "Poor")%>>
+        <label for="Poor">Poor</label>Additional Comments:
+        <input type="text" size="50" name="record[ment_judgment][]">
 
-<h3>SLEEP:</h3>
-<input type="checkbox" name="record[ment_sleep][]" value="No Problems Reported"<%='checked' if @record.ment_sleep.include?("No Problems Reported")%>><label for="No Problems Reported">No Problems Reported</label>
-<input type="checkbox" name="record[ment_sleep][]" value=" Restless"<%='checked' if @record.ment_sleep.include?("Restless")%>><label for="Restless">Restless</label>
-<input type="checkbox" name="record[ment_sleep][]" value=" Increased"<%='checked' if @record.ment_sleep.include?("Increased")%>><label for="Increased">Increased</label>
-<input type="checkbox" name="record[ment_sleep][]" value=" Decreased"<%='checked' if @record.ment_sleep.include?("Decreased")%>><label for="Decreased">Decreased</label>
-<input type="checkbox" name="record[ment_sleep][]" value="Early Morning Awakening"<%='checked' if @record.ment_sleep.include?("Early Morning Awakening")%>><label for="Early Morning Awakening">Early Morning Awakening</label>
-<input type="checkbox" name="record[ment_sleep][]" value="Frequent Awakening"<%='checked' if @record.ment_sleep.include?("Frequent Awakening")%>><label for="Frequent Awakening">Frequent Awakening</label>
-<input type="checkbox" name="record[ment_sleep][]" value=" Difficulty Falling Asleep"<%='checked' if @record.ment_sleep.include?("Difficulty Falling Asleep")%>><label for="Falling Asleep">Falling Asleep</label>
-<input type="checkbox" name="record[ment_sleep][]" value=" Unable to Sleep"<%='checked' if @record.ment_sleep.include?("Unable to Sleep")%>><label for="Unable to Sleep">Unable to Sleep</label>
-<input type="checkbox" name="record[ment_sleep][]" value=" Nightmares"<%='checked' if @record.ment_sleep.include?("Nightmares")%>><label for="Nightmares">Nightmares</label>   Additional Comments:
-<input type="text" size="50" name="record[ment_sleep][]">
+        <h3>INSIGHT:</h3>
+        <input type="checkbox" name="record[ment_insight][]" value=" Good" <%='checked' if @record.ment_insight.include?( "Good")%>>
+        <label for="Good">Good</label>
+        <input type="checkbox" name="record[ment_insight][]" value=" Fair" <%='checked' if @record.ment_insight.include?( "Fair")%>>
+        <label for="Fair">Fair</label>
+        <input type="checkbox" name="record[ment_insight][]" value=" Poor" <%='checked' if @record.ment_insight.include?( "Poor")%>>
+        <label for="Poor">Poor</label> Additional Comments:
+        <input type="text" size="50" name="record[ment_insight][]">
 
-<h3>APPETITE/WEIGHT:</h3>
-<input type="checkbox" name="record[ment_appetite][]" value=" No Problems Reported"<%='checked' if @record.ment_appetite.include?("No Problems Reported")%>><label for="No Problems Reported">No Problems Reported</label>
-<input type="checkbox" name="record[ment_appetite][]" value="Poor Appetite"<%='checked' if @record.ment_appetite.include?("Poor Appetite")%>><label for="Poor Appetite">Poor Appetite</label>
-<input type="checkbox" name="record[ment_appetite][]" value="Excessive Appetite"<%='checked' if @record.ment_appetite.include?("Excessive Appetite")%>><label for="Excessive Appetite">Excessive Appetite</label>
-<input type="checkbox" name="record[ment_appetite][]" value="Bingeing"<%='checked' if @record.ment_appetite.include?("Bingeing")%>><label for="Bingeing">Bingeing</label>
-<input type="checkbox" name="record[ment_appetite][]" value=" Purging"<%='checked' if @record.ment_appetite.include?("Purging")%>><label for="Purging">Purging</label>
-<input type="checkbox" name="record[ment_appetite][]" value=" Weight Gain"<%='checked' if @record.ment_appetite.include?("Weight Gain")%>><label for="Weight Gain">Weight Gain</label>
-<input type="checkbox" name="record[ment_appetite][]" value=" Weight Loss"<%='checked' if @record.ment_appetite.include?("Weight Loss")%>><label for="Weight Loss">Weight Loss</label>
-<input type="checkbox" name="record[ment_appetite][]" value=" Anorexia"<%='checked' if @record.ment_appetite.include?("Anorexia")%>><label for="Anorexia">Anorexia</label>
-<input type="checkbox" name="record[ment_appetite][]" value=" Disturbances in Eating or Body Image"<%='checked' if @record.ment_appetite.include?("Disturbances in Eating or Body Image")%>><label for="Disturbances in Eating or Body Image">Disturbances in Eating or Body Image</label>  Additional Comments:<input type="text" size="50" name="record[ment_appetite][]">
+        <h3>REPORTED BEHAVIORS (Symptoms/Stressors Affecting Ability to Function):</h3>
+        <input type="checkbox" name="record[ment_self_behavior][]" value=" Not at All" <%='checked' if @record.ment_self_behavior.include?( "Not at All")%>>
+        <label for="Not at All">Not at All</label>
+        <input type="checkbox" name="record[ment_self_behavior][]" value=" Slightly" <%='checked' if @record.ment_self_behavior.include?( "Slightly")%>>
+        <label for="Slightly">Slightly</label>
+        <input type="checkbox" name="record[ment_self_behavior][]" value=" Moderately" <%='checked' if @record.ment_self_behavior.include?( "Moderately")%>>
+        <label for="Moderately">Moderately</label>
+        <input type="checkbox" name="record[ment_self_behavior][]" value=" Significantly " <%='checked' if @record.ment_self_behavior.include?( "Significantly")%>>
+        <label for="Significantly">Significantly</label> Additional Comments:
+        <input type="text" size "50" name="record[ment_self_behavior][]">
 
-<h3>JUDGMENT:</h3>
-<input type="checkbox" name="record[ment_judgment][]" value=" Good"<%='checked' if @record.ment_judgment.include?("Good")%>><label for="Good">Good</label>
-<input type="checkbox" name="record[ment_judgment][]" value=" Fair"<%='checked' if @record.ment_judgment.include?("Fair")%>><label for="Fair">Fair</label>
-<input type="checkbox" name="record[ment_judgment][]" value=" Poor"<%='checked' if @record.ment_judgment.include?("Poor")%>><label for="Poor">Poor</label>Additional Comments:
-<input type="text" size="50" name="record[ment_judgment][]"> 
+        <h3>COMPULSIVE BEHAVIOR (Describe Type, Severity, and Frequency such as Sexual, Gambling, Spending):</h3>
+        <textarea rows="10" cols="50" placeholder="<%=@client.record.ment_compulsions%>" value="@client.record.ment_compulsions" name="record[ment_compulsions]"></textarea>
 
-<h3>INSIGHT:</h3>
-<input type="checkbox" name="record[ment_insight][]" value=" Good"<%='checked' if @record.ment_insight.include?("Good")%>><label for="Good">Good</label>
-<input type="checkbox" name="record[ment_insight][]" value=" Fair"<%='checked' if @record.ment_insight.include?("Fair")%>><label for="Fair">Fair</label>
-<input type="checkbox" name="record[ment_insight][]" value=" Poor"<%='checked' if @record.ment_insight.include?("Poor")%>><label for="Poor">Poor</label>   Additional Comments:
-<input type="text" size="50" name="record[ment_insight][]"> 
-
-
-<h3>REPORTED BEHAVIORS (Symptoms/Stressors Affecting Ability to Function):</h3>
-<input type="checkbox" name="record[ment_self_behavior][]" value=" Not at All"<%='checked' if @record.ment_self_behavior.include?("Not at All")%>><label for="Not at All">Not at All</label>
-<input type="checkbox" name="record[ment_self_behavior][]" value=" Slightly"<%='checked' if @record.ment_self_behavior.include?("Slightly")%>><label for="Slightly">Slightly</label>
-<input type="checkbox" name="record[ment_self_behavior][]" value=" Moderately"<%='checked' if @record.ment_self_behavior.include?("Moderately")%>><label for="Moderately">Moderately</label>
-<input type="checkbox" name="record[ment_self_behavior][]" value=" Significantly "<%='checked' if @record.ment_self_behavior.include?("Significantly")%>><label for="Significantly">Significantly</label>   Additional Comments:
-<input type="text" size"50" name="record[ment_self_behavior][]"> 
-
-<h3>COMPULSIVE BEHAVIOR (Describe Type, Severity, and Frequency such as Sexual, Gambling, Spending):</h3>
-<textarea rows="10" cols="50" placeholder="<%=@client.record.ment_compulsions%>" value ="@client.record.ment_compulsions" name="record[ment_compulsions]"></textarea>
-
-</div>
-<div class="listr1">
-  <input type="submit" value="Update">
+    </div>
+    <div class="listr1">
+        <input type="submit" value="Update">
 </form>
 </div>

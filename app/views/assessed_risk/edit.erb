@@ -1,86 +1,96 @@
 <form action="/clients/<%=@client.id%>/assessed_risk" method="POST">
-  <input id="hidden" type="hidden" name="_method" value="patch">
-<div class="listr1">
-<h2>Edit Assessed Risk for <%=@client.first_name%> <%=@client.last_name%></h2>
-<hr>
-</div>
-<div class="bloc1"
-<b>Fill out any field(s) below and click 'update' to save</b><br></br>
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <div class="listr1">
+        <h2>Edit Assessed Risk for <%=@client.first_name%> <%=@client.last_name%></h2>
+        <hr>
+    </div>
+    <div class="bloc1" <b>Fill out any field(s) below and click 'update' to save</b>
+        <br></br>
 
-  <p><b>CLIENT'S ASSESSED LEVEL OF RISK: </b></p>
+        <p><b>CLIENT'S ASSESSED LEVEL OF RISK: </b></p>
 
-1 <input type="radio" name="record[risk_level]" value="1">
-2 <input type="radio" name="record[risk_level]" value="2">
-3 <input type="radio" name="record[risk_level]" value="3">
-4 <input type="radio" name="record[risk_level]" value="4">
-5 <input type="radio" name="record[risk_level]" value="5">
-6 <input type="radio" name="record[risk_level]" value="6">
-7 <input type="radio" name="record[risk_level]" value="7">
-8 <input type="radio" name="record[risk_level]" value="8">
-9 <input type="radio" name="record[risk_level]" value="9">
-10 <input type="radio" name="record[risk_level]" value="10">
+        1
+        <input type="radio" name="record[risk_level]" value="1"> 2
+        <input type="radio" name="record[risk_level]" value="2"> 3
+        <input type="radio" name="record[risk_level]" value="3"> 4
+        <input type="radio" name="record[risk_level]" value="4"> 5
+        <input type="radio" name="record[risk_level]" value="5"> 6
+        <input type="radio" name="record[risk_level]" value="6"> 7
+        <input type="radio" name="record[risk_level]" value="7"> 8
+        <input type="radio" name="record[risk_level]" value="8"> 9
+        <input type="radio" name="record[risk_level]" value="9"> 10
+        <input type="radio" name="record[risk_level]" value="10">
 
+        <br></br>
+    </div>
+    <h3>Guidelines for Levels:</h3>
+    <div class="bloc2">
+        <b>High Risk =  9, 10:</b>
+        <p>Assess for hospitalization. Suicidal/Homicidal plan and/or intent; command hallucinations; psychotic symptoms which are significantly interfering with client's ability to function</p>
+        <b>High Risk Alert = 7, 8:</b>
+        <p>Possible symptoms include: suicidal/homicidal ideation; major psychiatric/substance dependence disorder; prior history of suicide attempts and/or violence/destructive behavior/high level of distress with minimal support or coping ability.</p>
+        <b>Medium = 4, 5, 6:</b>
+        <p>Moderate symtoms with moderate difficulty in functioning</p>
+        <b>Low = 1, 2, 3:</b>
+        <p>No current suicidal/homicidal ideation; no current or past high risk behavior; patient has important protective factor which reduces risk.</p>
+        ------------------------------------------------------------
+        <br></br>
+    </div>
+    <div class="bloc1">
+        <h3><b>INTERVENTIONS:</b></h3>
+    </div>
+    <div class="bloc2">
+        <b>High Risk (9, 10):</b>
 
-<br></br>
-</div>
-<h3>Guidelines for Levels:</h3>
-<div class="bloc2">
-<b>High Risk =  9, 10:</b>
-<p>Assess for hospitalization.  Suicidal/Homicidal plan and/or intent; command hallucinations; psychotic symptoms which are significantly interfering with client's ability to function</p>
-<b>High Risk Alert = 7, 8:</b>
-<p>Possible symptoms include: suicidal/homicidal ideation; major psychiatric/substance dependence disorder; prior history of suicide attempts and/or violence/destructive behavior/high level of distress with minimal support or coping ability.</p>
-<b>Medium = 4, 5, 6:</b>
-<p>Moderate symtoms with moderate difficulty in functioning</p>
-<b>Low = 1, 2, 3:</b>
-<p>No current suicidal/homicidal ideation; no current or past high risk behavior; patient has important protective factor which reduces risk.</p>
-------------------------------------------------------------
-<br></br>
-</div>
-<div class="bloc1">
-<h3><b>INTERVENTIONS:</b></h3>
-</div>
-<div class="bloc2">
-<b>High Risk (9, 10):</b>
+        <p>Assess for Hospitalization</p>
+        <input type="checkbox" name="record[risk_interventions][]" value="Arrangements were made for client to be evaluated for hospitalization"> Arrangements were made for client to be evaluated for hospitalization
+        <br></br>
 
-<p>Assess for Hospitalization</p>
-<input type="checkbox" name="record[risk_interventions][]" value="Arrangements were made for client to be evaluated for hospitalization"> Arrangements were made for client to be evaluated for hospitalization<br></br>
+        <input type="checkbox" name="record[risk_interventions][]" value="Information was provided to the ER staff in writing"> Information was provided to the ER staff in writing
+        <br></br>
 
-<input type="checkbox" name="record[risk_interventions][]" value="Information was provided to the ER staff in writing"> Information was provided to the ER staff in writing<br></br>
+        <input type="checkbox" name="record[risk_interventions][]" value="Other parties were notified"> If needed, other parties were notified
+        <br></br>
 
-<input type="checkbox" name="record[risk_interventions][]" value="Other parties were notified"> If needed, other parties were notified<br></br>
+        <b>High Risk Alert (7, 8):</b>
+        <br></br>
+        <input type="checkbox" name="record[risk_interventions][]" value="Add to High Risk Alert list for Team Review"> Add to High Risk Alert list for Team Review
+        <br></br>
 
+        <input type="checkbox" name="record[risk_interventions][]" value="Crisis numbers were provided to client"> Crisis numbers were provided to client
+        <br></br>
 
-<b>High Risk Alert (7, 8):</b><br></br>
-<input type="checkbox" name="record[risk_interventions][]" value="Add to High Risk Alert list for Team Review"> Add to High Risk Alert list for Team Review<br></br>
-        
-<input type="checkbox" name="record[risk_interventions][]" value="Crisis numbers were provided to client"> Crisis numbers were provided to client<br></br>
-          
-<input type="checkbox" name="record[risk_interventions][]" value="Plan was discussed for safety">Plan was discussed for safety<br></br>
+        <input type="checkbox" name="record[risk_interventions][]" value="Plan was discussed for safety">Plan was discussed for safety
+        <br></br>
 
-<input type="checkbox" name="record[risk_interventions][]" value="Ongoing monitoring and evealuations will be conducted">Ongoing monitoring and evealuations will be conducted<br></br>
+        <input type="checkbox" name="record[risk_interventions][]" value="Ongoing monitoring and evealuations will be conducted">Ongoing monitoring and evealuations will be conducted
+        <br></br>
 
-<b>Medium Risk (4, 5, 6):</b><br></br>
+        <b>Medium Risk (4, 5, 6):</b>
+        <br></br>
 
-<input type="checkbox" name="record[risk_interventions][]" value="Crisis numbers were provided to patient">Crisis numbers were provided to patient<br></br>
+        <input type="checkbox" name="record[risk_interventions][]" value="Crisis numbers were provided to patient">Crisis numbers were provided to patient
+        <br></br>
 
-<input type="checkbox" name="record[risk_interventions][]" value="Ongoing monitoring and evaluations will be conducted">Ongoing monitoring and evaluations will be conducted<br></br>
+        <input type="checkbox" name="record[risk_interventions][]" value="Ongoing monitoring and evaluations will be conducted">Ongoing monitoring and evaluations will be conducted
+        <br></br>
 
-<b>Low Risk (1, 2, 3):</b><br></br> 
+        <b>Low Risk (1, 2, 3):</b>
+        <br></br>
 
-<input type="checkbox" name="record[risk_interventions][]" value="Ongoing monitoring and evaluations will be conducted">Ongoing monitoring and evaluations will be conducted<br></br>
+        <input type="checkbox" name="record[risk_interventions][]" value="Ongoing monitoring and evaluations will be conducted">Ongoing monitoring and evaluations will be conducted
+        <br></br>
 
-<h3>Signatures:</h3>
+        <h3>Signatures:</h3>
 
-<input type="checkbox" name="record[risk_therapist_sign_and_date]" value="File signed and dated by therapist">check if signed and dated by therapist<br></br> 
+        <input type="checkbox" name="record[risk_therapist_sign_and_date]" value="File signed and dated by therapist">check if signed and dated by therapist
+        <br></br>
 
-<input type="checkbox" name="record[risk_supervisor_sign_and_date]" value="File signed and dated by supervisor">check if signed and dated by supervisor<br></br>
+        <input type="checkbox" name="record[risk_supervisor_sign_and_date]" value="File signed and dated by supervisor">check if signed and dated by supervisor
+        <br></br>
 
-</div>
-<div class="listr1">
-<input type="submit" value="Update">
+    </div>
+    <div class="listr1">
+        <input type="submit" value="Update">
 </form>
 </div>
-
-
-
-

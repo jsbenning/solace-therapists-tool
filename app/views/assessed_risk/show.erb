@@ -1,43 +1,47 @@
 <div class="listr1">
-<h2>Risk assessment for <%=@client.first_name%> <%=@client.last_name%></h2>
-<hr>
+    <h2>Risk assessment for <%=@client.first_name%> <%=@client.last_name%></h2>
+    <hr>
 </div>
 <div class="bloc1">
-<h3>Client is assessed with a risk of <%= @client.record.risk_level%>*</h3>
+    <h3>Client is assessed with a risk of <%= @client.record.risk_level%>*</h3>
 
-<h3>The following interventions were performed:</h3>
+    <h3>The following interventions were performed:</h3>
 </div>
 <div class="bloc2 lighter">
-<%=@client.record.risk_interventions.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '') %>
-<br></br>
+    <%=@client.record.risk_interventions.gsub("[", "").gsub("]", "").gsub('""', "").gsub('"', '') %>
+        <br></br>
 </div>
 
 <div class="bloc1">
-<h3><b>Signatures on file, if any:</b></h3>
+    <h3><b>Signatures on file, if any:</b></h3>
 </div>
 <div class="bloc2 lighter">
-<p><%=@client.record.risk_therapist_sign_and_date %></p>
-<p><%=@client.record.risk_supervisor_sign_and_date %></p>
+    <p>
+        <%=@client.record.risk_therapist_sign_and_date %>
+    </p>
+    <p>
+        <%=@client.record.risk_supervisor_sign_and_date %>
+    </p>
 </div>
 <div class="listr1">
-<form method="GET" action="../../clients/<%=@client.id%>">
-  <input type="submit" value="Client Main Page">
-</form>
-<br></br>
+    <form method="GET" action="../../clients/<%=@client.id%>">
+        <input type="submit" value="Client Main Page">
+    </form>
+    <br></br>
 
-<form method="GET" action="../../therapists/<%=@therapist.id%>">
-  <input type="submit" value="Homepage">
-</form>
-<br></br>
+    <form method="GET" action="../../therapists/<%=@therapist.id%>">
+        <input type="submit" value="Homepage">
+    </form>
+    <br></br>
 
-<form method="GET" action="/logout">
-  <input type="submit" value="Logout">
-</form>
+    <form method="GET" action="/logout">
+        <input type="submit" value="Logout">
+    </form>
 </div>
 <br></br>
 <div class="bloc2 lighter">
-<hr>
-<i><h3> * Guidelines for Risk Levels:</h3>
+    <hr>
+    <i><h3> * Guidelines for Risk Levels:</h3>
 
 <h4>High Risk =  9, 10:</h4>
 <p>Assess for hospitalization.  Suicidal/Homicidal plan and/or intent; command hallucinations; psychotic symptoms which are significantly interfering with client's ability to function</p>
@@ -48,5 +52,3 @@
 <h4>Low = 1, 2, 3:</h4>
 <p>No current suicidal/homicidal ideation; no current or past high risk behavior; patient has important protective factor which reduces risk.</p></i>
 </div>
-
-

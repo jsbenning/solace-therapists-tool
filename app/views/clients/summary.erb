@@ -1,44 +1,49 @@
 <div class="listr1">
-<h2>Summary for <%=@client.first_name%> <%=@client.last_name%></h2>
-<p><b>Medical Record Number:</b> <%=@client.medical_record_id%></p>
-<i>Currently under the care of <%=@therapist.first_name%> <%=@therapist.last_name%>, <%=@therapist.license_type%></i>
-<br></br>
-<hr>
+    <h2>Summary for <%=@client.first_name%> <%=@client.last_name%></h2>
+    <p><b>Medical Record Number:</b>
+        <%=@client.medical_record_id%>
+    </p>
+    <i>Currently under the care of <%=@therapist.first_name%> <%=@therapist.last_name%>, <%=@therapist.license_type%></i>
+    <br></br>
+    <hr>
 </div>
 
 <div class="bloc2">
-<h3>Client's Presenting Problem:</h3>
+    <h3>Client's Presenting Problem:</h3>
 </div>
 <div class="bloc2 lighter">
-<%=@client.record.bio_presenting_problem%><br></br>
+    <%=@client.record.bio_presenting_problem%>
+        <br></br>
 </div>
 
 <div class="bloc2">
-<h3>Clinical Analysis:</h3>
+    <h3>Clinical Analysis:</h3>
 </div>
 <div class="bloc2 lighter">
-<%=@client.record.bio_clinical_analysis%><br></br>
+    <%=@client.record.bio_clinical_analysis%>
+        <br></br>
 </div>
 
 <div class="bloc2">
-<h3>Treatment Recommendations:</h3>
+    <h3>Treatment Recommendations:</h3>
 </div>
 <div class="bloc2 lighter">
-<%=@client.record.bio_treatment_recommendations%><br></br>
+    <%=@client.record.bio_treatment_recommendations%>
+        <br></br>
 </div>
 
 <div class="listr1">
-<form method="GET" action="../../clients/<%=@client.id%>">
-<input type="submit" value="Client Main Page">
-</form>
-<br></br>
+    <form method="GET" action="../../clients/<%=@client.id%>">
+        <input type="submit" value="Client Main Page">
+    </form>
+    <br></br>
 
-<form method="GET" action="../../therapists/<%=@therapist.id%>">
-  <input type="submit" value="Homepage">
-</form>
-<br></br>
+    <form method="GET" action="../../therapists/<%=@therapist.id%>">
+        <input type="submit" value="Homepage">
+    </form>
+    <br></br>
 
-<form method="GET" action="/logout">
-  <input type="submit" value="Logout">
-</form>
+    <form method="GET" action="/logout">
+        <input type="submit" value="Logout">
+    </form>
 </div>
