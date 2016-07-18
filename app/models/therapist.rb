@@ -5,6 +5,7 @@ class Therapist < ActiveRecord::Base
   has_secure_password
   validates_presence_of :username, :on => :create
   validates_presence_of :password, :on => :create
+  validates_presence_of :email, :on => :create
   validates_presence_of :first_name, :on => :create
   validates_presence_of :last_name, :on => :create
   validates_presence_of :license_type, :on => :create

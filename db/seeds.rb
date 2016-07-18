@@ -1,12 +1,14 @@
 john = Therapist.create(username: "user",
-password: "password", 
+password: "password",
+email: "john@gmail.com", 
 first_name: "John", 
 last_name: "Miller", 
 license_type: "LCSW",
 license_number: "NJ434455566")  
 
 peter = Therapist.create(username: "pete",
-password: "password", 
+password: "password",
+email: "peter@gmail.com",  
 first_name: "Pete", 
 last_name: "Johnson", 
 license_type: "LCSW",

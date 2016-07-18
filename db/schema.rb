@@ -133,6 +133,7 @@ ActiveRecord::Schema.define(version: 20160710033531) do
   create_table "therapists", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.string "email"
     t.string "first_name"
     t.string "last_name"
     t.string "license_type"

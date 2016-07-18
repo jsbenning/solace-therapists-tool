@@ -3,6 +3,7 @@ class CreateTherapists < ActiveRecord::Migration
     create_table :therapists do |t|
       t.string :username
       t.string :password_digest
+      t.string :email
       t.string :first_name
       t.string :last_name
       t.string :license_type

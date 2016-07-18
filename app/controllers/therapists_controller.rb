@@ -2,7 +2,7 @@ class TherapistsController < ApplicationController
 
   post '/therapists/new' do
     @therapist = Therapist.create(username: params["username"], 
-    password: params["password"], first_name: params["first_name"], 
+    password: params["password"], email: params["email"], first_name: params["first_name"], 
     last_name: params["last_name"], license_type: params["license_type"],
     license_number: params["license_number"])
     if @therapist.save || logged_in?
@@ -44,11 +44,3 @@ class TherapistsController < ApplicationController
     end
   end
 end
-
-=begin
-  <p>To change this client's therapist, select from the following:</p>
-  <%@therapists.each do |therapist|%>
-   <input type="radio"  name="client[therapist]"  id="<%= therapist.id%>" value="<%=therapist.id%>"><%=therapist.first_name%> <%=therapist.last_name%>, <%=therapist.license_type%> 
-   <%end%>
-  
-=end
