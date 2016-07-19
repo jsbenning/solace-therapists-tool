@@ -5,7 +5,7 @@ This is a ruby/sinatra-driven project for maintaining client records in a therap
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/jsbenning/solace. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/jsbenning/solace-therapists-tool. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
