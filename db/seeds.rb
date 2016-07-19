@@ -355,7 +355,6 @@ trish.therapist_id = john.id
 frank.save
 sandee.save
 trish.save
-john.save
 record1.save
 record2.save
 record3.save
