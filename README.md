@@ -1,6 +1,6 @@
 ## Project Overview:
 
-This is a ruby/sinatra-driven project for maintaining client records in a therapeutic setting. Although it utilizes a login system, it is not believed to be HIPA compliant as written.
+This is a ruby/sinatra-driven project for maintaining client records in a therapeutic setting.  To use this app, simply clone, run bundle install, rake db:migrate, and shotgun from the terminal. Run rake db:seed to test program with dummy data (username: "user", password: "password"). Although Solace utilizes a login system, it is not believed to be HIPA compliant as written.
 
 
 ## Contributing

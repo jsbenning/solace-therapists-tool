@@ -6,14 +6,6 @@ last_name: "Miller",
 license_type: "LCSW",
 license_number: "NJ434455566")  
 
-peter = Therapist.create(username: "pete",
-password: "password",
-email: "peter@gmail.com",  
-first_name: "Pete", 
-last_name: "Johnson", 
-license_type: "LCSW",
-license_number: "NJ434476566") 
-
 sandee = Client.create( medical_record_id: "GT34233-88",
 first_name: "Sandra", 
 last_name: "Monroe", 
@@ -352,16 +344,17 @@ hom_criminal_present: "Quisque lobortis purus est, a porttitor mi venenatis sed.
 hom_deterrents_past: "Cras tempus pharetra interdum. Suspendisse pharetra tincidunt augue hendrerit lobortis. Donec tincidunt bibendum dolor, in gravida risus tempor a. Praesent luctus fringilla tincidunt. Phasellus efficitur tortor lacus, non faucibus quam vehicula sed.", 
 hom_deterrents_present: "Quisque lobortis purus est, a porttitor mi venenatis sed. Vivamus efficitur commodo neque, et faucibus nunc." )
 
+
+john.save
 record1.client_id = frank.id
 record2.client_id = sandee.id
 record3.client_id = trish.id
 frank.therapist_id = john.id
-sandee.therapist_id = peter.id
+sandee.therapist_id = john.id
 trish.therapist_id = john.id
 frank.save
 sandee.save
 trish.save
-peter.save
 john.save
 record1.save
 record2.save
