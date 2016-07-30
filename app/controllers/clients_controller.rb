@@ -82,31 +82,31 @@ class ClientsController < ApplicationController
   end
 
   # /clients/:id/records/:record_id/edit
-  get '/clients/:id/:record_name/edit' do
+  get '/clients/:id/records/:record_name/edit' do
     if logged_in?
       @therapist = current_user
       @client = Client.find(params[:id])  
       record_form = params[:record_name]
       @record = @client.record
-      erb  :"clients/records/#{record_form}/edit"
+      erb  :"records/#{record_form}/edit"
     else
       erb :'error'
     end
   end
 
-  get '/clients/:id/:record_name' do
+  get '/clients/:id/records/:record_name' do
     if logged_in?
       @therapist = current_user
       @client = Client.find(params[:id])
       @record_form = params[:record_name]
       @record = @client.record
-      erb :"clients/records/#{@record_form}/show"
+      erb :"records/#{@record_form}/show"
     else
       erb :'error'
     end
   end
 
-  patch '/clients/:id/:record_name' do
+  patch '/clients/:id/records/:record_name' do
     if logged_in?
       @therapist = current_user
       @client = Client.find(params[:id])
@@ -121,7 +121,7 @@ class ClientsController < ApplicationController
         end
       end
       @record_form = (params[:record_name])
-      erb :"clients/records/#{@record_form}/show"
+      erb :"records/show"
     else
       erb :'error'
     end
