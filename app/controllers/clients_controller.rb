@@ -121,7 +121,7 @@ class ClientsController < ApplicationController
         end
       end
       @record_form = (params[:record_name])
-      erb :"records/show"
+      redirect to "/clients/#{@client.id}/records/#{@record_form}"
     else
       erb :'error'
     end
