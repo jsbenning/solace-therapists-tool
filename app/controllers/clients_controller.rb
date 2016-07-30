@@ -22,13 +22,14 @@ class ClientsController < ApplicationController
   post '/clients/new' do
     if logged_in?
       @therapist = current_user
-      @client = Client.create( therapist_id: @therapist.id, 
-        medical_record_id: params["medical_record_id"], 
-        first_name: params["first_name"], 
-        last_name: params["last_name"], 
-        date_of_birth: params["date_of_birth"], 
-        address: params["address"],
-        phone: params["phone"] )
+      @client = @therapist.clients.build(params[:client])
+      # @client = @theriapist.clients.build( 
+      #   medical_record_id: params["medical_rec_id"], 
+      #   first_name: params["first_name"], 
+      #   last_name: params["last_name"], 
+      #   date_of_birth: params["date_of_birth"], 
+      #   address: params["address"],
+      #   phone: params["phone"] )
       @client.record = Record.create(client_id: @client.id)
       erb :'clients/show_client'
     else
@@ -53,7 +54,6 @@ class ClientsController < ApplicationController
   get '/clients/:id/edit' do
     if logged_in?
       @therapist = current_user
-      @therapists = Therapist.all
       @client = Client.find(params[:id])
       if !(@therapist.clients).include?(@client)
         erb :'error'
@@ -86,11 +86,11 @@ class ClientsController < ApplicationController
     end
   end
 
-
+  # /clients/:id/records/:record_id/edit
   get '/clients/:id/:record_name/edit' do
     if logged_in?
       @therapist = current_user
-      @client = Client.find(params[:id])
+      @client = Client.find(params[:id])  
       record_form = params[:record_name]
       @record = @client.record
       erb :"#{record_form}/edit"
