@@ -6,7 +6,7 @@ class ClientsController < ApplicationController
       @clients = @therapist.clients
       erb :'therapists/show_therapist'
     else
-      erb :'/'
+      redirect to '/'
     end
   end
 
@@ -23,15 +23,10 @@ class ClientsController < ApplicationController
     if logged_in?
       @therapist = current_user
       @client = @therapist.clients.build(params[:client])
-      # @client = @theriapist.clients.build( 
-      #   medical_record_id: params["medical_rec_id"], 
-      #   first_name: params["first_name"], 
-      #   last_name: params["last_name"], 
-      #   date_of_birth: params["date_of_birth"], 
-      #   address: params["address"],
-      #   phone: params["phone"] )
+      @client.save
       @client.record = Record.create(client_id: @client.id)
-      erb :'clients/show_client'
+     
+      redirect to "clients/#{@client.id}"
     else
       erb :'/'
     end
@@ -93,7 +88,7 @@ class ClientsController < ApplicationController
       @client = Client.find(params[:id])  
       record_form = params[:record_name]
       @record = @client.record
-      erb :"#{record_form}/edit"
+      erb  :"clients/records/#{record_form}/edit"
     else
       erb :'error'
     end
@@ -105,7 +100,7 @@ class ClientsController < ApplicationController
       @client = Client.find(params[:id])
       @record_form = params[:record_name]
       @record = @client.record
-      erb :"#{@record_form}/show"
+      erb :"clients/records/#{@record_form}/show"
     else
       erb :'error'
     end
@@ -126,7 +121,7 @@ class ClientsController < ApplicationController
         end
       end
       @record_form = (params[:record_name])
-      erb :"#{@record_form}/show"
+      erb :"clients/records/#{@record_form}/show"
     else
       erb :'error'
     end

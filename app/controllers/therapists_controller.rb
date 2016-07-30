@@ -7,8 +7,9 @@ class TherapistsController < ApplicationController
     license_number: params["license_number"])
     if @therapist.save || logged_in?
       session[:therapist_id] = @therapist.id
-      @clients = @therapist.clients
-      erb :'therapists/show_therapist'
+      #@clients = @therapist.clients
+
+      redirect to "therapists/#{@therapist.id}"
     else
       redirect to '/register'
     end
@@ -25,7 +26,7 @@ class TherapistsController < ApplicationController
   end
 
   get '/therapists/:id' do
-    if logged_in?
+    if logged_in? && current_user.id == params[:id].to_i
       @therapist = current_user
       @clients = @therapist.clients
       erb :'therapists/show_therapist'
