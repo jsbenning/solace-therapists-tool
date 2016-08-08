@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
       @clients = @therapist.clients
       erb :'therapists/show_therapist'
     else
-      erb :"index"
+      redirect to '/index'
     end
   end
 
@@ -25,18 +25,19 @@ class ApplicationController < Sinatra::Base
     if logged_in?
       @therapist = current_user
       @clients = @therapist.clients
-        erb :'therapists/show_therapist'
+      erb :'therapists/show_therapist'
     else 
-      erb :"therapists/create_therapist" 
+      redirect to '/therapists/new'
     end
   end
 
   get '/login' do
     if logged_in?
       @therapist = current_user
+      @clients = @therapist.clients
       erb :'therapists/show_therapist'
     else  
-      erb :'login'
+      redirect to '/login'
     end
   end
 
@@ -60,7 +61,11 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  not_found do
+  get '/error' do
+    erb :'error'
+  end
+
+  get '/not_found' do
     erb :'not_found'
   end
 

@@ -3,32 +3,32 @@ require './config/environment'
 class ApplicationController < Sinatra::Base
   register Sinatra::ActiveRecordExtension
 
-    # /clients/:id/records/:record_id/edit
-  get '/records/:record_name/edit' do
+
+  get '/clients/:id/records/:record_name/edit' do
     if logged_in?
       @therapist = current_user
       @client = Client.find(params[:id])  
-      record_form = params[:record_name]
+      @record_name = params[:record_name]
       @record = @client.record
-      erb  :"records/#{record_form}/edit"
+      erb  :"records/#{@record_name}/edit"
     else
-      erb :'error'
+      redirect to '/error'
     end
   end
 
-  get '/records/:record_name' do
+  get 'clients/:id/records/:record_name' do
     if logged_in?
       @therapist = current_user
       @client = Client.find(params[:id])
-      @record_form = params[:record_name]
+      @record_name = params[:record_name]
       @record = @client.record
-      erb :"records/#{@record_form}/show"
+      erb :"records/#{@record_name}/show"
     else
-      erb :'error'
+      redirect to '/error'
     end
   end
 
-  patch 'records/:record_name' do
+  patch 'clients/:id/records/:record_name' do
     if logged_in?
       @therapist = current_user
       @client = Client.find(params[:id])
@@ -42,9 +42,10 @@ class ApplicationController < Sinatra::Base
           end
         end
       end
-      @record_form = (params[:record_name])
-      redirect to "/clients/#{@client.id}/records/#{@record_form}"
+      @record_name = (params[:record_name])
+      redirect to "/clients/#{@client.id}/records/#{@record_name}"
     else
       erb :'error'
     end
   end
+end

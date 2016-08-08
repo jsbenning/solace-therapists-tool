@@ -94,6 +94,4 @@ class ClientsController < ApplicationController
       erb :'error'
     end
   end
-
-
 end

@@ -1,5 +1,16 @@
 class TherapistsController < ApplicationController
 
+  get '/therapists/new' do 
+    if logged_in? 
+      @therapist = current_user
+      @clients = @therapist.clients
+      erb :'therapists/show_therapist'
+    else
+      redirect to '/register'
+    end
+  end
+        
+
   post '/therapists/new' do
     @therapist = Therapist.create(username: params["username"], 
     password: params["password"], email: params["email"], first_name: params["first_name"], 
@@ -7,9 +18,7 @@ class TherapistsController < ApplicationController
     license_number: params["license_number"])
     if @therapist.save || logged_in?
       session[:therapist_id] = @therapist.id
-      #@clients = @therapist.clients
-
-      redirect to "therapists/#{@therapist.id}"
+      erb :'therapists/show_therapist'
     else
       redirect to '/register'
     end
@@ -41,7 +50,7 @@ class TherapistsController < ApplicationController
       @therapist.update(params["therapist"])
       redirect to "/therapists/#{@therapist.id}"
     else
-      erb :'index'
+      redirect to '/'
     end
   end
 end
