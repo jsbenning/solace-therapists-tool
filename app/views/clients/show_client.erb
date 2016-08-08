@@ -4,8 +4,11 @@
     </form>
 
     <% if @client.record.risk_level > 7 %>
-        <% @client.alert = " High level of Risk!" %>
-            <% end %>
+        <% @client.alert = " High level of Risk" %>
+        <% elsif @client.record.risk_level >= 4 %>
+            <% @client.alert = " Moderate level of Risk" %>
+
+                <% end %>
                 <h2>Basic Client Information</h2>
                 <hr>
 </div>
@@ -15,16 +18,15 @@
         <%=@client.medical_record_id%>
     </p>
 
-    <p><b>Alerts, if any: </b>
-        <div class="alert">
-            <%=@client.alert%>
-        </div>
-    </p>
+    <p><b>Alerts, if any:</b>
+        <label for="alert">
+            <span style="color:red;"> <%=@client.alert%></span></p>
+        </label>    
 
     <p><b>Name: </b>
         <label for="name">
-            <%=@client.last_name%>,
-                <%=@client.first_name%>
+            <%=@client.first_name%> 
+                <%=@client.last_name%>
     </p>
     </label>
     <p><b>Date of Birth:</b>
@@ -56,7 +58,9 @@
         <input id="hidden" name="_method" type="hidden" name="_method" value="delete">
         <div class="alert">
             <input type="submit" value="Delete Client">
-            <label for "caution"> *CAUTION* THIS ACTION CANNOT BE UNDONE!</label>
+            <label for "caution"> 
+                <span style="color:red;"> *CAUTION* THIS ACTION CANNOT BE UNDONE</span>
+            </label>
         </div>
     </form>
 </div>
