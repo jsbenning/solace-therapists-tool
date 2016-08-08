@@ -25,8 +25,8 @@ class ClientsController < ApplicationController
       @client = @therapist.clients.build(params[:client])
       @client.save
       @client.record = Record.create(client_id: @client.id)
-     
-      erb :"clients/#{@client.id}"
+      @id = @client.id
+      redirect to "/clients/#{@id}"
     else
       redirect to '/'
     end
@@ -89,7 +89,7 @@ class ClientsController < ApplicationController
       @client.record.delete
       @client.delete
       @clients = @therapist.clients
-      redirect to "therapists/#{therapist.id}"
+      redirect to "therapists/#{@therapist.id}"
     else
       erb :'error'
     end

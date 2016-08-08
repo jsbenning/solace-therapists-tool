@@ -1,8 +1,4 @@
-require './config/environment'
-
-class ApplicationController < Sinatra::Base
-  register Sinatra::ActiveRecordExtension
-
+class RecordsController < ApplicationController
 
   get '/clients/:id/records/:record_name/edit' do
     if logged_in?
@@ -16,7 +12,7 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  get 'clients/:id/records/:record_name' do
+  get '/clients/:id/records/:record_name' do
     if logged_in?
       @therapist = current_user
       @client = Client.find(params[:id])
@@ -28,7 +24,7 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  patch 'clients/:id/records/:record_name' do
+  patch '/clients/:id/records/:record_name' do
     if logged_in?
       @therapist = current_user
       @client = Client.find(params[:id])

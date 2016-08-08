@@ -6,11 +6,10 @@ class TherapistsController < ApplicationController
       @clients = @therapist.clients
       erb :'therapists/show_therapist'
     else
-      redirect to '/register'
+      erb :'therapists/create_therapist'
     end
   end
         
-
   post '/therapists/new' do
     @therapist = Therapist.create(username: params["username"], 
     password: params["password"], email: params["email"], first_name: params["first_name"], 
@@ -30,7 +29,7 @@ class TherapistsController < ApplicationController
       @clients = @therapist.clients
       erb :'therapists/edit_therapist'
     else
-      erb :'error'
+      redirect to '/error'
     end
   end
 
@@ -40,7 +39,7 @@ class TherapistsController < ApplicationController
       @clients = @therapist.clients
       erb :'therapists/show_therapist'
     else
-      erb :'error'
+      redirect to '/error'
     end
   end
 
@@ -50,7 +49,7 @@ class TherapistsController < ApplicationController
       @therapist.update(params["therapist"])
       redirect to "/therapists/#{@therapist.id}"
     else
-      redirect to '/'
+      redirect to '/error'
     end
   end
 end

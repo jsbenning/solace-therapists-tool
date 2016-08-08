@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
       @clients = @therapist.clients
       erb :'therapists/show_therapist'
     else
-      redirect to '/index'
+      erb :'index'
     end
   end
 
@@ -37,7 +37,7 @@ class ApplicationController < Sinatra::Base
       @clients = @therapist.clients
       erb :'therapists/show_therapist'
     else  
-      redirect to '/login'
+      erb :'login'
     end
   end
 
@@ -57,7 +57,7 @@ class ApplicationController < Sinatra::Base
       session.clear
       redirect to '/'
     else
-      erb :'error'
+      redirect to '/'
     end
   end
 
