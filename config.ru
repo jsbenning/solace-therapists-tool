@@ -8,5 +8,6 @@ end
 use Rack::MethodOverride
 use TherapistsController
 use ClientsController
+use RecordsController
 run ApplicationController
 
