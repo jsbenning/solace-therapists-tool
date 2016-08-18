@@ -4,9 +4,9 @@ class ClientsController < ApplicationController
     if logged_in?
       @therapist = current_user
       @clients = @therapist.clients
-      erb :'therapists/show_therapist'
+       redirect to "/therapists/#{@therapist.id}"
     else
-      redirect to '/'
+      erb :welcome
     end
   end
 
@@ -15,7 +15,7 @@ class ClientsController < ApplicationController
       @therapist = current_user
       erb :'clients/create_client'
     else
-      redirect to '/'
+      erb :welcome
     end
   end
 
@@ -25,10 +25,9 @@ class ClientsController < ApplicationController
       @client = @therapist.clients.build(params[:client])
       @client.save
       @client.record = Record.create(client_id: @client.id)
-      @id = @client.id
-      redirect to "/clients/#{@id}"
+      redirect to "clients/#{@client.id}"
     else
-      redirect to '/'
+      erb :welcome
     end
   end
 
@@ -37,12 +36,12 @@ class ClientsController < ApplicationController
       @therapist = current_user
       @client = Client.find(params[:id])
       if !(@therapist.clients).include?(@client)
-        erb :'error'
+        erb :error
       else
-      erb :'clients/show_client'
+        erb :'clients/show_client'
       end
     else
-      redirect to '/'
+      erb :welcome
     end
   end
 
@@ -60,14 +59,14 @@ class ClientsController < ApplicationController
     end
   end
 
-  patch '/clients/:id/edit' do
+  patch '/clients/:id' do
     if logged_in?
       @therapist = current_user
       @client = Client.find(params[:id])
       @client.update(params["client"])
-      erb :'clients/show_client'
+      redirect to "clients/#{@client.id}"
     else
-      redirect to '/'
+      erb :welcome
     end
   end
 

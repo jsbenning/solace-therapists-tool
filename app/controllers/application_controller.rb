@@ -2,7 +2,6 @@ require './config/environment'
 
 class ApplicationController < Sinatra::Base
   register Sinatra::ActiveRecordExtension
-  
 
   configure do
     enable :sessions
@@ -12,32 +11,19 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    if logged_in?
-      @therapist = current_user
-      @clients = @therapist.clients
-      erb :'therapists/show_therapist'
-    else
-      erb :'index'
-    end
+    erb :welcome
   end
 
   get '/register' do
-    if logged_in?
-      @therapist = current_user
-      @clients = @therapist.clients
-      erb :'therapists/show_therapist'
-    else 
-      redirect to '/therapists/new'
-    end
+    erb :'/therapists/create_therapist'
   end
 
   get '/login' do
     if logged_in?
       @therapist = current_user
-      @clients = @therapist.clients
-      erb :'therapists/show_therapist'
+      redirect to "/therapists/#{@therapist.id}"
     else  
-      erb :'login'
+      erb :login
     end
   end
 
@@ -45,10 +31,9 @@ class ApplicationController < Sinatra::Base
     @therapist = Therapist.find_by(username: params[:username])
     if @therapist && @therapist.authenticate(params[:password])
       session[:therapist_id] = @therapist.id
-      @clients = @therapist.clients
-      erb :'therapists/show_therapist'
+      redirect to "/therapists/#{@therapist.id}"
     else
-      redirect to '/'  #index page
+      redirect '/'  
     end
   end
 
@@ -57,16 +42,16 @@ class ApplicationController < Sinatra::Base
       session.clear
       redirect to '/'
     else
-      redirect to '/'
+      erb :welcome
     end
   end
 
   get '/error' do
-    erb :'error'
+    erb :error
   end
 
   get '/not_found' do
-    erb :'not_found'
+    erb :not_found
   end
 
   helpers do

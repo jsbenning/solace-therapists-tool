@@ -6,7 +6,7 @@ class RecordsController < ApplicationController
       @client = Client.find(params[:id])  
       @record_name = params[:record_name]
       @record = @client.record
-      erb  :"records/#{@record_name}/edit"
+      erb :"records/#{@record_name}/edit"
     else
       redirect to '/error'
     end

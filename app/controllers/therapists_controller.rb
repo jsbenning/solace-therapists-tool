@@ -4,7 +4,7 @@ class TherapistsController < ApplicationController
     if logged_in? 
       @therapist = current_user
       @clients = @therapist.clients
-      erb :'therapists/show_therapist'
+      redirect to "therapists/#{@therapist.id}"
     else
       erb :'therapists/create_therapist'
     end
@@ -17,19 +17,18 @@ class TherapistsController < ApplicationController
     license_number: params["license_number"])
     if @therapist.save || logged_in?
       session[:therapist_id] = @therapist.id
-      erb :'therapists/show_therapist'
+      redirect to "therapists/#{@therapist.id}"
     else
-      redirect to '/register'
+      erb :index
     end
   end
 
   get '/therapists/:id/edit' do
     if logged_in?
       @therapist = current_user
-      @clients = @therapist.clients
       erb :'therapists/edit_therapist'
     else
-      redirect to '/error'
+      erb :error
     end
   end
 
@@ -37,9 +36,9 @@ class TherapistsController < ApplicationController
     if logged_in? && current_user.id == params[:id].to_i
       @therapist = current_user
       @clients = @therapist.clients
-      erb :'therapists/show_therapist'
+      erb :"therapists/show_therapist"
     else
-      redirect to '/error'
+      erb :error
     end
   end
 
@@ -47,9 +46,9 @@ class TherapistsController < ApplicationController
     if logged_in?
       @therapist = current_user
       @therapist.update(params["therapist"])
-      redirect to "/therapists/#{@therapist.id}"
+      redirect to "therapists/#{@therapist.id}"
     else
-      redirect to '/error'
+      erb :error
     end
   end
 end

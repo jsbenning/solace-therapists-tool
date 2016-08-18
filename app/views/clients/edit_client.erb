@@ -3,7 +3,7 @@
   <%=@client.last_name%>, <%=@client.first_name%></h2>
     <h4>Medical Record #: <%=@client.medical_record_id%></h4>
 
-    <form method="POST" action="/clients/<%= @client.id %>/edit">
+    <form method="POST" action="/clients/<%= @client.id %>">
         <input id="hidden" type="hidden" name="_method" value="patch">
         <hr>
 </div>
