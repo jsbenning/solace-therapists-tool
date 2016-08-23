@@ -1,6 +1,6 @@
 class RecordsController < ApplicationController
 
-  get '/clients/:id/records/:record_name/edit' do
+  get ':record_name/edit' do
     if logged_in?
       @therapist = current_user
       @client = Client.find(params[:id])  
@@ -12,7 +12,7 @@ class RecordsController < ApplicationController
     end
   end
 
-  get '/clients/:id/records/:record_name' do
+  get ':record_name' do
     if logged_in?
       @therapist = current_user
       @client = Client.find(params[:id])
@@ -24,7 +24,7 @@ class RecordsController < ApplicationController
     end
   end
 
-  patch '/clients/:id/records/:record_name' do
+  patch ':record_name' do
     if logged_in?
       @therapist = current_user
       @client = Client.find(params[:id])
@@ -41,7 +41,7 @@ class RecordsController < ApplicationController
       @record_name = (params[:record_name])
       redirect to "/clients/#{@client.id}/records/#{@record_name}"
     else
-      erb :'error'
+      redirect to '/error'
     end
   end
 end
