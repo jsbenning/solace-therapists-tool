@@ -19,7 +19,7 @@ class TherapistsController < ApplicationController
       session[:therapist_id] = @therapist.id
       redirect to "therapists/#{@therapist.id}"
     else
-      erb :index
+      erb :welcome
     end
   end
 

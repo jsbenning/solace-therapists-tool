@@ -50,8 +50,8 @@ class ApplicationController < Sinatra::Base
     erb :error
   end
 
-  get '/not_found' do
-    erb :not_found
+  not_found do
+    erb :oops
   end
 
   helpers do
