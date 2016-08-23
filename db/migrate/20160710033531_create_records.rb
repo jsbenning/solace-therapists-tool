@@ -1,4 +1,5 @@
 class CreateRecords < ActiveRecord::Migration
+      # Instances of a record are divided amongst various views/forms, but all record params on forms should follow the pattern "record[attribute_name]" 
   def up
     create_table :records do |t|
       t.integer :client_id, default: 0
